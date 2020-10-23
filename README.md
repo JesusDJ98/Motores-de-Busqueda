@@ -1,3 +1,3 @@
-#4§ Ingenier¡a Inform tica
+#4º Ingeniería Informática
 Asignatura Optativa
 Huelva 2020

@@ -1,11 +1,11 @@
 
 package miclientesolrj;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -85,7 +85,6 @@ public class MiClienteAddSolrj {
         }
         System.out.println("Titulo del ultimo: "+this.titulo[this.titulo.length-1]);
     }
-    
     /**
      * Coge TODOS los archivos del directorio pasado por parametro
      * @param path
@@ -104,7 +103,6 @@ public class MiClienteAddSolrj {
             for(int i=0; i<arr_content.length; i++){
                 if( arr_content[i].isFile()){ //Si es un archivo
                     String aux = arr_content[i].getName();
-                    //System.out.println(aux);
                     
                     String partes[] = aux.split("LISA");
                     try{
@@ -132,12 +130,29 @@ public class MiClienteAddSolrj {
         }else{
             System.out.println("Directorio incorrecto");
         }
-        
-        
-        
         return lista_archivos;
     }
 
+    /**
+     * Funcion que abre el navegador y va a la url
+     * pasada por parametro
+     * @param url
+     */
+    public void goUrl(String url){
+        if(java.awt.Desktop.isDesktopSupported())
+        {
+            java.awt.Desktop escritorio = java.awt.Desktop.getDesktop();
+            if(escritorio.isSupported(java.awt.Desktop.Action.BROWSE)){
+                try{
+                    java.net.URI uri = new java.net.URI(url);
+                    escritorio.browse(uri);
+                }catch(Exception ex){
+                    System.out.println("Error abriendo navegador: "+ex);
+                }
+            }
+        }
+    }
+    
     /**
      * Devuelve el tamaño de los arrays
      * @return
@@ -181,6 +196,32 @@ public class MiClienteAddSolrj {
         int tama;
         MiClienteAddSolrj p = new MiClienteAddSolrj();
         
+        try{
+            //Ver en que directorio estamos trabajando
+            String current = new java.io.File( "." ).getCanonicalPath();
+            System.out.println("Current dir:"+current);
+            //Ejecuto el cambio de directorio y el comando para abrir la conexion con solr
+            //en la misma linea de comando y lo guardo en un fichero
+            /*String cmd = "cmd /K cd C:\\Users\\Jesus Delgado\\Desktop\\2020-2021\\"
+                    + "1erCuatrimestre\\MiGitHub\\MB\\Motores-de-Busqueda\\Practica1\\"
+                    + "Practica\\solr-8.6.3"
+                    + " && .\\bin\\solr start -e cloud -noprompt>>./prueba.txt";
+            Runtime.getRuntime().exec(cmd);
+            
+            //Leo dicho fichero para coger la url
+            String url = "";
+            
+            //Lanzo la url para ver los cambios
+            //p.goUrl(url);*/
+            
+            
+            //Thread.sleep(5000);
+        
+        }catch(Exception ex){
+            System.out.println("Error: "+ex);
+        }
+        
+        
         //Creo el cliente
         /*HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983"
                 + "/solr/gettingstarted").build();
@@ -201,7 +242,7 @@ public class MiClienteAddSolrj {
             solr.add(doc);
             solr.commit();
         }
-        */
+        //*/
     }
     
 }

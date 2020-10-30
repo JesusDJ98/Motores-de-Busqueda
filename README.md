@@ -1,4 +1,4 @@
-<h1>4o Ingenieria Informatica<\h1>
+<h1>4o Ingenieria Informatica<h1>
 <br>
 Asignatura Optativa
 <br>

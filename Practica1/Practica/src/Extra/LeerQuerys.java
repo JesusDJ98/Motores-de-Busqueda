@@ -14,10 +14,18 @@ import java.util.logging.Logger;
 public class LeerQuerys {
 
     String[] querys;
+    
+    /**
+     * Constructor
+     * @param cantidad
+     */
     public LeerQuerys(int cantidad) {
         querys = new String[cantidad];
     }
     
+    /**
+     * Leer el archivo de Querys
+     */
     public void Leer(){
         String actual = DirAct();
         String carpeta = "\\Coleccion LISA revisada";
@@ -81,6 +89,5 @@ public class LeerQuerys {
         }
         return dir;
     }
-    
     
 }

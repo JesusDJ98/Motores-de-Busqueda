@@ -1,4 +1,3 @@
-
 package Extra;
 
 import java.io.File;
@@ -165,7 +164,5 @@ public class LeerCorpus {
         }
         return dir;
     }
-    
-   
     
 }

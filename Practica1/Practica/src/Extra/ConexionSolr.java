@@ -1,14 +1,7 @@
-
 package Extra;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+
 
 /**
  *
@@ -16,22 +9,7 @@ import java.util.StringTokenizer;
  */
 public class ConexionSolr {
     
-    String inicio;
-    String actual;
-    String carpeta;
-    String ConexionSolr;
-    String CloseSolr;
-    String Core;
-    
-    
     public ConexionSolr(){
-        inicio = "cmd /c ";
-        actual = "cd " + DirAct();
-        carpeta = "\\solr-8.6.3";
-        ConexionSolr = "bin\\solr start";
-        //Core = " && .\\bin\\solr.cmd create -c micoleccion";//NO muestra nada pues se queda pillado
-        Core = "bin\\solr.cmd create -c micoleccion"; 
-        CloseSolr = " && .\\bin\\solr stop -all";
     }
     
     public void Conexion(){
@@ -46,7 +24,7 @@ public class ConexionSolr {
         //Damos un margen
         try{
             Thread.sleep(5000);//5 segundos
-        }catch(Exception ex){
+        }catch(InterruptedException ex){
         }
         //Abro conexion con SOLR
         try {
@@ -58,7 +36,7 @@ public class ConexionSolr {
         //Damos un margen
         try{
             Thread.sleep(3000);//3 segundos
-        }catch(Exception ex){
+        }catch(InterruptedException ex){
         }
         
         
@@ -83,7 +61,7 @@ public class ConexionSolr {
         //Damos un margen
         try{
             Thread.sleep(1000);
-        }catch(Exception ex){
+        }catch(InterruptedException ex){
         }
     }
     

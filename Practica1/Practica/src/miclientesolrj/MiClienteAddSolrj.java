@@ -26,16 +26,16 @@ public class MiClienteAddSolrj {
      */
     public static void main(String[] args) throws IOException, SolrServerException{
         //Objetos que usare
-        int[] IdDoc;
+        /*int[] IdDoc;
         String[] Titulo;
         String[] Texto;
         int tama;
         
         //Abrimos la conexion con SOLR
-        String url = "";
         try{
             ConexionSolr conex = new ConexionSolr();
-            url = conex.Conexion();
+            //conex.Conexion();
+            conex.CerrarConexion();
         }catch(Exception ex){
             System.out.println("Error: "+ex);
         }
@@ -46,9 +46,9 @@ public class MiClienteAddSolrj {
         
         
         //Creo el cliente
-        /*HttpSolrClient solr = new HttpSolrClient.Builder(url+"/gettingstarted").build();
-        //HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983"
-        //        + "/solr/gettingstarted").build();
+        //HttpSolrClient solr = new HttpSolrClient.Builder(url+"/gettingstarted").build();
+        HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/micoleccion").build();
+        
         
         //Leo los archivos
         tama = corpus.getTama();

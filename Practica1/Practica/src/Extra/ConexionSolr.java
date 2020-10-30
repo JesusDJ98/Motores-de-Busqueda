@@ -4,7 +4,9 @@ package Extra;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -14,63 +16,81 @@ import java.util.StringTokenizer;
  */
 public class ConexionSolr {
     
+    String inicio;
+    String actual;
+    String carpeta;
+    String ConexionSolr;
+    String CloseSolr;
+    String Core;
     
     
     public ConexionSolr(){
-        
+        inicio = "cmd /c ";
+        actual = "cd " + DirAct();
+        carpeta = "\\solr-8.6.3";
+        ConexionSolr = "bin\\solr start";
+        //Core = " && .\\bin\\solr.cmd create -c micoleccion";//NO muestra nada pues se queda pillado
+        Core = "bin\\solr.cmd create -c micoleccion"; 
+        CloseSolr = " && .\\bin\\solr stop -all";
     }
     
-    public String Conexion(){
+    public void Conexion(){
         
-        /*
-        Exista o no la carpeta siempre en la ultima linea pone la direccion url
-        Pero para que no tarde mucho leyendo, borraremos la carpeta
-        */
-        String inicio = "cmd /K cd ";
-        String actual = DirAct();
-        String carpeta = "\\solr-8.6.3";
-        String nameArch = "prueba.txt";
-        String ConSolr = " && .\\bin\\solr start -e cloud -noprompt>>./"+nameArch;
-        //System.out.println("Conexion: "+inicio+actual+carpeta+ConSolr);
-        
-        //Abro conexion y creo un archivo con la info de url
+        //Abro conexion con SOLR
         try {
-            Runtime.getRuntime().exec(inicio+actual+carpeta+ConSolr);
-            //exec.waitFor(); //Espera indefinida
+            Runtime r = Runtime.getRuntime();
+            r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd start");
         } catch (IOException ex) {
-            //Logger.getLogger(LeerCorpus.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Error abriendo conexion con Solr: "+ex);
         }
-        
-        //Leo el archivo
-        String path = actual+carpeta+"\\"+nameArch;
-        String url = "";
-        
-        //Hay que esperar
-        String a = "";
-        while (a.isEmpty()){
-            a = LeerArchivo(path);
-        }
+        //Damos un margen
         try{
-            System.out.println("Conectando");
-            Thread.sleep(10000);//10 segundos
+            Thread.sleep(5000);//5 segundos
         }catch(Exception ex){
-        } 
-        System.out.println("Conectado");
-        a =LeerArchivo(path);
-        //Separar esta ultima linea
-        StringTokenizer st = new StringTokenizer(a);
-        while(st.hasMoreTokens()){
-            url = st.nextToken();
         }
+        //Abro conexion con SOLR
+        try {
+            Runtime r = Runtime.getRuntime();
+            r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd create -c micoleccion");
+        } catch (IOException ex) {
+            System.out.println("Error creando CORE: "+ex);
+        }
+        //Damos un margen
+        try{
+            Thread.sleep(3000);//3 segundos
+        }catch(Exception ex){
+        }
+        
+        
+        String url = "http://localhost:8983/solr/#/micoleccion/core-overview";
         
         //Abro la url en el navegador
-        System.out.println("URL: "+url);
+        //System.out.println("URL: "+url);
         goUrl(url);
         
-        return url;
     }
     
+    /**
+     * Cerramos la conexion con SOLR
+     */
+    public void CerrarConexion(){
+        //Abro conexion con SOLR
+        try {
+            Runtime.getRuntime().exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr stop -all");
+        } catch (IOException ex) {
+            System.out.println("Error cerrando conexion con Solr: "+ex);
+        }
+        //Damos un margen
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ex){
+        }
+    }
+    
+    /**
+     * Coge el directorio actual de trabajo
+     * @return
+     */
     private String DirAct(){
         //Ver en que directorio estamos trabajando
         String dir = "";
@@ -83,41 +103,12 @@ public class ConexionSolr {
         return dir;
     }
     
-    private String LeerArchivo(String path){
-        String url = "";
-        
-        try {
-            File archivo = new File(path);
-            Scanner sc = new Scanner(archivo);
-            //int i = 0;
-            while(sc.hasNextLine()) {
-                String actual = sc.nextLine();
-                //System.out.println(i+": "+sc.nextLine());
-                if(actual.equals("")){
-                    //System.out.println(i+": En blanco");
-                }else{
-                    url = actual; //Devolvera la ultima
-                    //System.out.println(i+": "+actual);
-                }
-                //i++;
-            }
-            sc.close(); //Cerramos
-            archivo.delete();//Eliminamos
-        } catch (FileNotFoundException ex) {
-            //Logger.getLogger(ConexionSolr.class.getName()).log(Level.SEVERE, null, ex);
-            //System.out.println("Error leyendo: "+ex);
-            url = "";
-        }
-        return url;
-    }
-    
-    
     /**
      * Funcion que abre el navegador y va a la url
      * pasada por parametro
      * @param url
      */
-    public void goUrl(String url){
+    private void goUrl(String url){
         if(java.awt.Desktop.isDesktopSupported())
         {
             java.awt.Desktop escritorio = java.awt.Desktop.getDesktop();
@@ -131,4 +122,5 @@ public class ConexionSolr {
             }
         }
     }
+    
 }

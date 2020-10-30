@@ -1,5 +1,6 @@
 package miclientesolrj;
 
+import Extra.LeerQuerys;
 import java.io.IOException;
 import org.apache.solr.client.solrj.SolrQuery;
 
@@ -21,9 +22,19 @@ public class MiClienteSearchSolrj {
 
     public static void main(String[] args) throws IOException,
 			SolrServerException {
-
         
-        HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/gettingstarted").build();
+        LeerQuerys query = new LeerQuerys(35);
+        query.Leer();
+        String[] consultas = query.getQuerys();
+        
+        System.out.println(" ");
+        System.out.println(" ");
+        for(int i =0; i< consultas.length; i++){
+            System.out.println(consultas[i]);
+            System.out.println(" ");
+        }
+        
+        /*HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/gettingstarted").build();
 		
         SolrQuery query = new SolrQuery();
         query.setQuery("*:*");
@@ -34,6 +45,6 @@ public class MiClienteSearchSolrj {
         SolrDocumentList docs = rsp.getResults();
         for (int i = 0; i < docs.size(); ++i) {
             System.out.println(docs.get(i));
-        }
+        }*/
     }
 }

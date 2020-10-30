@@ -55,10 +55,6 @@ public class LeerCorpus {
         return this.id.length;
     }
     
-    
-    
-    
-    
     /**
      * Lee todos los ficheros del directorio predeterminado propio
      * @throws FileNotFoundException

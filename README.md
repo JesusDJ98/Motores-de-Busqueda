@@ -1,6 +1,4 @@
-<h1>4o Ingenieria Informatica<h1>
+#4o Ingenieria Informatica
 
-<br>
-<br>
 Asignatura Optativa
-Huelva 2020
+<br>Huelva 2020<br>

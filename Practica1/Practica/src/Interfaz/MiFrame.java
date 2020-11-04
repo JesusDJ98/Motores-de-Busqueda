@@ -5,17 +5,43 @@
  */
 package Interfaz;
 
+import Extra.ConexionSolr;
+import Extra.LeerCorpus;
+import Extra.LeerQuerys;
+import javax.swing.JOptionPane;
+import miclientesolrj.MiClienteAddSolrj;
+import miclientesolrj.MiClienteSearchSolrj;
+
 /**
  *
  * @author Jesus Delgado
  */
 public class MiFrame extends javax.swing.JFrame {
 
+    LeerCorpus Corpus;
+    LeerQuerys LISAQUE;
+    ConexionSolr SOLR;
+    MiClienteAddSolrj AgregarSolrj;
+    MiClienteSearchSolrj ConsultasSolrj;
+    
+    boolean conectado;
+    
     /**
      * Creates new form MiFrame
      */
     public MiFrame() {
         initComponents();
+        InicializarObj();
+    }
+    
+    private void InicializarObj(){
+        Corpus = new LeerCorpus();
+        LISAQUE = new LeerQuerys(35);
+        SOLR = new ConexionSolr();
+        AgregarSolrj = new MiClienteAddSolrj();
+        ConsultasSolrj = new MiClienteSearchSolrj();
+        
+        conectado = false;
     }
 
     /**
@@ -29,10 +55,13 @@ public class MiFrame extends javax.swing.JFrame {
 
         MainPrincipal = new javax.swing.JPanel();
         Querys = new javax.swing.JScrollPane();
-        Acciones = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        LISA = new javax.swing.JScrollPane();
         Consulta = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        ChooseCore = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Solr = new javax.swing.JMenu();
         Conectar = new javax.swing.JMenuItem();
@@ -40,55 +69,101 @@ public class MiFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        Acciones.setViewportView(jList1);
+        jLabel1.setText("Aqui hacemos Querys");
+
+        jLabel2.setText("Añadir y Eliminar");
 
         javax.swing.GroupLayout ConsultaLayout = new javax.swing.GroupLayout(Consulta);
         Consulta.setLayout(ConsultaLayout);
         ConsultaLayout.setHorizontalGroup(
             ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 96, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ConsultaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(49, 49, 49))
+            .addGroup(ConsultaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ConsultaLayout.setVerticalGroup(
             ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 97, Short.MAX_VALUE)
+            .addGroup(ConsultaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        javax.swing.GroupLayout ChooseCoreLayout = new javax.swing.GroupLayout(ChooseCore);
+        ChooseCore.setLayout(ChooseCoreLayout);
+        ChooseCoreLayout.setHorizontalGroup(
+            ChooseCoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
+        ChooseCoreLayout.setVerticalGroup(
+            ChooseCoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jLabel3.setText("Elegimos el CORE");
+
+        jLabel4.setText("Practica");
+
+        jLabel5.setText("MiniMenu de Opciones");
 
         javax.swing.GroupLayout MainPrincipalLayout = new javax.swing.GroupLayout(MainPrincipal);
         MainPrincipal.setLayout(MainPrincipalLayout);
         MainPrincipalLayout.setHorizontalGroup(
             MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LISA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Querys, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(MainPrincipalLayout.createSequentialGroup()
+                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainPrincipalLayout.createSequentialGroup()
+                        .addComponent(ChooseCore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Querys, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainPrincipalLayout.createSequentialGroup()
+                        .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MainPrincipalLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)))
+                            .addComponent(jLabel5))
+                        .addGap(119, 119, 119)
+                        .addComponent(Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         MainPrincipalLayout.setVerticalGroup(
             MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Querys, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                        .addComponent(LISA))
-                    .addComponent(Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(107, Short.MAX_VALUE))
+                    .addGroup(MainPrincipalLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addGap(85, 85, 85)
+                        .addComponent(ChooseCore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainPrincipalLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Querys, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         Solr.setText("SOLR");
 
         Conectar.setText("Conectar");
+        Conectar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConectarActionPerformed(evt);
+            }
+        });
         Solr.add(Conectar);
 
         Desconectar.setText("Desconectar");
@@ -107,7 +182,7 @@ public class MiFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(MainPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -125,7 +200,18 @@ public class MiFrame extends javax.swing.JFrame {
 
     private void DesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesconectarActionPerformed
         // TODO add your handling code here:
+        SOLR.CerrarConexion();
+        conectado = false;
+        JOptionPane.showMessageDialog(null, "Conexion cerrada");
     }//GEN-LAST:event_DesconectarActionPerformed
+
+    private void ConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarActionPerformed
+        // TODO add your handling code here:
+        SOLR.Conexion();
+        conectado = true;
+        //JOptionPane.showMessageDialog(null, "Conexion abierta");
+        //No necesaria, pues ya abrimos el navegador
+    }//GEN-LAST:event_ConectarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,15 +249,18 @@ public class MiFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane Acciones;
+    private javax.swing.JPanel ChooseCore;
     private javax.swing.JMenuItem Conectar;
     private javax.swing.JPanel Consulta;
     private javax.swing.JMenuItem Desconectar;
-    private javax.swing.JScrollPane LISA;
     private javax.swing.JPanel MainPrincipal;
     private javax.swing.JScrollPane Querys;
     private javax.swing.JMenu Solr;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

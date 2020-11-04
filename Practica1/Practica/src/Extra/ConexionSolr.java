@@ -26,10 +26,19 @@ public class ConexionSolr {
             Thread.sleep(5000);//5 segundos
         }catch(InterruptedException ex){
         }
-        //Abro conexion con SOLR
+        
+        String url = "http://localhost:8983/solr";
+        
+        //Abro la url en el navegador
+        goUrl(url);
+        
+    }
+    
+    public void NewColeccion(String name){
+        //Creo el nuevo core
         try {
             Runtime r = Runtime.getRuntime();
-            r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd create -c micoleccion");
+            r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd create -c "+name);
         } catch (IOException ex) {
             System.out.println("Error creando CORE: "+ex);
         }
@@ -40,12 +49,10 @@ public class ConexionSolr {
         }
         
         
-        String url = "http://localhost:8983/solr/#/micoleccion/core-overview";
+        String url = "http://localhost:8983/solr/#/"+name+"/core-overview";
         
         //Abro la url en el navegador
-        //System.out.println("URL: "+url);
         goUrl(url);
-        
     }
     
     /**
@@ -60,7 +67,7 @@ public class ConexionSolr {
         }
         //Damos un margen
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }catch(InterruptedException ex){
         }
     }

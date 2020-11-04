@@ -1,0 +1,131 @@
+2020-11-03 15:39:42.568 INFO  (main) [   ] o.e.j.u.log Logging initialized @1099ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-03 15:39:42.630 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+    <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
+        <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
+      </Arg></New>
+  </Arg>
+2020-11-03 15:39:42.724 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_261-b12
+2020-11-03 15:39:42.743 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2020-11-03 15:39:43.193 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2020-11-03 15:39:43.202 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2020-11-03 15:39:43.202 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2020-11-03 15:39:43.204 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2020-11-03 15:39:43.248 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2020-11-03 15:39:43.252 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2020-11-03 15:39:43.252 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2020-11-03 15:39:43.252 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2020-11-03 15:39:43.252 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-11-03T15:39:43.252Z
+2020-11-03 15:39:43.259 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr
+2020-11-03 15:39:43.264 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\solr.xml
+2020-11-03 15:39:43.343 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@56a6d5a6, but no JMX reporters were configured - adding default JMX reporter.
+2020-11-03 15:39:43.645 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2020-11-03 15:39:43.940 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@47874b25[provider=null,keyStore=null,trustStore=null]
+2020-11-03 15:39:43.940 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@47874b25[provider=null,keyStore=null,trustStore=null]
+2020-11-03 15:39:44.018 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@71e9a896[provider=null,keyStore=null,trustStore=null]
+2020-11-03 15:39:44.018 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@71e9a896[provider=null,keyStore=null,trustStore=null]
+2020-11-03 15:39:44.066 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2020-11-03 15:39:44.182 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2020-11-03 15:39:44.185 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2020-11-03 15:39:44.241 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@56a6d5a6
+2020-11-03 15:39:44.241 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@56a6d5a6
+2020-11-03 15:39:44.247 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@56a6d5a6
+2020-11-03 15:39:44.269 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 0 core definitions underneath C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr
+2020-11-03 15:39:44.621 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@52b1beb6{/solr,file:///C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2020-11-03 15:39:44.628 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@609db43b{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2020-11-03 15:39:44.628 INFO  (main) [   ] o.e.j.s.Server Started @3161ms
+2020-11-03 15:39:44.837 INFO  (qtp1793436274-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=69
+2020-11-03 15:39:44.840 INFO  (qtp1793436274-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=72
+2020-11-03 15:39:44.895 INFO  (qtp1793436274-19) [   x:techproducts] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=techproducts&action=STATUS&wt=json} status=0 QTime=0
+2020-11-03 15:39:44.927 INFO  (qtp1793436274-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=25
+2020-11-03 15:39:44.957 INFO  (qtp1793436274-25) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=25
+2020-11-03 15:39:44.966 INFO  (qtp1793436274-21) [   x:techproducts] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=techproducts&action=STATUS&wt=json} status=0 QTime=0
+2020-11-03 15:39:45.058 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.h.a.CoreAdminOperation core create command name=techproducts&action=CREATE&instanceDir=techproducts&wt=json
+2020-11-03 15:39:45.135 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.c.SolrResourceLoader Added 63 libs to classloader, from paths: [/C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/contrib/clustering/lib, /C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/contrib/extraction/lib, /C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/contrib/langid/lib, /C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/contrib/velocity/lib, /C:/Users/usuario/Desktop/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/dist]
+2020-11-03 15:39:45.285 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2020-11-03 15:39:45.307 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
+2020-11-03 15:39:45.426 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.s.IndexSchema Schema name=example
+2020-11-03 15:39:45.822 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedWordSetResource for path /schema/analysis/stopwords/english
+2020-11-03 15:39:45.823 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory$SynonymManager for path /schema/analysis/synonyms/english
+2020-11-03 15:39:45.823 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedStopFilterFactory to existing ManagedResource /schema/analysis/stopwords/english
+2020-11-03 15:39:45.823 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory to existing ManagedResource /schema/analysis/synonyms/english
+2020-11-03 15:39:45.832 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.s.IndexSchema Loaded schema example/1.6 with uniqueid field id
+2020-11-03 15:39:45.832 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedStopFilterFactory to existing ManagedResource /schema/analysis/stopwords/english
+2020-11-03 15:39:45.832 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory to existing ManagedResource /schema/analysis/synonyms/english
+2020-11-03 15:39:45.832 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedStopFilterFactory to existing ManagedResource /schema/analysis/stopwords/english
+2020-11-03 15:39:45.832 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory to existing ManagedResource /schema/analysis/synonyms/english
+2020-11-03 15:39:45.903 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.c.CoreContainer Creating SolrCore 'techproducts' using configuration from instancedir C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts, trusted=true
+2020-11-03 15:39:45.911 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.techproducts' (registry 'solr.core.techproducts') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@56a6d5a6
+2020-11-03 15:39:45.924 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.c.SolrCore [[techproducts] ] Opening new SolrCore at [C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts], dataDir=[C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts\data\]
+2020-11-03 15:39:46.020 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2020-11-03 15:39:46.327 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2020-11-03 15:39:46.328 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2020-11-03 15:39:46.336 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2020-11-03 15:39:46.336 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2020-11-03 15:39:46.359 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts\conf
+2020-11-03 15:39:46.360 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts\conf
+2020-11-03 15:39:46.360 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
+2020-11-03 15:39:46.361 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _schema_analysis_stopwords_english.json using file:dir=C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts\conf
+2020-11-03 15:39:46.361 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResource Loaded initArgs {ignoreCase=true} for /schema/analysis/stopwords/english
+2020-11-03 15:39:46.361 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.s.a.ManagedWordSetResource Loaded 35 words for /schema/analysis/stopwords/english
+2020-11-03 15:39:46.362 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResource Notified 2 observers of /schema/analysis/stopwords/english
+2020-11-03 15:39:46.362 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _schema_analysis_synonyms_english.json using file:dir=C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts\conf
+2020-11-03 15:39:46.362 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResource Loaded initArgs {ignoreCase=true,format=solr} for /schema/analysis/synonyms/english
+2020-11-03 15:39:46.363 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.s.a.ManagedSynonymGraphFilterFactory Loaded 3 synonym mappings for /schema/analysis/synonyms/english
+2020-11-03 15:39:46.364 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.r.ManagedResource Notified 2 observers of /schema/analysis/synonyms/english
+2020-11-03 15:39:46.372 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2020-11-03 15:39:46.378 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2020-11-03 15:39:46.387 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.h.c.SuggestComponent Initializing SuggestComponent
+2020-11-03 15:39:46.390 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.s.s.SolrSuggester init: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string,buildOnStartup=false}
+2020-11-03 15:39:46.404 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.s.s.SolrSuggester Dictionary loaded with params: {name=mySuggester,lookupImpl=FuzzyLookupFactory,dictionaryImpl=DocumentDictionaryFactory,field=cat,weightField=price,suggestAnalyzerFieldType=string,buildOnStartup=false}
+2020-11-03 15:39:46.405 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.h.c.QueryElevationComponent Loading QueryElevation from: C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\example\techproducts\solr\techproducts\conf\elevate.xml
+2020-11-03 15:39:46.417 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2020-11-03 15:39:46.421 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1682354194529386496
+2020-11-03 15:39:46.425 INFO  (qtp1793436274-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={name=techproducts&action=CREATE&instanceDir=techproducts&wt=json} status=0 QTime=1366
+2020-11-03 15:39:46.479 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.c.S.Request [techproducts]  webapp=null path=null params={q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false&event=firstSearcher} hits=0 status=0 QTime=53
+2020-11-03 15:39:46.480 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2020-11-03 15:39:46.480 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2020-11-03 15:39:46.480 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: wordbreak
+2020-11-03 15:39:46.488 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.c.SolrCore [techproducts]  Registered new searcher autowarm time: 0 ms
+2020-11-03 15:39:46.556 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[GB18030TEST (1682354194622709760)]} 0 107
+2020-11-03 15:39:46.596 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[SP2514N (1682354194685624320), 6H500F0 (1682354194710790144)]} 0 26
+2020-11-03 15:39:46.617 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[F8V7067-APL-KIT (1682354194730713088), IW-02 (1682354194733858816)]} 0 3
+2020-11-03 15:39:46.634 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[MA147LL/A (1682354194747490304)]} 0 6
+2020-11-03 15:39:46.650 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[adata (1682354194763218944), apple (1682354194764267520), asus (1682354194765316096), ati (1682354194765316097), belkin (1682354194766364672), canon (1682354194766364673), corsair (1682354194767413248), dell (1682354194767413249), maxtor (1682354194768461824), samsung (1682354194768461825), ... (11 adds)]} 0 6
+2020-11-03 15:39:46.665 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[TWINX2048-3200PRO (1682354194778947584), VS1GB400C3 (1682354194782093312), VDBDB1A16 (1682354194784190464)]} 0 6
+2020-11-03 15:39:46.676 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[USD (1682354194794676224), EUR (1682354194795724800), GBP (1682354194795724801), NOK (1682354194796773376)]} 0 2
+2020-11-03 15:39:46.690 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[3007WFP (1682354194810404864)]} 0 1
+2020-11-03 15:39:46.710 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[VA902B (1682354194827182080)]} 0 5
+2020-11-03 15:39:46.722 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[0579B002 (1682354194842910720)]} 0 1
+2020-11-03 15:39:46.737 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[9885A004 (1682354194858639360)]} 0 1
+2020-11-03 15:39:46.751 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[SOLR1000 (1682354194874368000)]} 0 1
+2020-11-03 15:39:46.772 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[UTF8TEST (1682354194891145216)]} 0 7
+2020-11-03 15:39:46.785 INFO  (qtp1793436274-22) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={}{add=[EN7800GTX/2DHTV/256M (1682354194905825280), 100-435805 (1682354194910019584)]} 0 5
+2020-11-03 15:39:46.936 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2020-11-03 15:39:46.942 INFO  (searcherExecutor-15-thread-1-processing-x:techproducts) [   x:techproducts] o.a.s.c.SolrCore [techproducts]  Registered new searcher autowarm time: 0 ms
+2020-11-03 15:39:46.945 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.u.p.LogUpdateProcessorFactory [techproducts]  webapp=/solr path=/update params={commit=true}{commit=} 0 157
+2020-11-03 15:40:02.960 INFO  (qtp1793436274-41) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1604418002883} status=0 QTime=0
+2020-11-03 15:40:02.991 INFO  (qtp1793436274-25) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1604418002883} status=0 QTime=32
+2020-11-03 15:40:45.008 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.c.S.Request [techproducts]  webapp=/solr path=/browse params={} hits=32 status=0 QTime=92
+2020-11-03 15:40:45.008 INFO  (qtp1793436274-24) [   x:techproducts] o.a.s.c.PluginBag Going to create a new queryResponseWriter with {type = queryResponseWriter,name = velocity,class = solr.VelocityResponseWriter,attributes = {startup=lazy, name=velocity, class=solr.VelocityResponseWriter},args = {template.base.dir=}} 
+2020-11-03 15:40:45.022 WARN  (qtp1793436274-24) [   x:techproducts] o.a.s.r.VelocityResponseWriter VelocityResponseWriter is deprecated. This may be removed in future Solr releases. Please SOLR-14065.
+2020-11-03 15:40:45.242 WARN  (qtp1793436274-24) [   x:techproducts] o.a.v.rendering Cannot retrieve method getname from object of class java.lang.Class due to security restrictions.
+2020-11-03 15:40:45.243 WARN  (qtp1793436274-24) [   x:techproducts] o.a.v.rendering Cannot retrieve method getname from object of class java.lang.Class due to security restrictions.
+2020-11-03 15:40:45.244 WARN  (qtp1793436274-24) [   x:techproducts] o.a.v.rendering Cannot retrieve method getname from object of class java.lang.Class due to security restrictions.
+2020-11-03 15:40:45.248 WARN  (qtp1793436274-24) [   x:techproducts] o.a.v.rendering Cannot retrieve method getname from object of class java.lang.Class due to security restrictions.
+2020-11-03 15:40:45.348 INFO  (qtp1793436274-17) [   x:techproducts] o.a.s.c.S.Request [techproducts]  webapp=/solr path=/admin/file params={file=/velocity/main.css&contentType=text/css} status=0 QTime=1
+2020-11-03 15:40:45.348 INFO  (qtp1793436274-25) [   x:techproducts] o.a.s.c.S.Request [techproducts]  webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.css&contentType=text/css} status=0 QTime=1
+2020-11-03 15:40:45.349 INFO  (qtp1793436274-21) [   x:techproducts] o.a.s.c.S.Request [techproducts]  webapp=/solr path=/admin/file params={file=/velocity/jquery.autocomplete.js&contentType=text/javascript} status=0 QTime=0
+2020-11-03 15:50:01.741 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@609db43b{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2020-11-03 15:50:01.741 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2020-11-03 15:50:01.742 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1305004711
+2020-11-03 15:50:01.743 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.c.SolrCore [techproducts]  CLOSING SolrCore org.apache.solr.core.SolrCore@1462e0fd
+2020-11-03 15:50:01.743 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.techproducts tag=SolrCore@1462e0fd
+2020-11-03 15:50:01.744 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@62c95a50: rootName = null, domain = solr.core.techproducts, service url = null, agent id = null] for registry solr.core.techproducts/com.codahale.metrics.MetricRegistry@219fecd1
+2020-11-03 15:50:01.755 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2020-11-03 15:50:01.766 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2020-11-03 15:50:01.766 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2caf6912: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@378278f9
+2020-11-03 15:50:01.770 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2020-11-03 15:50:01.770 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4e558728: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@42124c1f
+2020-11-03 15:50:01.771 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2020-11-03 15:50:01.771 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@5eccd3b9: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@1c2b8ce3
+2020-11-03 15:50:01.778 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@52b1beb6{/solr,null,UNAVAILABLE}{C:\Users\usuario\Desktop\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}

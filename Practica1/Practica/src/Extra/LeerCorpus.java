@@ -55,61 +55,76 @@ public class LeerCorpus {
     }
     
     /**
-     * Lee todos los ficheros del directorio predeterminado propio
+     * Lee el fichero pasado por parametro
+     * @param files
      * @throws FileNotFoundException
      */
-    public void LeerFicheros() throws FileNotFoundException{
+    public void LeerFicheros(String files) throws FileNotFoundException{
         boolean fin_titulo = false;
         int identificador = 0; 
         String tit="";
         String tex="";
         
+        /*String actual = DirAct();
+        String carpeta = "\\Coleccion LISA revisada";
+        
+        String path = actual+carpeta;
+        String[] files = getFiles( path );*/
+        
+        //for(int k=0; k<files.length; k++){
+            //String fin = path+"\\"+files[k];
+            
+        String fin = files;
+        //System.out.println("Directorio: "+fin);
+        Scanner sc = new Scanner(new File(fin));
+        int i = 0;
+        while(sc.hasNextLine()) {
+            if(i==0){ //Donde se encuentra el documento
+                String aux = sc.nextLine();
+                //System.out.println(aux);
+                String partes[] = aux.split(" ");
+                identificador = Integer.parseInt(partes[partes.length-1]);
+                this.id[identificador-1] = identificador; //No muy importante pues estan en orden
+
+            }else{
+                String aux = sc.nextLine();
+                if(aux.equals("********************************************")){ //Fin del documento
+                    //Guardamos los datos
+                    this.titulo[identificador-1]=tit;
+                    this.texto[identificador-1]=tex;
+                    //Reiniciamos los valores
+                    tit="";
+                    tex="";
+                    fin_titulo = false;
+                    i=-1; 
+                }else{
+                    if(aux.equals("")){ //Separacion entre tirulo y texto
+                        fin_titulo = true;
+                    }
+                    if(fin_titulo){ //Lo agregamos al texto
+                        tex += aux;
+                    }else{          //Lo agregamos al titulo
+                        tit += aux;
+                    }
+                }
+            }
+            i++;
+        }
+        sc.close();
+    }
+    
+    /**
+     * Devuelve el listado de ficheros a leer
+     * @return
+     */
+    public String[] Listado(){
         String actual = DirAct();
         String carpeta = "\\Coleccion LISA revisada";
         
         String path = actual+carpeta;
         String[] files = getFiles( path );
         
-        for(int k=0; k<files.length; k++){
-            String fin = path+"\\"+files[k];
-            //System.out.println("Directorio: "+fin);
-            Scanner sc = new Scanner(new File(fin));
-            int i = 0;
-            while(sc.hasNextLine()) {
-                if(i==0){ //Donde se encuentra el documento
-                    String aux = sc.nextLine();
-                    //System.out.println(aux);
-                    String partes[] = aux.split(" ");
-                    identificador = Integer.parseInt(partes[partes.length-1]);
-                    this.id[identificador-1] = identificador; //No muy importante pues estan en orden
-
-                }else{
-                    String aux = sc.nextLine();
-                    if(aux.equals("********************************************")){ //Fin del documento
-                        //Guardamos los datos
-                        this.titulo[identificador-1]=tit;
-                        this.texto[identificador-1]=tex;
-                        //Reiniciamos los valores
-                        tit="";
-                        tex="";
-                        fin_titulo = false;
-                        i=-1; 
-                    }else{
-                        if(aux.equals("")){ //Separacion entre tirulo y texto
-                            fin_titulo = true;
-                        }
-                        if(fin_titulo){ //Lo agregamos al texto
-                            tex += aux;
-                        }else{          //Lo agregamos al titulo
-                            tit += aux;
-                        }
-                    }
-                }
-                i++;
-            }
-            sc.close();
-        }
-        System.out.println("Titulo del ultimo: "+this.titulo[this.titulo.length-1]);
+        return files;
     }
     
     /**

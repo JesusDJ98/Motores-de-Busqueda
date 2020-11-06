@@ -23,7 +23,7 @@ public class ConexionSolr {
         }
         //Damos un margen
         try{
-            Thread.sleep(5000);//5 segundos
+            Thread.sleep(7000);//7 segundos
         }catch(InterruptedException ex){
         }
         

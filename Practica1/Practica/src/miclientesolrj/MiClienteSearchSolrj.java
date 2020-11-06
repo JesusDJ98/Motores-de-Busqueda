@@ -2,6 +2,7 @@ package miclientesolrj;
 
 import Extra.LeerQuerys;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.apache.solr.client.solrj.SolrQuery;
 
 import org.apache.solr.client.solrj.SolrServerException;
@@ -17,6 +18,9 @@ import org.apache.solr.common.SolrDocumentList;
  */
 public class MiClienteSearchSolrj {
     
+    private int documentos=0;
+    private String[] salida;
+    
     /**
      * Hacemos todas las consultas del archivo LISA.QUE
      * @param QUE
@@ -28,22 +32,43 @@ public class MiClienteSearchSolrj {
         //QUE.Leer();
         String[] consultas = QUE.getQuerys();
         
-        
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
         //Recorremos la consulta
+        //Vemos el tamaño de lineas que necesitammos mientras hacemos las consultas
+        ArrayList<String> salid = new ArrayList<>();
         for(int j=0; j< consultas.length; j++){
             System.out.println(consultas[j]);
             SolrQuery query = new SolrQuery();
-            query.setQuery("*:"+consultas[j]);
+            //Coger solo 5 pos
+            String s="";
+            for(int i=0; i<5; i++){
+                s+=consultas[j].charAt(i);
+            }
+            query.setQuery("text:"+s);
+            //query.setQuery("*:"+consultas[j]);
+            /*query.setQuery("id"+":"+s);
+            query.setQuery("title"+":"+s);
+            query.setQuery("text"+":"+s);*/
+            System.out.println("Consulta: "+query.getQuery());
+            //query.setRows(10000);//Numero grande 10k
             QueryResponse rsp = solr.query(query);
             SolrDocumentList docs = rsp.getResults();
             //Mostramos el resultado
             for (int i = 0; i < docs.size(); ++i) {
-                System.out.println(docs.get(i));
+                salid.add(docs.get(i).toString());
+                //System.out.println(docs.get(i));
             }
             //Separacion
-            System.out.println(" ");
-            System.out.println("-----------------------------------");
+            salid.add(" ");
+            salid.add("-----------------------------------");
+            /*System.out.println(" ");
+            System.out.println("-----------------------------------");*/
+        }
+        /*System.out.println("Cantidad de consultas: "+salid.size());
+        System.out.println(" ");*/
+        salida = new String[salid.size()];
+        for (int i = 0; i < salid.size(); i++) {
+            salida[i]=salid.get(i);
         }
             
     }
@@ -59,15 +84,25 @@ public class MiClienteSearchSolrj {
     public void Busqueda(String campo, String texto, String core) throws SolrServerException, IOException{
         
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
-        
+        //System.out.println("He creado el cliente");
         SolrQuery query = new SolrQuery();
         query.setQuery(campo+":"+texto);
         QueryResponse rsp = solr.query(query);
         SolrDocumentList docs = rsp.getResults();
+        documentos =docs.size();
         //Mostramos los documentos
-        for (int i = 0; i < docs.size(); ++i) {
-            System.out.println(docs.get(i));
+        for (int i = 0; i < docs.size(); ++i) { //Lo utilizo ara contabilizar los archivos
+            //System.out.println(docs.get(i));
         }
+        
+    }
+    
+    public int getNumero(){
+        return documentos;
+    }
+    
+    public String[] getSalida(){
+        return salida;
     }
 
     /*public static void main(String[] args) throws IOException,

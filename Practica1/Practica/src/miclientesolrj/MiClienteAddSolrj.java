@@ -55,7 +55,7 @@ public class MiClienteAddSolrj {
      * @throws SolrServerException
      * @throws IOException
      */
-    public void Añadir(int id, String title, String text, String core) throws SolrServerException, IOException{
+    public void Añadir(String id, String title, String text, String core) throws SolrServerException, IOException{
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
         
         //Creo los documentos SOLR
@@ -65,6 +65,7 @@ public class MiClienteAddSolrj {
         doc.addField("text", text);
         solr.add(doc);
         solr.commit();
+        
     }
     
     /**

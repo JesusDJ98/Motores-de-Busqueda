@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Interfaz;
 
 import Extra.ConexionSolr;
 import Extra.LeerCorpus;
 import Extra.LeerQuerys;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import miclientesolrj.MiClienteAddSolrj;
 import miclientesolrj.MiClienteSearchSolrj;
@@ -21,11 +18,12 @@ import miclientesolrj.MiClienteSearchSolrj;
  */
 public class MiFrame extends javax.swing.JFrame {
 
-    LeerCorpus Corpus;
-    LeerQuerys LISAQUE;
-    ConexionSolr SOLR;
-    MiClienteAddSolrj AgregarSolrj;
-    MiClienteSearchSolrj ConsultasSolrj;
+    private LeerCorpus Corpus;
+    private LeerQuerys LISAQUE;
+    private ConexionSolr SOLR;
+    private MiClienteAddSolrj AgregarSolrj;
+    private MiClienteSearchSolrj ConsultasSolrj;
+    private BufferedImage image;
     
     boolean conectado;
     
@@ -45,6 +43,7 @@ public class MiFrame extends javax.swing.JFrame {
         ConsultasSolrj = new MiClienteSearchSolrj();
         
         conectado = false;
+        image = ImagePanel();
     }
 
     /**
@@ -56,194 +55,169 @@ public class MiFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MainPrincipal = new javax.swing.JPanel();
-        Querys = new javax.swing.JScrollPane();
-        Consulta = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        AccionQuery = new javax.swing.JTextField();
-        IdQuery = new javax.swing.JTextField();
-        TitleQuery = new javax.swing.JTextField();
-        TextQuery = new javax.swing.JTextField();
-        ChooseCore = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        BotonPractica = new javax.swing.JButton();
-        InfoPactYCore = new javax.swing.JPanel();
-        InfoTracEval = new javax.swing.JPanel();
-        AccionActual = new javax.swing.JLabel();
-        LoqHacemos = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        MainPanel = new javax.swing.JPanel();
+        Buscador = new javax.swing.JTextField();
+        SalidaPanel = new javax.swing.JScrollPane();
+        MiniInfoPanel = new javax.swing.JPanel();
+        NameCore = new javax.swing.JLabel();
+        NameArchivos = new javax.swing.JLabel();
+        Core = new javax.swing.JLabel();
+        Files = new javax.swing.JLabel();
+        OpcionesPanel = new javax.swing.JPanel();
+        ListaOpciones = new javax.swing.JScrollPane();
+        Opciones = new javax.swing.JList<>();
+        Autor = new javax.swing.JLabel();
+        Practica = new javax.swing.JLabel();
+        Asignatura = new javax.swing.JLabel();
+        AccionesCoRe = new javax.swing.JComboBox<>();
+        Menu = new javax.swing.JMenuBar();
         Solr = new javax.swing.JMenu();
         Conectar = new javax.swing.JMenuItem();
         Desconectar = new javax.swing.JMenuItem();
 
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Consulta.setBackground(new java.awt.Color(0, 204, 102));
+        MiniInfoPanel.setBackground(new java.awt.Color(0, 204, 255));
 
-        jLabel1.setText("Accion: ");
+        NameCore.setText("Core:");
 
-        jLabel6.setText("Id:");
+        NameArchivos.setText("Archivos:");
 
-        jLabel7.setText("Title:");
+        Core.setBackground(new java.awt.Color(204, 204, 0));
 
-        jLabel8.setText("Texto:");
-
-        IdQuery.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdQueryActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ConsultaLayout = new javax.swing.GroupLayout(Consulta);
-        Consulta.setLayout(ConsultaLayout);
-        ConsultaLayout.setHorizontalGroup(
-            ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ConsultaLayout.createSequentialGroup()
+        javax.swing.GroupLayout MiniInfoPanelLayout = new javax.swing.GroupLayout(MiniInfoPanel);
+        MiniInfoPanel.setLayout(MiniInfoPanelLayout);
+        MiniInfoPanelLayout.setHorizontalGroup(
+            MiniInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MiniInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
+                .addGroup(MiniInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NameArchivos)
+                    .addComponent(NameCore))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AccionQuery, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                    .addComponent(IdQuery)
-                    .addComponent(TitleQuery)
-                    .addComponent(TextQuery))
-                .addGap(25, 25, 25))
+                .addGroup(MiniInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Files, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(Core, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        ConsultaLayout.setVerticalGroup(
-            ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ConsultaLayout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addGroup(ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ConsultaLayout.createSequentialGroup()
-                        .addGroup(ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(AccionQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6))
-                    .addComponent(IdQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        MiniInfoPanelLayout.setVerticalGroup(
+            MiniInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MiniInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MiniInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NameCore)
+                    .addComponent(Core, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(TitleQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(ConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)))
-        );
-
-        javax.swing.GroupLayout ChooseCoreLayout = new javax.swing.GroupLayout(ChooseCore);
-        ChooseCore.setLayout(ChooseCoreLayout);
-        ChooseCoreLayout.setHorizontalGroup(
-            ChooseCoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 122, Short.MAX_VALUE)
-        );
-        ChooseCoreLayout.setVerticalGroup(
-            ChooseCoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
-        );
-
-        jLabel3.setText("Elegimos el CORE");
-
-        BotonPractica.setText("Practica");
-        BotonPractica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonPracticaActionPerformed(evt);
-            }
-        });
-
-        InfoPactYCore.setBackground(new java.awt.Color(51, 153, 255));
-
-        javax.swing.GroupLayout InfoPactYCoreLayout = new javax.swing.GroupLayout(InfoPactYCore);
-        InfoPactYCore.setLayout(InfoPactYCoreLayout);
-        InfoPactYCoreLayout.setHorizontalGroup(
-            InfoPactYCoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 92, Short.MAX_VALUE)
-        );
-        InfoPactYCoreLayout.setVerticalGroup(
-            InfoPactYCoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 87, Short.MAX_VALUE)
-        );
-
-        InfoTracEval.setBackground(new java.awt.Color(255, 51, 51));
-
-        javax.swing.GroupLayout InfoTracEvalLayout = new javax.swing.GroupLayout(InfoTracEval);
-        InfoTracEval.setLayout(InfoTracEvalLayout);
-        InfoTracEvalLayout.setHorizontalGroup(
-            InfoTracEvalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        InfoTracEvalLayout.setVerticalGroup(
-            InfoTracEvalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        AccionActual.setText("Accion:");
-
-        javax.swing.GroupLayout MainPrincipalLayout = new javax.swing.GroupLayout(MainPrincipal);
-        MainPrincipal.setLayout(MainPrincipalLayout);
-        MainPrincipalLayout.setHorizontalGroup(
-            MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainPrincipalLayout.createSequentialGroup()
-                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPrincipalLayout.createSequentialGroup()
-                        .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ChooseCore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(InfoTracEval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Querys))
-                    .addGroup(MainPrincipalLayout.createSequentialGroup()
-                        .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MainPrincipalLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(BotonPractica))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(InfoPactYCore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(MainPrincipalLayout.createSequentialGroup()
-                                .addComponent(AccionActual)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LoqHacemos, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addGroup(MiniInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NameArchivos)
+                    .addComponent(Files, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
-        MainPrincipalLayout.setVerticalGroup(
-            MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainPrincipalLayout.createSequentialGroup()
-                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPrincipalLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MainPrincipalLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InfoPactYCore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(MainPrincipalLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(BotonPractica)))))
-                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPrincipalLayout.createSequentialGroup()
+
+        OpcionesPanel.setBackground(new java.awt.Color(255, 51, 51));
+
+        Opciones.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Buscador", "Practica", "Modificar_Solr"};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        Opciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                OpcionesKeyPressed(evt);
+            }
+        });
+        Opciones.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                OpcionesValueChanged(evt);
+            }
+        });
+        ListaOpciones.setViewportView(Opciones);
+
+        Autor.setText("Jesús Delgado");
+
+        Practica.setText("Practica 1");
+
+        Asignatura.setText("Motores_Busqueda");
+
+        AccionesCoRe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Core", "Añadir", "Eliminar"}));
+        AccionesCoRe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AccionesCoReActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OpcionesPanelLayout = new javax.swing.GroupLayout(OpcionesPanel);
+        OpcionesPanel.setLayout(OpcionesPanelLayout);
+        OpcionesPanelLayout.setHorizontalGroup(
+            OpcionesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ListaOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(Asignatura, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OpcionesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(OpcionesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AccionesCoRe, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(OpcionesPanelLayout.createSequentialGroup()
+                        .addGroup(OpcionesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Autor)
+                            .addGroup(OpcionesPanelLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(Practica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        OpcionesPanelLayout.setVerticalGroup(
+            OpcionesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OpcionesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Autor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Practica)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Asignatura)
+                .addGap(14, 14, 14)
+                .addComponent(ListaOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(AccionesCoRe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
+        MainPanel.setLayout(MainPanelLayout);
+        MainPanelLayout.setHorizontalGroup(
+            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(OpcionesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(SalidaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Querys, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MainPrincipalLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InfoTracEval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ChooseCore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(MainPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AccionActual)
-                    .addComponent(LoqHacemos, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(MiniInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        MainPanelLayout.setVerticalGroup(
+            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainPanelLayout.createSequentialGroup()
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MainPanelLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
+                                .addComponent(MiniInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)))
+                        .addComponent(SalidaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(OpcionesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         Solr.setText("SOLR");
@@ -264,24 +238,24 @@ public class MiFrame extends javax.swing.JFrame {
         });
         Solr.add(Desconectar);
 
-        jMenuBar1.add(Solr);
+        Menu.add(Solr);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -303,40 +277,54 @@ public class MiFrame extends javax.swing.JFrame {
         //No necesaria, pues ya abrimos el navegador
     }//GEN-LAST:event_ConectarActionPerformed
 
-    private void BotonPracticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPracticaActionPerformed
+    private void OpcionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OpcionesKeyPressed
         // TODO add your handling code here:
-        if(conectado){
-            //Leemos el CORPUS
-            try {
-                String[] Lista = Corpus.Listado();
-                for(int i=0; i<Lista.length; i++){
-                    LoqHacemos.setText("Leyendo "+Lista[i]);
-                    Corpus.LeerFicheros(Lista[i]);
-                }
-                
-            } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Error leyendo CORPUS: "+ex);
-            }
+    }//GEN-LAST:event_OpcionesKeyPressed
+
+    private void OpcionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_OpcionesValueChanged
+        // TODO add your handling code here:
+        
+        if(!evt.getValueIsAdjusting()){
+            System.out.println(Opciones.getSelectedValue().toString());
+            MainPanel.setVisible(false);
             
-        }else{
-            JOptionPane.showMessageDialog(null, "Debe estar conectado");
-        }
-    }//GEN-LAST:event_BotonPracticaActionPerformed
+        }/*else{//Se muestra al mismo time que lo otro
+            System.out.println("Hola");
+        }*/
+        
+    }//GEN-LAST:event_OpcionesValueChanged
 
-    private void IdQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdQueryActionPerformed
+    private void AccionesCoReActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionesCoReActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IdQueryActionPerformed
-
+        System.out.println("Click");
+        
+    }//GEN-LAST:event_AccionesCoReActionPerformed
+    
+    /**
+     * Creamos la imagen de la lupa
+     * @return
+     */
+    public BufferedImage ImagePanel() {
+        BufferedImage imagen=null;
+       try {                
+           imagen = ImageIO.read(new File("Imagenes/Lupa.png"));
+       } catch (IOException ex) {
+            // handle exception...
+       }
+       return imagen;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -355,35 +343,33 @@ public class MiFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+    /*    java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MiFrame().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AccionActual;
-    private javax.swing.JTextField AccionQuery;
-    private javax.swing.JButton BotonPractica;
-    private javax.swing.JPanel ChooseCore;
+    private javax.swing.JComboBox<String> AccionesCoRe;
+    private javax.swing.JLabel Asignatura;
+    private javax.swing.JLabel Autor;
+    private javax.swing.JTextField Buscador;
     private javax.swing.JMenuItem Conectar;
-    private javax.swing.JPanel Consulta;
+    private javax.swing.JLabel Core;
     private javax.swing.JMenuItem Desconectar;
-    private javax.swing.JTextField IdQuery;
-    private javax.swing.JPanel InfoPactYCore;
-    private javax.swing.JPanel InfoTracEval;
-    private javax.swing.JLabel LoqHacemos;
-    private javax.swing.JPanel MainPrincipal;
-    private javax.swing.JScrollPane Querys;
+    private javax.swing.JLabel Files;
+    private javax.swing.JScrollPane ListaOpciones;
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JMenuBar Menu;
+    private javax.swing.JPanel MiniInfoPanel;
+    private javax.swing.JLabel NameArchivos;
+    private javax.swing.JLabel NameCore;
+    private javax.swing.JList<String> Opciones;
+    private javax.swing.JPanel OpcionesPanel;
+    private javax.swing.JLabel Practica;
+    private javax.swing.JScrollPane SalidaPanel;
     private javax.swing.JMenu Solr;
-    private javax.swing.JTextField TextQuery;
-    private javax.swing.JTextField TitleQuery;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

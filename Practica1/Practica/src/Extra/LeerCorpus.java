@@ -20,9 +20,12 @@ public class LeerCorpus {
     private String[] texto;
     
     public LeerCorpus(){
-        id = new int[6004];
+        /*id = new int[6004];
         titulo = new String[6004];
-        texto = new String[6004];
+        texto = new String[6004];*/
+        id = new int[501];
+        titulo = new String[501];
+        texto = new String[501];
     }
     
     /**
@@ -65,29 +68,26 @@ public class LeerCorpus {
         String tit="";
         String tex="";
         
-        /*String actual = DirAct();
+        String actual = DirAct();
         String carpeta = "\\Coleccion LISA revisada";
         
         String path = actual+carpeta;
-        String[] files = getFiles( path );*/
-        
-        //for(int k=0; k<files.length; k++){
-            //String fin = path+"\\"+files[k];
             
-        String fin = files;
+        String fin = path+"\\"+files;
         //System.out.println("Directorio: "+fin);
         Scanner sc = new Scanner(new File(fin));
         int i = 0;
         while(sc.hasNextLine()) {
+            String aux = sc.nextLine();
+            //System.out.println(aux);
             if(i==0){ //Donde se encuentra el documento
-                String aux = sc.nextLine();
-                //System.out.println(aux);
+                //String aux = sc.nextLine();
                 String partes[] = aux.split(" ");
                 identificador = Integer.parseInt(partes[partes.length-1]);
                 this.id[identificador-1] = identificador; //No muy importante pues estan en orden
 
             }else{
-                String aux = sc.nextLine();
+                //String aux = sc.nextLine();
                 if(aux.equals("********************************************")){ //Fin del documento
                     //Guardamos los datos
                     this.titulo[identificador-1]=tit;

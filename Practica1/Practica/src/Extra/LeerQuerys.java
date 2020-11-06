@@ -39,12 +39,11 @@ public class LeerQuerys {
             int i = 0;
             String consulta = "";
             int pos = 0;
-            while(sc.hasNextLine()){
+            while(sc.hasNextLine() && pos<querys.length){
                 String s = sc.nextLine();
                 //System.out.println(s);
                 
                 if(i > 0){
-
                     char charAt = s.charAt(s.length()-1);
                     if(charAt=='#'){                //Terminamos
                         String aux="";

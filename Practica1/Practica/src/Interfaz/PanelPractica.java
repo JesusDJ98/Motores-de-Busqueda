@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
 import Extra.*;
@@ -13,8 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -102,12 +95,19 @@ public class PanelPractica extends JPanel{
             }
         });
         
-        /*SalidaPanel = new JScrollPane();
+        SalidaPanel = new JList();
         SalidaPanel.setLayout(null);
-        SalidaPanel.setBounds(20, 200, 380, 150);*/
-        SalidaPanel = new JList<>();
-        SalidaPanel.setLayout(null);
-        SalidaPanel.setBounds(20, 200, 380, 150);
+        SalidaPanel.setBounds(5, 5, 370, 140);
+        
+        SalidaPanel.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        
+        JScrollPane scroll = new JScrollPane(SalidaPanel);
+        scroll.setBounds(20, 200, 380, 150);
+        
         
         
         accion = new JLabel("Accion: ");
@@ -117,7 +117,7 @@ public class PanelPractica extends JPanel{
         add(NDoc);
         add(Corpus);
         add(Query);
-        add(SalidaPanel);
+        add(scroll);
         add(accion);
         
         Inicio();
@@ -222,8 +222,14 @@ public class PanelPractica extends JPanel{
         try {
             consultas.BusquedaQuery(query, "micoleccion");
             String[] s = consultas.getSalida();
+            
+            
+            
+            
+            
             if(s!=null){
                 SalidaPanel.setListData(s);
+                
             }else{
                 System.out.println("NULL");
             }

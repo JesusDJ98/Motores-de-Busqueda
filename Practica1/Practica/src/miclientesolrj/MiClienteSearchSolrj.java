@@ -37,22 +37,30 @@ public class MiClienteSearchSolrj {
         //Vemos el tamaño de lineas que necesitammos mientras hacemos las consultas
         ArrayList<String> salid = new ArrayList<>();
         for(int j=0; j< consultas.length; j++){
-            System.out.println(consultas[j]);
+            //System.out.println(consultas[j]);
             SolrQuery query = new SolrQuery();
             //Coger solo 5 pos
             String s="";
-            for(int i=0; i<5; i++){
-                s+=consultas[j].charAt(i);
+            String[] aux=consultas[j].split(" "); //Separamos
+            for(int i=0; i<5; i++){//Cogemos 5 palabras
+                s+=aux[i];
+                if(i<4){
+                    s+=" ";
+                }
             }
             query.setQuery("text:"+s);
             //query.setQuery("*:"+consultas[j]);
             /*query.setQuery("id"+":"+s);
             query.setQuery("title"+":"+s);
             query.setQuery("text"+":"+s);*/
-            System.out.println("Consulta: "+query.getQuery());
-            //query.setRows(10000);//Numero grande 10k
+            //System.out.println("Consulta: "+query.getQuery());
+            query.setRows(100000);//Numero grande 10k
             QueryResponse rsp = solr.query(query);
             SolrDocumentList docs = rsp.getResults();
+            
+            salid.add("Consulta: "+query.getQuery());
+            salid.add("Documentos: "+docs.getNumFound());
+            salid.add(" ");
             //Mostramos el resultado
             for (int i = 0; i < docs.size(); ++i) {
                 salid.add(docs.get(i).toString());
@@ -87,13 +95,20 @@ public class MiClienteSearchSolrj {
         //System.out.println("He creado el cliente");
         SolrQuery query = new SolrQuery();
         query.setQuery(campo+":"+texto);
+        //System.out.println("Numero de querys: "+query.getRows()); //Esto da null
+        //System.out.println("Numero de querys: "+query.getTermsLimit());
+        query.setRows(100000); //Un numero muy grande
+        //System.out.println("Numero de querys modificado: "+query.getTermsLimit());
+        //System.out.println("Numero de querys: "+query.getRows());
         QueryResponse rsp = solr.query(query);
         SolrDocumentList docs = rsp.getResults();
-        documentos =docs.size();
+        //System.out.println("Salida: "+docs.getNumFound());
+        documentos=(int)docs.getNumFound();
+        //documentos =docs.size();
         //Mostramos los documentos
-        for (int i = 0; i < docs.size(); ++i) { //Lo utilizo ara contabilizar los archivos
+        /*for (int i = 0; i < docs.size(); ++i) { //Lo utilizo ara contabilizar los archivos
             //System.out.println(docs.get(i));
-        }
+        }*/
         
     }
     

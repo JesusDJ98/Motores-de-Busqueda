@@ -33,7 +33,6 @@ public class PanelPractica extends JPanel{
     JLabel NDoc;
     JButton Corpus;
     JButton Query;
-    //JScrollPane SalidaPanel;
     JList<String> SalidaPanel;
     
     JLabel accion;
@@ -42,7 +41,7 @@ public class PanelPractica extends JPanel{
         //super();
         setLayout(null);
         setBounds(150, 10, 430, 400);
-        setBackground(Color.blue);
+        //setBackground(Color.blue);
         
         solr = s;
         permitido=p;
@@ -222,10 +221,6 @@ public class PanelPractica extends JPanel{
         try {
             consultas.BusquedaQuery(query, "micoleccion");
             String[] s = consultas.getSalida();
-            
-            
-            
-            
             
             if(s!=null){
                 SalidaPanel.setListData(s);

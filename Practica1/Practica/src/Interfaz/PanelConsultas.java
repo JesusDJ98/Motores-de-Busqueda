@@ -51,7 +51,7 @@ public class PanelConsultas extends JPanel{
         //super();
         setLayout(null);
         setBounds(150, 10, 430, 400);
-        setBackground(Color.red);
+        //setBackground(Color.red);
         
         solr = s;
         permitido=p;

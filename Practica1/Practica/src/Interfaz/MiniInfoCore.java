@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -16,20 +18,24 @@ public class MiniInfoCore extends JPanel{
     
     private JLabel core;
     private JLabel NDoc;
+    private String coleccion;
     
     public MiniInfoCore(){
         
         setLayout(null);
-        setBounds(450, 30, 200, 60);
+        setBounds(450, 35, 130, 60);
+        setBackground(Color.white);
+        setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
         
         Inicio();
     }
     
     private void Inicio(){
+        coleccion = "";
         core = new JLabel("Core: ");
         NDoc = new JLabel("Nº Doc: ");
-        core.setBounds(0, 0, 150, 20);
-        NDoc.setBounds(0, 30, 150, 20);
+        core.setBounds(5, 5, 150, 20);
+        NDoc.setBounds(5, 30, 150, 20);
         
         add(core);
         add(NDoc);
@@ -41,8 +47,17 @@ public class MiniInfoCore extends JPanel{
      * @param num
      */
     public void ActualizarMinInf(String c, String num){
+        coleccion = c;
         core.setText("Core: "+c);
         NDoc.setText("Nº Doc: "+num);
+    }
+    
+    /**
+     * Devuelve la coleccion
+     * @return
+     */
+    public String getCore(){
+        return coleccion;
     }
         
 }

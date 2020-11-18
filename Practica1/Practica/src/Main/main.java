@@ -31,9 +31,9 @@ public class main {
         MiClienteAddSolrj clienteAdd = new MiClienteAddSolrj();
         MiClienteSearchSolrj clienteSearch = new MiClienteSearchSolrj(infoCore);
         
-        PanelPrincipal principal = new PanelPrincipal(clienteSearch, conexion);
-        PanelConsultas cambios = new PanelConsultas(clienteAdd, clienteSearch, conexion);
-        PanelPractica practica = new PanelPractica(corpus, querys, clienteAdd, clienteSearch, conexion);
+        PanelPrincipal principal = new PanelPrincipal(clienteSearch, conexion, infoCore);
+        PanelConsultas cambios = new PanelConsultas(clienteAdd, clienteSearch, conexion, infoCore);
+        PanelPractica practica = new PanelPractica(corpus, querys, clienteAdd, clienteSearch, conexion, infoCore);
         
         MiFrame frame = new MiFrame(infoCore, principal, cambios, practica, conexion, clienteSearch);
         frame.setVisible(true); // */

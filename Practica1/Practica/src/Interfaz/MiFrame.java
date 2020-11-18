@@ -5,6 +5,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,6 +20,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import miclientesolrj.MiClienteSearchSolrj;
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.request.CoreAdminRequest;
+import org.apache.solr.client.solrj.response.CoreAdminResponse;
+import org.apache.solr.common.params.CoreAdminParams.CoreAdminAction;
 
 /**
  *
@@ -33,6 +42,7 @@ public class MiFrame extends JFrame{
     private ConexionSolr solr;
     private MiClienteSearchSolrj search;
    
+    private String[] OpcionesCore;
     
     
     public MiFrame(MiniInfoCore p0, PanelPrincipal p1, PanelConsultas p2, PanelPractica p3, ConexionSolr s, MiClienteSearchSolrj s2){
@@ -50,12 +60,22 @@ public class MiFrame extends JFrame{
     private void Init(MiniInfoCore p0, PanelPrincipal p1, PanelConsultas p2, PanelPractica p3, ConexionSolr s, MiClienteSearchSolrj s2){
         solr = s;
         search = s2;
+        OpcionesCore = new String[1];
+        OpcionesCore[0]= "Core";
+        
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBounds(0, 0, 600, 480);
+        panel.setBackground(Color.white);
+        
+        
+        
         //Añadimos la barra del menu de SOLR 
-        this.add(MenuSolr());
+        panel.add(MenuSolr());
         //Añadimos menu de Opciones 
-        add(PanelOpciones());
+        panel.add(PanelOpciones());
         //Panel de info propio
-        add(PanelDatos());
+        panel.add(PanelDatos());
         
         info = p0;
         
@@ -67,10 +87,12 @@ public class MiFrame extends JFrame{
         consulP = p2;
         consulP.setVisible(false);
         
-        add(info);
-        add(mainP);
-        add(practP);
-        add(consulP);
+        panel.add(info);
+        panel.add(mainP);
+        panel.add(practP);
+        panel.add(consulP);
+        
+        add(panel);
     }
     
     /**
@@ -82,14 +104,13 @@ public class MiFrame extends JFrame{
     private JMenuBar MenuSolr(){
         
         JMenuBar options = new JMenuBar();
-        options.setBackground(Color.blue);
+        options.setBackground(Color.WHITE);
         options.setSize(this.getWidth(), 30);//size
         options.setLocation(0, 0);//position
         options.setLayout(null);
         
         JMenu Solr = new JMenu("SOLR");
         Solr.setBounds(10, 5, 200, 20);
-        //Solr.setText("SOLR");
         Solr.setLayout(null);
 
         JMenuItem Conectar = new JMenuItem();
@@ -97,9 +118,14 @@ public class MiFrame extends JFrame{
         Conectar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConectarActionPerformed(evt);
-                //practP.Actualizar(conectado);
                 Solr.setText("Conectado a SOLR");
-                search.ActualizarMiniInfo();
+                try{
+                    Thread.sleep(2000);
+                }catch(Exception ex){
+                }
+                //System.out.println("COre: "+(String)box.getSelectedItem());
+                
+                search.ActualizarMiniInfo((String)box.getSelectedItem());
             }
         });
         
@@ -108,7 +134,6 @@ public class MiFrame extends JFrame{
         Desconectar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DesconectarActionPerformed(evt);
-                //practP.Actualizar(conectado);
                 Solr.setText("Desconectado de SOLR");
             }
         });
@@ -125,6 +150,7 @@ public class MiFrame extends JFrame{
      */
     private void DesconectarActionPerformed(java.awt.event.ActionEvent evt) { 
         solr.CerrarConexion();
+        Salir();
         JOptionPane.showMessageDialog(null, "Conexion cerrada");
     }   
     /**
@@ -133,6 +159,13 @@ public class MiFrame extends JFrame{
      */
     private void ConectarActionPerformed(java.awt.event.ActionEvent evt) {
         solr.Conexion();
+        
+        try{
+            Thread.sleep(2000);
+        }catch(Exception ex){
+        }
+        //OpcionesCore = Cores();
+        setBox(Cores());
     }
     
     /**
@@ -141,40 +174,35 @@ public class MiFrame extends JFrame{
      */
     private JPanel PanelOpciones(){
         JPanel opciones = new JPanel();
-        opciones.setBounds(15, 100, 125, 250);
-        //opciones.setBackground(Color.red);
+        opciones.setBounds(15, 110, 125, 310);
+        opciones.setBackground(Color.white);
         opciones.setLayout(null);
+        opciones.setBorder(BorderFactory.createLineBorder(Color.black));
         
         //ComboBox del Core
-        String[] OpcionesCore = new String[3];
-        OpcionesCore[0] ="Core";
+        //String[] OpcionesCore = new String[3];
+        /*OpcionesCore[0] ="Core";
         OpcionesCore[1] ="Eliminar";
-        OpcionesCore[2] ="Nuevo";
+        OpcionesCore[2] ="Nuevo";*/
+        
+        
+        //= Cores();
+        
         
         box = new JComboBox(OpcionesCore);
+        //box.setBackground(Color.LIGHT_GRAY);
+        //box.setName("Core");
         box.setBounds(10, 200, 100, 30);
         box.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int pos = box.getSelectedIndex();
-                switch(pos){
-                    case 0:
-                    {
-                        JOptionPane.showMessageDialog(null, "Aun no he implementado el tener los cores disponibles");
-                        setBox("micoleccion");
-                    }
-                        break;
-                    case 1:
-                    {
-                        JOptionPane.showMessageDialog(null, "Aun no he implementado el eliminar el core seleccionado");
-                    }
-                        break;
-                    case 2:
-                    {
-                        JOptionPane.showMessageDialog(null, "Aun no he implementado el añadir nuevo core");
-                    }    
-                        break;
-                    default: 
+                boolean permitido=solr.estado();
+                if(permitido){
+                    String namecore = (String) box.getSelectedItem();
+                    box.setName(namecore);//Cambio el nombre
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
             }
         });
@@ -182,12 +210,13 @@ public class MiFrame extends JFrame{
         //Lista de Acciones
         String[] op = { "Buscador", "Practica", "Modificar_Solr" };
         JList<String> Lista = new JList<>(op);
-        Lista.setBounds(0, 40, 130, 150);
+        Lista.setBounds(5, 40, 100, 150);
         Lista.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 OpcionesValueChanged(evt);
             }
         });
+        //Lista.setBackground(Color.LIGHT_GRAY);
         
         opciones.add(box);
         opciones.add(Lista);
@@ -199,7 +228,7 @@ public class MiFrame extends JFrame{
      * Funcion de la lista 
      * @param evt
      */
-    public void OpcionesValueChanged(javax.swing.event.ListSelectionEvent evt) {                                      
+    private void OpcionesValueChanged(javax.swing.event.ListSelectionEvent evt) {                                      
         // TODO add your handling code here:
         if(evt.getValueIsAdjusting()){
             Object Lista = evt.getSource();
@@ -243,11 +272,17 @@ public class MiFrame extends JFrame{
      * Modificamos el nombre del core
      * @param s
      */
-    private void setBox(String s){
-        box.removeAllItems();
-        box.addItem(s);
-        box.addItem("Eliminar");
-        box.addItem("Nuevo");
+    public void setBox(String[] s){
+        box.removeAllItems(); 
+        box.addItem("micoleccion"); //Lo añado el primero
+        for (int i = 0; i < s.length; i++) {
+            if(!s[i].equals("micoleccion")){
+                box.addItem(s[i]);
+            }
+        }
+        
+        /*box.addItem("Eliminar");
+        box.addItem("Nuevo");*/
     }
     
     /**
@@ -256,16 +291,17 @@ public class MiFrame extends JFrame{
      */
     private JPanel PanelDatos(){
         JPanel datos = new JPanel();
-        datos.setBounds(20, 10, 120, 80);
-        //datos.setBackground(Color.yellow);
         datos.setLayout(null);
+        datos.setBounds(20, 40, 120, 60);
+        datos.setBackground(Color.white);
+        datos.setBorder(BorderFactory.createBevelBorder(0));
         
         JLabel name = new JLabel("Jesús Delgado");
-        name.setBounds(10, 30, 110, 20);
+        name.setBounds(10, 5, 110, 20);
         JLabel pract = new JLabel("Practica 1");
-        pract.setBounds(25, 45, 80, 20);
+        pract.setBounds(25, 20, 80, 20);
         JLabel asig = new JLabel("Motores_Busqueda");
-        asig.setBounds(0, 60, 120, 20);
+        asig.setBounds(5, 35, 120, 20);
         
         datos.add(name);
         datos.add(pract);
@@ -276,13 +312,38 @@ public class MiFrame extends JFrame{
     
     private void Salir(){
         //Pongo nombre a core
+        String[] s = new String[1];
+        s[0]="";
+        setBox(s);
         
         //MiniInfo vacio
         info.ActualizarMinInf("", "");
     }
     
-    private void Cores(){
+    private String[] Cores(){
         
+        HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/").build();
+        CoreAdminRequest request = new CoreAdminRequest();
+        request.setAction(CoreAdminAction.STATUS);
+        CoreAdminResponse cores=null;
+        try {
+            cores = request.process(solr);
+        } catch (SolrServerException | IOException ex) {
+            JOptionPane.showMessageDialog(null, "Error recuperando cores: "+ex);
+        }
+        //Los guardamos
+        List<String> coreList = new ArrayList<String>();
+        for (int i = 0; i < cores.getCoreStatus().size(); i++) {
+            coreList.add(cores.getCoreStatus().getName(i));
+            System.out.println(cores.getCoreStatus().getName(i));
+        }
+        
+        String[] coresDisponibles = new String[coreList.size()];
+        for (int i = 0; i < coreList.size(); i++) {
+            coresDisponibles[i]=coreList.get(i);
+        }
+        
+        return coresDisponibles;
     }
     
 }

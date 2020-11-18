@@ -34,17 +34,21 @@ public class PanelPrincipal extends JPanel{
     private MiClienteSearchSolrj search;
     private ConexionSolr conexion;
     
-    public PanelPrincipal(MiClienteSearchSolrj s, ConexionSolr c){
+    private MiniInfoCore info;
+    
+    public PanelPrincipal(MiClienteSearchSolrj s, ConexionSolr c, MiniInfoCore f){
         //super();
         setLayout(null);
         setBounds(150, 100, 430, 350);
+        setBackground(Color.white);
         
-        Inicio(s, c);
+        Inicio(s, c, f);
     }
     
-    private void Inicio(MiClienteSearchSolrj s, ConexionSolr c){
+    private void Inicio(MiClienteSearchSolrj s, ConexionSolr c, MiniInfoCore f){
         search=s;
-        conexion=c; 
+        conexion=c;
+        info = f;
         
         Image img = new ImageIcon("src/Imagenes/Lupa.png").getImage();
         ImageIcon imagenBusc=new ImageIcon(img.getScaledInstance(20, 20, Image.SCALE_SMOOTH));
@@ -52,6 +56,7 @@ public class PanelPrincipal extends JPanel{
         buscador = new JTextField();           
         buscador.setBounds(25, 5, 260, 32);
         buscador.setBorder(null);
+        buscador.setBackground(Color.lightGray);
         buscador.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -84,13 +89,14 @@ public class PanelPrincipal extends JPanel{
         JPanel aux = new JPanel();
         aux.setLayout(null);
         aux.setBounds(60, 10, 300, 40);
-        aux.setBackground(Color.white);
+        aux.setBackground(Color.lightGray);
         aux.setBorder(BorderFactory.createLineBorder(Color.black));
         aux.add(label); //Para darle el color blanco abajo
         
         SalidaPanel = new JList();
         SalidaPanel.setLayout(null);
         SalidaPanel.setBounds(5, 5, 370, 140);
+        SalidaPanel.setBackground(Color.lightGray);
         
         SalidaPanel.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = {};
@@ -99,7 +105,7 @@ public class PanelPrincipal extends JPanel{
         });
         
         JScrollPane scroll = new JScrollPane(SalidaPanel);
-        scroll.setBounds(20, 110, 380, 220);
+        scroll.setBounds(20, 100, 380, 220);
         
         
         add(scroll);
@@ -111,7 +117,7 @@ public class PanelPrincipal extends JPanel{
      */
     public void RealizarBusqueda(){
         try {
-            search.RealizarQuery(buscador.getText(), "micoleccion");
+            search.RealizarQuery(buscador.getText(), info.getCore());
             String[] s = search.getSalidaB();
             
             if(s!=null){

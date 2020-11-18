@@ -6,6 +6,7 @@
 package Interfaz;
 
 import Extra.ConexionSolr;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -35,14 +36,15 @@ public class PanelConsultas extends JPanel{
     private JTextField title;
     private JTextField text;
     
-    public PanelConsultas(MiClienteAddSolrj add, MiClienteSearchSolrj search, ConexionSolr s){
+    MiniInfoCore info;
+    
+    public PanelConsultas(MiClienteAddSolrj add, MiClienteSearchSolrj search, ConexionSolr s, MiniInfoCore f){
         //super();
         setLayout(null);
         setBounds(150, 100, 430, 350);
-        //setBackground(Color.red);
+        setBackground(Color.white);
         
-        
-        Init(add, search, s);
+        Init(add, search, s, f);
     }
     
     /**
@@ -50,11 +52,12 @@ public class PanelConsultas extends JPanel{
      * @param p
      * @param s
      */
-    private void Init(MiClienteAddSolrj add, MiClienteSearchSolrj search, ConexionSolr s){
+    private void Init(MiClienteAddSolrj add, MiClienteSearchSolrj search, ConexionSolr s, MiniInfoCore f){
         
         solr = s;
         clienteAdd = add;
         consultas = search;
+        info=f;
         
         
         Añadir = new JButton();
@@ -95,21 +98,25 @@ public class PanelConsultas extends JPanel{
         ConsultaPanel = new JPanel();
         ConsultaPanel.setLayout(null);
         ConsultaPanel.setBounds(20, 20, 380, 150);
+        ConsultaPanel.setBackground(Color.white);
         
         JLabel namid = new JLabel("Id: ");
         namid.setBounds(20, 20, 60, 30);
         id=new JTextField();
         id.setBounds(80, 20, 200, 30);
+        //id.setBackground(Color.lightGray);
         
         JLabel namtitle = new JLabel("Tilte: ");
         namtitle.setBounds(20, 60, 60, 30);
         title=new JTextField();
         title.setBounds(80, 60, 200, 30);
+        //title.setBackground(Color.lightGray);
         
         JLabel namtext = new JLabel("Text: ");
         namtext.setBounds(20, 100, 60, 30);
         text=new JTextField();
         text.setBounds(80, 100, 200, 30);
+        //text.setBackground(Color.lightGray);
        
         ConsultaPanel.add(namid);
         ConsultaPanel.add(id);
@@ -154,7 +161,7 @@ public class PanelConsultas extends JPanel{
         }catch(Exception ex){
         }
         
-        consultas.ActualizarMiniInfo();
+        consultas.ActualizarMiniInfo(info.getCore());
     }
     
     /**
@@ -179,7 +186,7 @@ public class PanelConsultas extends JPanel{
         }catch(Exception ex){
         }
         
-        consultas.ActualizarMiniInfo();
+        consultas.ActualizarMiniInfo(info.getCore());
     }
     
     /**

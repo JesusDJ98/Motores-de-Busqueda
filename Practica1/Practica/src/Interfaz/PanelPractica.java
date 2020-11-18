@@ -1,6 +1,7 @@
 package Interfaz;
 
 import Extra.*;
+import java.awt.Color;
 import miclientesolrj.*;
 
 import java.awt.event.ActionEvent;
@@ -27,25 +28,27 @@ public class PanelPractica extends JPanel{
     MiClienteSearchSolrj consultas;
     MiClienteAddSolrj clientaAdd;
     
+    MiniInfoCore info;
     
     JButton Corpus;
     JButton Query;
     JList<String> SalidaPanel;
-    
     JLabel accion;
+    private JLabel labelAcu;
     
     public PanelPractica(LeerCorpus corpus, LeerQuerys q, MiClienteAddSolrj add,
-            MiClienteSearchSolrj search, ConexionSolr s){
+            MiClienteSearchSolrj search, ConexionSolr s, MiniInfoCore f){
         //super();
         setLayout(null);
-        setBounds(150, 100, 430, 350);
-        //setBackground(Color.blue);
+        setBounds(150, 100, 430, 330);
+        setBackground(Color.white);
         
         solr = s;
         lisa = corpus;
         query = q;
         consultas = search;
         clientaAdd = add;
+        info = f;
         Init();
     }
     
@@ -66,7 +69,7 @@ public class PanelPractica extends JPanel{
                 boolean permitido = solr.estado();
                 if(permitido){
                     Corpus_SOLR();
-                    consultas.ActualizarMiniInfo();
+                    consultas.ActualizarMiniInfo(info.getCore());
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -83,7 +86,7 @@ public class PanelPractica extends JPanel{
                 boolean permitido = solr.estado();
                 if(permitido){
                     Query_SOLR();
-                    consultas.ActualizarMiniInfo();
+                    consultas.ActualizarMiniInfo(info.getCore());
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -92,7 +95,8 @@ public class PanelPractica extends JPanel{
         
         SalidaPanel = new JList();
         SalidaPanel.setLayout(null);
-        SalidaPanel.setBounds(5, 5, 370, 140);
+        SalidaPanel.setBounds(5, 5, 370, 170);
+        SalidaPanel.setBackground(Color.lightGray);
         
         SalidaPanel.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = {};
@@ -101,15 +105,27 @@ public class PanelPractica extends JPanel{
         });
         
         JScrollPane scroll = new JScrollPane(SalidaPanel);
-        scroll.setBounds(20, 120, 380, 200);
+        scroll.setBounds(20, 120, 380, 170);
         
         accion = new JLabel("Accion: ");
-        accion.setBounds(10, 370, 400, 30);
+        accion.setBounds(20, 290, 400, 30);
+        
+        
+        /*JPanel panelAcu = new JPanel();
+        panelAcu.setLayout(null);
+        panelAcu.setBackground(Color.red);
+        panelAcu.setBounds(310, 30, 120, 40);*/
+        
+        labelAcu = new JLabel();
+        labelAcu.setBounds(310, 30, 120, 40);
+        labelAcu.setText("");
+        
        
         add(Corpus);
         add(Query);
         add(scroll);
         add(accion);
+        add(labelAcu);
         
     }
     
@@ -147,7 +163,7 @@ public class PanelPractica extends JPanel{
         }catch(Exception ex){
         }
         
-        consultas.ActualizarMiniInfo();
+        consultas.ActualizarMiniInfo(info.getCore());
         //Actualizamos y esperamos
         try{
             Thread.sleep(1000);
@@ -199,6 +215,15 @@ public class PanelPractica extends JPanel{
         } catch (SolrServerException | IOException ex) {
             JOptionPane.showMessageDialog(null, "Error al ejecutar la consulta");
         }
+        
+        accion.setText("Accion: Generando Trec_Eval");
+        //Aqui genero el traceval
+        
+        //Luego comparo
+        
+        //Lo escribo
+        labelAcu.setText("Presición: ");
+        
     }
     
 }

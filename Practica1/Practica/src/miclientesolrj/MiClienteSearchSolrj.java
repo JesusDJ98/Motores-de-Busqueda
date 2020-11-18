@@ -153,13 +153,13 @@ public class MiClienteSearchSolrj {
     
     /**
      * Metodo que utilizaremos para tener actualizado el panel
-     * de informacion sobre el core.
-     * 
-     * Debe coger el core del otro menu del nombre del core.
+     * de informacion sobre el core.Debe coger el core del otro menu del nombre del core.
+     *
+     * @param core
      */
-    public void ActualizarMiniInfo(){
+    public void ActualizarMiniInfo(String core){
         try {
-            Busqueda("micoleccion");
+            Busqueda(core);
             Thread.sleep(3000);
         } catch (SolrServerException | IOException | InterruptedException ex) {
         }

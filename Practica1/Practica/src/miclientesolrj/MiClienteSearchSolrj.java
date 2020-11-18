@@ -1,6 +1,7 @@
 package miclientesolrj;
 
 import Extra.LeerQuerys;
+import Interfaz.MiniInfoCore;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -12,14 +13,23 @@ import org.apache.solr.common.SolrDocumentList;
 
 
 
+
 /**
  *
  * @author Jesus Delgado
  */
 public class MiClienteSearchSolrj {
     
-    private int documentos=0;
+    private int documentos;
     private String[] salida;
+    private String[] salidaBuscador;
+    private MiniInfoCore PanelInfo;
+    
+    public MiClienteSearchSolrj(MiniInfoCore infoC){
+        PanelInfo = infoC;
+        documentos=0;
+        salida = new String[documentos];
+    }
     
     /**
      * Hacemos todas las consultas del archivo LISA.QUE
@@ -29,8 +39,9 @@ public class MiClienteSearchSolrj {
      * @throws java.io.IOException
      */
     public void BusquedaQuery(LeerQuerys QUE, String core) throws SolrServerException, IOException{
-        //QUE.Leer();
+        
         String[] consultas = QUE.getQuerys();
+        
         
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
         //Recorremos la consulta
@@ -47,26 +58,22 @@ public class MiClienteSearchSolrj {
                     s+=" ";
                 }
             }
-            query.setQuery("text:"+s);
-            //query.setQuery("*:"+consultas[j]);
-            /*query.setQuery("id"+":"+s);
-            query.setQuery("title"+":"+s);
-            query.setQuery("text"+":"+s);*/
-            //System.out.println("Consulta: "+query.getQuery());
+            query.setQuery("id:"+s+" title:"+s+" text:"+s);
             query.setRows(100000);//Numero grande 10k
             QueryResponse rsp = solr.query(query);
             SolrDocumentList docs = rsp.getResults();
             
-            salid.add("Consulta: "+(j+1)+" || "+query.getQuery());
+            salid.add("Consulta: "+(j+1)+" || '*:"+s+"'");
             salid.add("Documentos: "+docs.getNumFound());
             salid.add(" ");
-            //Mostramos el resultado
-            for (int i = 0; i < docs.size(); ++i) {
-                salid.add(docs.get(i).toString());
+            for (int i = 0; i < docs.getNumFound(); i++) {
+                salid.add(" ");
+                salid.add("id: "+docs.get(i).getFieldValue("id"));
+                salid.add("title: "+docs.get(i).getFieldValue("title"));
+                salid.add("text: "+docs.get(i).getFieldValue("text"));
             }
-            //Separacion
-            salid.add(" ");
-            salid.add("-----------------------------------");
+            //Separacion de consultas
+            salid.add("------------------------");
         }
         salida = new String[salid.size()];
         for (int i = 0; i < salid.size(); i++) {
@@ -76,17 +83,15 @@ public class MiClienteSearchSolrj {
     }
     
     /**
-     * Buscamos una busqueda especifica
-     * @param campo
-     * @param texto
+     * Realizamos el *:* para ver el numero de documentos
      * @param core
      * @throws SolrServerException
      * @throws IOException
      */
-    public void Busqueda(String campo, String texto, String core) throws SolrServerException, IOException{
+    public void Busqueda(String core) throws SolrServerException, IOException{
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
         SolrQuery query = new SolrQuery();
-        query.setQuery(campo+":"+texto);
+        query.setQuery("*:*");
         query.setRows(100000); //Un numero muy grande
         QueryResponse rsp = solr.query(query);
         SolrDocumentList docs = rsp.getResults();
@@ -94,19 +99,72 @@ public class MiClienteSearchSolrj {
     }
     
     /**
-     * Devolvemos el numero de documentos
-     * @return
+     * Realizamos las QUERY
+     * @param texto
+     * @param core
+     * @throws IOException
+     * @throws SolrServerException
      */
-    public int getNumero(){
-        return documentos;
+    public void RealizarQuery(String texto, String core) throws IOException, SolrServerException{
+        HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
+        SolrQuery query = new SolrQuery();
+        query.setQuery("id:"+texto+" title:"+texto+" text:"+texto);
+        query.setRows(100000); //Un numero muy grande
+        QueryResponse rsp = solr.query(query);
+        SolrDocumentList docs = rsp.getResults();
+        
+        ArrayList<String> salid = new ArrayList<>();
+        salid.add("Consulta: '*:"+texto+"'");
+        salid.add("Documentos: "+docs.getNumFound());
+        salid.add(" ");
+        salid.add(" ");
+        for (int i = 0; i < docs.getNumFound(); i++) {
+            salid.add("id: "+docs.get(i).getFieldValue("id"));
+            salid.add("title: "+docs.get(i).getFieldValue("title"));
+            salid.add("text: "+docs.get(i).getFieldValue("text"));
+            salid.add(" ");
+            salid.add("------------------------");
+        }
+        
+        documentos=(int)docs.getNumFound();
+        
+        salidaBuscador = new String[salid.size()];
+        for (int i = 0; i < salid.size(); i++) {
+            salidaBuscador[i]=salid.get(i);
+        }
     }
     
+    
     /**
-     * Devolvemos la salida obtenida
+     * Devolvemos la salida obtenida del CORPUS
      * @return
      */
     public String[] getSalida(){
         return salida;
+    }
+    
+    /**
+     * Devolvemos la salida obtenida del buscador
+     * @return
+     */
+    public String[] getSalidaB(){
+        return salidaBuscador;
+    }
+    
+    /**
+     * Metodo que utilizaremos para tener actualizado el panel
+     * de informacion sobre el core.
+     * 
+     * Debe coger el core del otro menu del nombre del core.
+     */
+    public void ActualizarMiniInfo(){
+        try {
+            Busqueda("micoleccion");
+            Thread.sleep(3000);
+        } catch (SolrServerException | IOException | InterruptedException ex) {
+        }
+        String s = ""+documentos;
+        PanelInfo.ActualizarMinInf("micoleccion", s);
     }
 
 }

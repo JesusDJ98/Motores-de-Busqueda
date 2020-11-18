@@ -3,7 +3,6 @@ package Interfaz;
 import Extra.*;
 import miclientesolrj.*;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -27,24 +26,26 @@ public class PanelPractica extends JPanel{
     LeerQuerys query;
     MiClienteSearchSolrj consultas;
     MiClienteAddSolrj clientaAdd;
-    boolean permitido;
     
-    JLabel core;
-    JLabel NDoc;
+    
     JButton Corpus;
     JButton Query;
     JList<String> SalidaPanel;
     
     JLabel accion;
     
-    public PanelPractica(boolean p, ConexionSolr s){
+    public PanelPractica(LeerCorpus corpus, LeerQuerys q, MiClienteAddSolrj add,
+            MiClienteSearchSolrj search, ConexionSolr s){
         //super();
         setLayout(null);
-        setBounds(150, 10, 430, 400);
+        setBounds(150, 100, 430, 350);
         //setBackground(Color.blue);
         
         solr = s;
-        permitido=p;
+        lisa = corpus;
+        query = q;
+        consultas = search;
+        clientaAdd = add;
         Init();
     }
     
@@ -55,24 +56,17 @@ public class PanelPractica extends JPanel{
      */
     private void Init(){
         
-        core = new JLabel("Core: ");
-        NDoc = new JLabel("Nº Doc: ");
-        core.setBounds(300, 30, 100, 20);
-        NDoc.setBounds(300, 50, 100, 20);
-            
-        
         Corpus = new JButton();
-        Corpus.setBounds(80, 100, 200, 30);
+        Corpus.setBounds(100, 10, 200, 30);
         //Corpus.setEnabled(false);
         Corpus.setText("Añadir Corpus");
         Corpus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //System.out.println("Entramos: "+permitido);
+                boolean permitido = solr.estado();
                 if(permitido){
-                    //System.out.println("Hola");
                     Corpus_SOLR();
-                    ModificacionJLabel(); //Actualizamos la cantidad de documentos
+                    consultas.ActualizarMiniInfo();
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -80,14 +74,16 @@ public class PanelPractica extends JPanel{
         });
         
         Query = new JButton();
-        Query.setBounds(80, 150, 200, 30);
+        Query.setBounds(100, 60, 200, 30);
         //Query.setEnabled(false);
         Query.setText("Realizar Querys");
         Query.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                boolean permitido = solr.estado();
                 if(permitido){
                     Query_SOLR();
+                    consultas.ActualizarMiniInfo();
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -105,53 +101,18 @@ public class PanelPractica extends JPanel{
         });
         
         JScrollPane scroll = new JScrollPane(SalidaPanel);
-        scroll.setBounds(20, 200, 380, 150);
-        
-        
+        scroll.setBounds(20, 120, 380, 200);
         
         accion = new JLabel("Accion: ");
-        accion.setBounds(10, 370, 300, 30);
+        accion.setBounds(10, 370, 400, 30);
        
-        add(core);
-        add(NDoc);
         add(Corpus);
         add(Query);
         add(scroll);
         add(accion);
         
-        Inicio();
     }
     
-    /**
-     * Nos movemos a dicha coleccion (micoleccion)
-     * y vemos los documentos que hay ya introducidos
-     */
-    private void Inicio(){
-        ModificacionJLabel();
-    }
-    
-    /**
-     * Modificamos los Label de Info
-     */
-    private void ModificacionJLabel(){
-        if(permitido){
-            //Nos aseguramos de que existe dicho core (micoleccion)
-            solr.NewColeccion("micoleccion");
-
-            //Vemos cuantos documentos tiene
-            consultas = new MiClienteSearchSolrj();
-            int numero =0;
-            try{
-                consultas.Busqueda("*", "*", "micoleccion");
-                numero = consultas.getNumero();
-            }catch(Exception ex){
-                System.out.println("Error en JLabel");
-                System.out.println("Error: "+ex);
-            }
-
-            setInfo("micoleccion", numero);
-        }
-    }
     
     /**
      * Leemos el corpus y lo añadimos a SOLR
@@ -159,22 +120,21 @@ public class PanelPractica extends JPanel{
     private void Corpus_SOLR(){
         accion.setText("Accion: Leyendo el CORPUS");
         //Leo el Corpus
-        lisa = new LeerCorpus();
         String[] listado = lisa.Listado();
-        clientaAdd = new MiClienteAddSolrj();
         for(int i = 0; i<listado.length; i++){
             System.out.println("File: "+listado[i]);
             accion.setText("Accion: Leyendo "+listado[i]);
             try {
                 lisa.LeerFicheros(listado[i]);
-            } catch (FileNotFoundException ex) {
+                Thread.sleep(200); //Mini descanso para que de time a actualizar
+            } catch (FileNotFoundException | InterruptedException ex) {
                 accion.setText("Accion: Error leyendo "+listado[i]);
             }
         }
         accion.setText("Accion: Añadiendo el Corpus a SOLR");
         try {
-            //espero
-            Thread.sleep(5000);
+            
+            Thread.sleep(1000);//espero
             //Lo añado a SOLR
             clientaAdd.AñadirCorpus(lisa, "micoleccion");
         } catch (SolrServerException | IOException | InterruptedException ex) {
@@ -186,7 +146,15 @@ public class PanelPractica extends JPanel{
             Thread.sleep(2000);
         }catch(Exception ex){
         }
-        Actualizar(permitido);
+        
+        consultas.ActualizarMiniInfo();
+        //Actualizamos y esperamos
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ex){
+        }
+        
+        accion.setText("Accion: Todo el CORPUS Agregado");
     }
     
     /**
@@ -213,7 +181,7 @@ public class PanelPractica extends JPanel{
             }
         }
         
-        query = new LeerQuerys(a);
+        query.setCant(a);
         query.Leer();
         //String[] ListaQue = query.getQuerys();
         
@@ -231,29 +199,6 @@ public class PanelPractica extends JPanel{
         } catch (SolrServerException | IOException ex) {
             JOptionPane.showMessageDialog(null, "Error al ejecutar la consulta");
         }
-    }
-    
-    /**
-     * Cambiamos los nombres de los JLabel
-     * @param c
-     * @param num
-     */
-    private void setInfo(String c, int num){
-        core.setText("Core: "+c);
-        NDoc.setText("Nº Doc: "+num);
-    }
-    
-     /**
-     * Actualizamos segun este conectado o no
-     * @param p
-     */
-    public void Actualizar(boolean p){
-        permitido=p;
-        try{
-            Thread.sleep(5000);//5 segundos
-        }catch(Exception ex){
-        }
-        Inicio();
     }
     
 }

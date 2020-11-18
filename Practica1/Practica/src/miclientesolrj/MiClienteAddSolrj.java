@@ -3,15 +3,19 @@ package miclientesolrj;
 
 
 import Extra.LeerCorpus;
+import Interfaz.MiniInfoCore;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.apache.solr.common.SolrInputDocument;
 /**
  *
  * @author Jesus Delgado
  */
 public class MiClienteAddSolrj {
+    
     
     /**
      * Añadimos todos los documentos de LISA a SOLR
@@ -66,6 +70,8 @@ public class MiClienteAddSolrj {
         solr.add(doc);
         solr.commit();
         
+        JOptionPane.showMessageDialog(null, "Eliminado correctamente");
+        
     }
     
     /**
@@ -79,7 +85,14 @@ public class MiClienteAddSolrj {
         
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/"+core).build();
         
-        solr.deleteById(id);
-        solr.commit();
+        solr.deleteByQuery("id:"+id);
+        UpdateResponse commit = solr.commit();
+        
+        if(commit.getStatus() == 0){
+            JOptionPane.showMessageDialog(null, "No existe ningun documente con dicho id: "+id);
+        }else{
+            JOptionPane.showMessageDialog(null, "Eliminado correctamente");
+        }
+        
     }
 }

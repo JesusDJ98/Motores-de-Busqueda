@@ -1,112 +1,115 @@
-2020-11-15 15:43:05.161 INFO  (main) [   ] o.e.j.u.log Logging initialized @3067ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-11-15 15:43:05.333 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2020-11-15 16:22:26.669 INFO  (main) [   ] o.e.j.u.log Logging initialized @3243ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-15 16:22:26.892 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2020-11-15 15:43:05.551 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_221-b11
-2020-11-15 15:43:05.596 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
-2020-11-15 15:43:08.355 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2020-11-15 15:43:08.399 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2020-11-15 15:43:08.399 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2020-11-15 15:43:08.405 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
-2020-11-15 15:43:08.557 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2020-11-15 15:43:08.576 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2020-11-15 15:43:08.576 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2020-11-15 15:43:08.576 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
-2020-11-15 15:43:08.577 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-11-15T15:43:08.577Z
-2020-11-15 15:43:08.594 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-11-15 15:43:08.639 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
-2020-11-15 15:43:09.055 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87, but no JMX reporters were configured - adding default JMX reporter.
-2020-11-15 15:43:10.771 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2020-11-15 15:43:11.877 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@26a4842b[provider=null,keyStore=null,trustStore=null]
-2020-11-15 15:43:11.877 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@26a4842b[provider=null,keyStore=null,trustStore=null]
-2020-11-15 15:43:12.034 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@4a3e3e8b[provider=null,keyStore=null,trustStore=null]
-2020-11-15 15:43:12.034 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@4a3e3e8b[provider=null,keyStore=null,trustStore=null]
-2020-11-15 15:43:12.123 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2020-11-15 15:43:12.359 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2020-11-15 15:43:12.362 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2020-11-15 15:43:12.469 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
-2020-11-15 15:43:12.470 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
-2020-11-15 15:43:12.480 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
-2020-11-15 15:43:12.579 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-11-15 15:43:12.580 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [micoleccion]
-2020-11-15 15:43:12.720 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-11-15 15:43:13.269 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
-2020-11-15 15:43:14.526 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-11-15 15:43:14.527 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-11-15 15:43:14.527 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-11-15 15:43:14.527 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-11-15 15:43:14.527 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-11-15 15:43:15.301 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-11-15 15:43:15.527 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
-2020-11-15 15:43:15.629 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
-2020-11-15 15:43:15.666 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
-2020-11-15 15:43:15.902 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@72e5a8e{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
-2020-11-15 15:43:15.922 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@1329eff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-11-15 15:43:15.922 INFO  (main) [   ] o.e.j.s.Server Started @13830ms
-2020-11-15 15:43:16.608 INFO  (qtp1364767791-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=299
-2020-11-15 15:43:19.039 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-11-15 15:43:19.039 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-11-15 15:43:19.241 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-11-15 15:43:19.241 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-11-15 15:43:20.755 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
-2020-11-15 15:43:20.785 INFO  (qtp1364767791-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605454999626} status=0 QTime=1
-2020-11-15 15:43:20.870 INFO  (qtp1364767791-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605454999629} status=0 QTime=83
-2020-11-15 15:43:20.894 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-11-15 15:43:20.913 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-11-15 15:43:20.938 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-11-15 15:43:20.978 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-11-15 15:43:20.978 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-11-15 15:43:20.992 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
-2020-11-15 15:43:21.019 INFO  (qtp1364767791-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1605455000157} status=0 QTime=236
-2020-11-15 15:43:21.030 INFO  (qtp1364767791-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1605455000156} status=0 QTime=241
-2020-11-15 15:43:21.139 INFO  (qtp1364767791-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&wt=javabin&version=2} hits=501 status=0 QTime=478
-2020-11-15 15:43:21.142 INFO  (qtp1364767791-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1605455000156} status=0 QTime=354
-2020-11-15 15:43:21.228 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1605454999629&ts=1605454999629} status=503 QTime=3
-2020-11-15 15:43:23.773 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605455003078} status=0 QTime=0
-2020-11-15 15:43:23.842 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455003080} status=0 QTime=66
-2020-11-15 15:43:23.912 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455003080} status=0 QTime=59
-2020-11-15 15:43:24.622 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=86
-2020-11-15 15:43:24.727 INFO  (qtp1364767791-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=39
-2020-11-15 15:43:24.747 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=micoleccion&action=STATUS&wt=json} status=0 QTime=10
-2020-11-15 15:45:14.998 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605455114864} status=0 QTime=0
-2020-11-15 15:45:15.071 INFO  (qtp1364767791-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455114865} status=0 QTime=71
-2020-11-15 15:45:15.343 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455114865} status=0 QTime=156
-2020-11-15 15:45:23.889 INFO  (qtp1364767791-39) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=62
-2020-11-15 15:45:24.028 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=71
-2020-11-15 15:45:24.072 INFO  (qtp1364767791-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=micoleccion&action=STATUS&wt=json} status=0 QTime=16
-2020-11-15 15:45:24.285 INFO  (qtp1364767791-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&wt=javabin&version=2} hits=501 status=0 QTime=0
-2020-11-15 15:45:24.479 INFO  (qtp1364767791-39) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605455123848} status=0 QTime=0
-2020-11-15 15:45:24.486 INFO  (qtp1364767791-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1605455124462} status=0 QTime=0
-2020-11-15 15:45:24.531 INFO  (qtp1364767791-39) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1605455124462} status=0 QTime=11
-2020-11-15 15:45:24.541 INFO  (qtp1364767791-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1605455123850&ts=1605455123850} status=503 QTime=0
-2020-11-15 15:45:24.557 INFO  (qtp1364767791-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455123850} status=0 QTime=75
-2020-11-15 15:45:24.611 INFO  (qtp1364767791-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1605455124462} status=0 QTime=73
-2020-11-15 15:46:56.905 INFO  (qtp1364767791-39) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605455216725} status=0 QTime=0
-2020-11-15 15:46:56.970 INFO  (qtp1364767791-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455216726} status=0 QTime=59
-2020-11-15 15:46:57.032 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455216726} status=0 QTime=56
-2020-11-15 15:47:03.098 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605455222837} status=0 QTime=0
-2020-11-15 15:47:03.124 INFO  (qtp1364767791-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1605455223061} status=0 QTime=1
-2020-11-15 15:47:03.129 INFO  (qtp1364767791-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1605455223062} status=0 QTime=20
-2020-11-15 15:47:03.169 INFO  (qtp1364767791-39) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605455222842} status=0 QTime=68
-2020-11-15 15:47:03.178 INFO  (qtp1364767791-39) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1605455222843&ts=1605455222843} status=503 QTime=0
-2020-11-15 15:47:03.241 INFO  (qtp1364767791-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1605455223062} status=0 QTime=66
-2020-11-15 15:47:03.832 INFO  (qtp1364767791-38) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=20&wt=javabin&version=2} hits=501 status=0 QTime=0
-2020-11-15 15:47:04.344 INFO  (qtp1364767791-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=34
-2020-11-15 15:47:04.431 INFO  (qtp1364767791-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=51
-2020-11-15 15:47:04.462 INFO  (qtp1364767791-38) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=micoleccion&action=STATUS&wt=json} status=0 QTime=12
-2020-11-15 15:47:44.262 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@1329eff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-11-15 15:47:44.262 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
-2020-11-15 15:47:44.268 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=605982374
-2020-11-15 15:47:44.270 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@550db639
-2020-11-15 15:47:44.270 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@550db639
-2020-11-15 15:47:44.270 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1f2900eb: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@4330a9cc
-2020-11-15 15:47:44.325 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-11-15 15:47:44.367 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2020-11-15 15:47:44.367 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@7f4d9395: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@37f124fe
-2020-11-15 15:47:44.373 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2020-11-15 15:47:44.373 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@64d43929: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@34f70bca
-2020-11-15 15:47:44.376 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2020-11-15 15:47:44.376 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1d269ed7: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@84085b9
-2020-11-15 15:47:44.412 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@72e5a8e{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2020-11-15 16:22:27.218 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_221-b11
+2020-11-15 16:22:27.621 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2020-11-15 16:22:30.639 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2020-11-15 16:22:30.720 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2020-11-15 16:22:30.720 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2020-11-15 16:22:30.724 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
+2020-11-15 16:22:30.906 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2020-11-15 16:22:30.916 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2020-11-15 16:22:30.917 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2020-11-15 16:22:30.917 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2020-11-15 16:22:30.918 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-11-15T16:22:30.918Z
+2020-11-15 16:22:30.950 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2020-11-15 16:22:30.984 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
+2020-11-15 16:22:31.221 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87, but no JMX reporters were configured - adding default JMX reporter.
+2020-11-15 16:22:32.965 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2020-11-15 16:22:34.144 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@26a4842b[provider=null,keyStore=null,trustStore=null]
+2020-11-15 16:22:34.144 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@26a4842b[provider=null,keyStore=null,trustStore=null]
+2020-11-15 16:22:34.404 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@4a3e3e8b[provider=null,keyStore=null,trustStore=null]
+2020-11-15 16:22:34.405 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@4a3e3e8b[provider=null,keyStore=null,trustStore=null]
+2020-11-15 16:22:34.943 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2020-11-15 16:22:35.615 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2020-11-15 16:22:35.623 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2020-11-15 16:22:35.864 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
+2020-11-15 16:22:35.864 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
+2020-11-15 16:22:35.872 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
+2020-11-15 16:22:36.065 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2020-11-15 16:22:36.066 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [micoleccion]
+2020-11-15 16:22:36.196 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2020-11-15 16:22:36.830 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
+2020-11-15 16:22:38.548 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@72e5a8e{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2020-11-15 16:22:38.711 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@1329eff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2020-11-15 16:22:38.711 INFO  (main) [   ] o.e.j.s.Server Started @15291ms
+2020-11-15 16:22:39.894 INFO  (qtp1364767791-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=508
+2020-11-15 16:22:40.271 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2020-11-15 16:22:40.271 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2020-11-15 16:22:40.271 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2020-11-15 16:22:40.271 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2020-11-15 16:22:40.271 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2020-11-15 16:22:41.466 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2020-11-15 16:22:41.679 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
+2020-11-15 16:22:41.722 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@163e4e87
+2020-11-15 16:22:41.813 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
+2020-11-15 16:22:42.312 INFO  (qtp1364767791-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605457361739} status=0 QTime=1
+2020-11-15 16:22:42.552 INFO  (qtp1364767791-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605457361744} status=0 QTime=235
+2020-11-15 16:22:44.346 INFO  (qtp1364767791-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605457364132} status=0 QTime=0
+2020-11-15 16:22:44.425 INFO  (qtp1364767791-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605457364134} status=0 QTime=76
+2020-11-15 16:22:44.502 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605457364134} status=0 QTime=69
+2020-11-15 16:22:44.600 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2020-11-15 16:22:44.600 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2020-11-15 16:22:44.721 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2020-11-15 16:22:44.721 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2020-11-15 16:22:45.845 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
+2020-11-15 16:22:45.955 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2020-11-15 16:22:46.000 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2020-11-15 16:22:46.036 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2020-11-15 16:22:46.073 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2020-11-15 16:22:46.073 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2020-11-15 16:22:46.089 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
+2020-11-15 16:22:46.124 INFO  (qtp1364767791-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1605457361745&ts=1605457361745} status=503 QTime=3786
+2020-11-15 16:22:46.131 INFO  (qtp1364767791-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1605457362283} status=0 QTime=3813
+2020-11-15 16:22:46.136 INFO  (qtp1364767791-37) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1605457362284} status=0 QTime=3814
+2020-11-15 16:22:46.222 INFO  (qtp1364767791-38) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1605457362284} status=0 QTime=3895
+2020-11-15 16:22:46.250 INFO  (qtp1364767791-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3314
+2020-11-15 16:22:50.892 INFO  (qtp1364767791-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=text:I+AM+INTERESTED+IN+THE&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=127
+2020-11-15 16:22:50.899 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=text:I+WOULD+BE+INTERESTED+TO&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
+2020-11-15 16:29:49.389 INFO  (qtp1364767791-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605457789229} status=0 QTime=1
+2020-11-15 16:29:49.463 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605457789230} status=0 QTime=69
+2020-11-15 16:29:49.536 INFO  (qtp1364767791-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605457789230} status=0 QTime=53
+2020-11-15 16:29:56.282 INFO  (qtp1364767791-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605457795863} status=0 QTime=0
+2020-11-15 16:29:56.295 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1605457796250} status=0 QTime=1
+2020-11-15 16:29:56.313 INFO  (qtp1364767791-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1605457796251} status=0 QTime=11
+2020-11-15 16:29:56.320 INFO  (qtp1364767791-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1605457795866&ts=1605457795866} status=503 QTime=0
+2020-11-15 16:29:56.424 INFO  (qtp1364767791-38) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=165
+2020-11-15 16:29:56.480 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605457795866} status=0 QTime=187
+2020-11-15 16:29:56.514 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1605457796250} status=0 QTime=193
+2020-11-15 16:29:56.563 INFO  (qtp1364767791-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=79
+2020-11-15 16:29:56.589 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=micoleccion&action=STATUS&wt=json} status=0 QTime=12
+2020-11-15 16:29:56.656 INFO  (qtp1364767791-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
+2020-11-15 16:30:05.565 INFO  (qtp1364767791-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=text:I+AM+INTERESTED+IN+THE&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
+2020-11-15 16:30:05.574 INFO  (qtp1364767791-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=text:I+WOULD+BE+INTERESTED+TO&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
+2020-11-15 16:33:55.071 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605458034867} status=0 QTime=0
+2020-11-15 16:33:55.131 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605458034868} status=0 QTime=57
+2020-11-15 16:33:55.194 INFO  (qtp1364767791-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605458034868} status=0 QTime=57
+2020-11-15 16:34:00.182 INFO  (qtp1364767791-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1605458039863} status=0 QTime=0
+2020-11-15 16:34:00.195 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1605458040151} status=0 QTime=1
+2020-11-15 16:34:00.210 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1605458040152} status=0 QTime=11
+2020-11-15 16:34:00.235 INFO  (qtp1364767791-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1605458039866&ts=1605458039866} status=503 QTime=0
+2020-11-15 16:34:00.381 INFO  (qtp1364767791-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1605458039865} status=0 QTime=198
+2020-11-15 16:34:00.396 INFO  (qtp1364767791-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1605458040151} status=0 QTime=195
+2020-11-15 16:34:00.751 INFO  (qtp1364767791-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=64
+2020-11-15 16:34:00.884 INFO  (qtp1364767791-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=58
+2020-11-15 16:34:00.922 INFO  (qtp1364767791-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=micoleccion&action=STATUS&wt=json} status=0 QTime=11
+2020-11-15 16:34:00.976 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
+2020-11-15 16:34:12.619 INFO  (qtp1364767791-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=text:I+AM+INTERESTED+IN+THE&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=1
+2020-11-15 16:34:12.627 INFO  (qtp1364767791-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=text:I+WOULD+BE+INTERESTED+TO&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=1
+2020-11-15 16:35:06.076 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@1329eff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2020-11-15 16:35:06.076 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2020-11-15 16:35:06.083 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=605982374
+2020-11-15 16:35:06.085 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@3230a223
+2020-11-15 16:35:06.085 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@3230a223
+2020-11-15 16:35:06.086 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@68a6f39a: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@566b9cd1
+2020-11-15 16:35:06.130 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2020-11-15 16:35:06.170 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2020-11-15 16:35:06.170 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@7f4d9395: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@3d29d4d
+2020-11-15 16:35:06.177 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2020-11-15 16:35:06.177 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@64d43929: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@23e59a1
+2020-11-15 16:35:06.179 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2020-11-15 16:35:06.180 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1d269ed7: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@7558dfe9
+2020-11-15 16:35:06.265 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@72e5a8e{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}

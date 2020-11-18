@@ -6,22 +6,15 @@
 package Interfaz;
 
 import Extra.ConexionSolr;
-import Extra.LeerCorpus;
-import Extra.LeerQuerys;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import miclientesolrj.MiClienteAddSolrj;
 import miclientesolrj.MiClienteSearchSolrj;
-import org.apache.solr.client.solrj.SolrServerException;
 
 /**
  *
@@ -29,33 +22,27 @@ import org.apache.solr.client.solrj.SolrServerException;
  */
 public class PanelConsultas extends JPanel{
     
-    ConexionSolr solr;
-    LeerCorpus lisa;
-    LeerQuerys query;
-    MiClienteSearchSolrj consultas;
-    MiClienteAddSolrj clienteAdd;
-    boolean permitido;
-    String coleccion;
+    private ConexionSolr solr;
+    private MiClienteSearchSolrj consultas;
+    private MiClienteAddSolrj clienteAdd;
+    private String coleccion; //Debo hacer que esto lo coja del core
     
-    JLabel core;
-    JLabel NDoc;
-    JButton Añadir;
-    JButton Eliminar;
+    private JButton Añadir;
+    private JButton Eliminar;
     //JScrollPane SalidaPanel;
-    JPanel ConsultaPanel;
-    JTextField id;
-    JTextField title;
-    JTextField text;
+    private JPanel ConsultaPanel;
+    private JTextField id;
+    private JTextField title;
+    private JTextField text;
     
-    public PanelConsultas(boolean p, ConexionSolr s){
+    public PanelConsultas(MiClienteAddSolrj add, MiClienteSearchSolrj search, ConexionSolr s){
         //super();
         setLayout(null);
-        setBounds(150, 10, 430, 400);
+        setBounds(150, 100, 430, 350);
         //setBackground(Color.red);
         
-        solr = s;
-        permitido=p;
-        Init();
+        
+        Init(add, search, s);
     }
     
     /**
@@ -63,25 +50,25 @@ public class PanelConsultas extends JPanel{
      * @param p
      * @param s
      */
-    private void Init(){
+    private void Init(MiClienteAddSolrj add, MiClienteSearchSolrj search, ConexionSolr s){
         
-        core = new JLabel("Core: ");
-        NDoc = new JLabel("Nº Doc: ");
-        core.setBounds(300, 30, 100, 20);
-        NDoc.setBounds(300, 50, 100, 20);
-            
+        solr = s;
+        clienteAdd = add;
+        consultas = search;
+        
         
         Añadir = new JButton();
-        Añadir.setBounds(80, 100, 200, 30);
+        Añadir.setBounds(100, 200, 200, 30);
         //Corpus.setEnabled(false);
         Añadir.setText("Añadir");
         Añadir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                boolean permitido = solr.estado();
                 if(permitido){
-                    //System.out.println("Hola");
-                    Añadir();
-                    ModificacionJLabel(); //Actualizamos la cantidad de documentos
+                    System.out.println("Hola boton añadir, estas conectado");
+                    //Añadir();
+                    //ModificacionJLabel(); //Actualizamos la cantidad de documentos
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -89,39 +76,40 @@ public class PanelConsultas extends JPanel{
         });
         
         Eliminar = new JButton();
-        Eliminar.setBounds(80, 150, 200, 30);
-        //Query.setEnabled(false);
+        Eliminar.setBounds(100, 250, 200, 30);
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                boolean permitido = solr.estado();
                 if(permitido){
-                    Eliminar();
+                    System.out.println("Hola boton eliminar, estas conectado");
+                    //Eliminar();
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
             }
         });
         
+        //^Panel de  cambios
         ConsultaPanel = new JPanel();
         ConsultaPanel.setLayout(null);
-        ConsultaPanel.setBounds(20, 200, 380, 150);
-        
+        ConsultaPanel.setBounds(20, 20, 380, 150);
         
         JLabel namid = new JLabel("Id: ");
         namid.setBounds(20, 20, 60, 30);
         id=new JTextField();
-        id.setBounds(100, 20, 200, 30);
+        id.setBounds(80, 20, 200, 30);
         
         JLabel namtitle = new JLabel("Tilte: ");
         namtitle.setBounds(20, 60, 60, 30);
         title=new JTextField();
-        title.setBounds(100, 60, 200, 30);
+        title.setBounds(80, 60, 200, 30);
         
         JLabel namtext = new JLabel("Text: ");
         namtext.setBounds(20, 100, 60, 30);
         text=new JTextField();
-        text.setBounds(100, 100, 200, 30);
+        text.setBounds(80, 100, 200, 30);
        
         ConsultaPanel.add(namid);
         ConsultaPanel.add(id);
@@ -130,8 +118,6 @@ public class PanelConsultas extends JPanel{
         ConsultaPanel.add(namtext);
         ConsultaPanel.add(text);
         
-        add(core);
-        add(NDoc);
         add(Añadir);
         add(Eliminar);
         add(ConsultaPanel);
@@ -145,19 +131,17 @@ public class PanelConsultas extends JPanel{
      */
     private void Inicio(){
         coleccion = "micoleccion"; //Predeterminado
-        ModificacionJLabel();
     }
     
     /**
      * Añado los datos
      */
     private void Añadir(){
-        clienteAdd = new MiClienteAddSolrj();
         try{
             if((id.getText()!="") && (title.getText()!="") && (text.getText()!="")){
                 clienteAdd.Añadir(id.getText(), title.getText(), text.getText(), coleccion);
                 LimpiarField();
-                JOptionPane.showMessageDialog(null, "Añadido correctamente");
+                //JOptionPane.showMessageDialog(null, "Añadido correctamente");
             }else{
                 JOptionPane.showMessageDialog(null, "Rellena todos los datos");
             }
@@ -169,7 +153,8 @@ public class PanelConsultas extends JPanel{
             Thread.sleep(2000);
         }catch(Exception ex){
         }
-        Actualizar(permitido, coleccion);
+        
+        consultas.ActualizarMiniInfo();
     }
     
     /**
@@ -181,7 +166,7 @@ public class PanelConsultas extends JPanel{
             if(id.getText()!=""){
                 clienteAdd.Eliminar(id.getText(), coleccion);
                 LimpiarField();
-                JOptionPane.showMessageDialog(null, "Eliminado correctamente");
+                //JOptionPane.showMessageDialog(null, "Eliminado correctamente");
             }else{
                 JOptionPane.showMessageDialog(null, "Rellena el id");
             }
@@ -193,53 +178,8 @@ public class PanelConsultas extends JPanel{
             Thread.sleep(2000);
         }catch(Exception ex){
         }
-        Actualizar(permitido, coleccion);
-    }
-    
-    /**
-     * Modificamos los Label de Info
-     */
-    private void ModificacionJLabel(){
-        if(permitido){
-            //coleccion = "micoleccion";
-
-            //Vemos cuantos documentos tiene
-            consultas = new MiClienteSearchSolrj();
-            int numero =0;
-            try{
-                consultas.Busqueda(".", ".", coleccion);
-                numero = consultas.getNumero();
-            }catch(Exception ex){
-                System.out.println("Error: "+ex);
-            }
-
-            setInfo(coleccion, numero);
-        }
-    }
-    
-    /**
-     * Cambiamos los nombres de los JLabel
-     * @param c
-     * @param num
-     */
-    private void setInfo(String c, int num){
-        core.setText("Core: "+c);
-        NDoc.setText("Nº Doc: "+num);
-    }
-    
-     /**
-     * Actualizamos segun este conectado o no
-     * @param p
-     * @param n
-     */
-    public void Actualizar(boolean p, String n){
-        permitido=p;
-        coleccion = n;
-        try{
-            Thread.sleep(5000);//5 segundos
-        }catch(Exception ex){
-        }
-        Inicio();
+        
+        consultas.ActualizarMiniInfo();
     }
     
     /**

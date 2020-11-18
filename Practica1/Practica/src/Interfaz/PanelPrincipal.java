@@ -5,19 +5,22 @@
  */
 package Interfaz;
 
+import Extra.ConexionSolr;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Insets;
-import javax.swing.Icon;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.IOException;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
+import miclientesolrj.MiClienteSearchSolrj;
+import org.apache.solr.client.solrj.SolrServerException;
 
 /**
  *
@@ -25,36 +28,65 @@ import javax.swing.border.Border;
  */
 public class PanelPrincipal extends JPanel{
     
-    private boolean permitido;
     private JList<String> SalidaPanel;
+    private JTextField buscador;
     
-    public PanelPrincipal(boolean p){
+    private MiClienteSearchSolrj search;
+    private ConexionSolr conexion;
+    
+    public PanelPrincipal(MiClienteSearchSolrj s, ConexionSolr c){
         //super();
         setLayout(null);
-        setBounds(150, 10, 430, 400);
-        //setBackground(Color.green);
+        setBounds(150, 100, 430, 350);
         
-        permitido=p;
-        Inicio();
+        Inicio(s, c);
     }
     
-    private void Inicio(){
+    private void Inicio(MiClienteSearchSolrj s, ConexionSolr c){
+        search=s;
+        conexion=c; 
         
         Image img = new ImageIcon("src/Imagenes/Lupa.png").getImage();
         ImageIcon imagenBusc=new ImageIcon(img.getScaledInstance(20, 20, Image.SCALE_SMOOTH));
         
-        JTextField buscador = new JTextField();           
-        buscador.setBounds(25, 0, 220, 30);
+        buscador = new JTextField();           
+        buscador.setBounds(25, 5, 260, 32);
         buscador.setBorder(null);
+        buscador.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    if(conexion.estado()){
+                        RealizarBusqueda();
+                        buscador.setText("");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No estas conectado a SOLR");
+                        buscador.setText("");
+                    }
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        
         
         JLabel label = new JLabel();
-        label.setIcon(imagenBusc); //NO hace nada
-        label.setBounds(30, 100, 250, 30);
+        label.setIcon(imagenBusc); 
+        label.setBounds(5, 0, 270, 40);
         label.add(buscador);
         
-        
-        
-        
+        JPanel aux = new JPanel();
+        aux.setLayout(null);
+        aux.setBounds(60, 10, 300, 40);
+        aux.setBackground(Color.white);
+        aux.setBorder(BorderFactory.createLineBorder(Color.black));
+        aux.add(label); //Para darle el color blanco abajo
         
         SalidaPanel = new JList();
         SalidaPanel.setLayout(null);
@@ -67,25 +99,29 @@ public class PanelPrincipal extends JPanel{
         });
         
         JScrollPane scroll = new JScrollPane(SalidaPanel);
-        scroll.setBounds(20, 200, 380, 180);
+        scroll.setBounds(20, 110, 380, 220);
         
         
         add(scroll);
-        //add(buscador);
-        add(label);
-        //add(imagenBusc);
-        
+        add(aux);
     }
     
-    
     /**
-     * Cuand cambiamos el core este se debe modificar tambien
-     * @param core
-     * @param cantidad
+     * Realizamos las busqueda
      */
-    public void ActualizarMiniInfo(String core, String cantidad){
-        
-        
+    public void RealizarBusqueda(){
+        try {
+            search.RealizarQuery(buscador.getText(), "micoleccion");
+            String[] s = search.getSalidaB();
+            
+            if(s!=null){
+                SalidaPanel.setListData(s);
+            }else{
+                System.out.println("NULL");
+            }
+        } catch (SolrServerException | IOException ex) {
+            JOptionPane.showMessageDialog(null, "Error al ejecutar la consulta");
+        }
     }
     
     

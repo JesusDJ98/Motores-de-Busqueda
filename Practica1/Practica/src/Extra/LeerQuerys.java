@@ -13,14 +13,16 @@ import java.util.logging.Logger;
  */
 public class LeerQuerys {
 
-    String[] querys;
+    private String[] querys;
+    private int cantidad;
     
     /**
      * Constructor
      * @param cantidad
      */
     public LeerQuerys(int cantidad) {
-        querys = new String[cantidad];
+        this.cantidad=cantidad;
+        querys = new String[35];
     }
     
     /**
@@ -39,7 +41,7 @@ public class LeerQuerys {
             int i = 0;
             String consulta = "";
             int pos = 0;
-            while(sc.hasNextLine() && pos<querys.length){
+            while(sc.hasNextLine() && pos<this.cantidad){
                 String s = sc.nextLine();
                 //System.out.println(s);
                 
@@ -71,7 +73,20 @@ public class LeerQuerys {
      * @return
      */
     public String[] getQuerys(){
-        return this.querys;
+        
+        String[] aux = new String[this.cantidad];
+        for (int i = 0; i < this.cantidad; i++) {
+            aux[i]=this.querys[i];
+        }
+        return aux;
+    }
+    
+    /**
+     * Modificamos la cantidad de consultas
+     * @param cant
+     */
+    public void setCant(int cant){
+        this.cantidad=cant;
     }
     
     /**

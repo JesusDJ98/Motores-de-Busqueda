@@ -9,7 +9,10 @@ import java.io.IOException;
  */
 public class ConexionSolr {
     
+    private boolean conectado;
+    
     public ConexionSolr(){
+        conectado=false;
     }
     
     public void Conexion(){
@@ -23,7 +26,7 @@ public class ConexionSolr {
         }
         //Damos un margen
         try{
-            Thread.sleep(7000);//7 segundos
+            Thread.sleep(10000);//10 segundos
         }catch(InterruptedException ex){
         }
         
@@ -31,6 +34,7 @@ public class ConexionSolr {
         
         //Abro la url en el navegador
         goUrl(url);
+        conectado=true;
         
     }
     
@@ -44,7 +48,7 @@ public class ConexionSolr {
         }
         //Damos un margen
         try{
-            Thread.sleep(3000);//3 segundos
+            Thread.sleep(5000);//5 segundos
         }catch(InterruptedException ex){
         }
         
@@ -65,11 +69,13 @@ public class ConexionSolr {
         } catch (IOException ex) {
             System.out.println("Error cerrando conexion con Solr: "+ex);
         }
+        conectado=false;
         //Damos un margen
         try{
             Thread.sleep(5000);
         }catch(InterruptedException ex){
         }
+        
     }
     
     /**
@@ -108,4 +114,11 @@ public class ConexionSolr {
         }
     }
     
+    /**
+     * Devoolvemos el estado de Solr
+     * @return
+     */
+    public boolean estado(){
+        return conectado;
+    }
 }

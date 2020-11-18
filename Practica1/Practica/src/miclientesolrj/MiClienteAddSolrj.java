@@ -3,7 +3,6 @@ package miclientesolrj;
 
 
 import Extra.LeerCorpus;
-import Interfaz.MiniInfoCore;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.apache.solr.client.solrj.SolrServerException;

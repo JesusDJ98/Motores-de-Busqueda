@@ -39,18 +39,18 @@ public class Trec_Eval {
         */
     }
     
-    private void CreoFichero(String path){
-        Existe(path+"\trec_top_file.txt");//Si existe lo elimina
+    public void CreoFichero(String path){
+        Existe(path+"\\trec_top_file.txt");//Si existe lo elimina
         //Creamos el fichero
         FileWriter fichero = null;
         PrintWriter pw = null;
         try {
-            fichero = new FileWriter(path+"\trec_top_file.txt");
+            fichero = new FileWriter(path+"\\trec_top_file.txt");
             pw = new PrintWriter(fichero);
             //Insertamos los datos
-            for (int i = 0; i < 10; i++) {
+            /*for (int i = 0; i < 10; i++) {
                 pw.println("Lo que sea");
-            }
+            }*/
         } catch (IOException ex) {
             System.out.println("Error creando trec_top_file: ");
         }finally{
@@ -67,6 +67,7 @@ public class Trec_Eval {
     
     
     private void Existe(String fichero){
+        System.out.println("Ruta: "+fichero);
         File fich = new File(fichero);
         if(fich.exists()){
             if(fich.delete()){
@@ -113,7 +114,7 @@ public class Trec_Eval {
      * Devuelve el directorio de trabajo
      * @return
      */
-    private String DirAct(){
+    public String DirAct(){
         //Ver en que directorio estamos trabajando
         String dir = "";
         try {

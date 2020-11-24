@@ -60,6 +60,7 @@ public class MiClienteSearchSolrj {
             }
             query.setQuery("id:"+s+" title:"+s+" text:"+s);
             query.setRows(100000);//Numero grande 10k
+            query.setFields("id", "text", "title", "score");
             QueryResponse rsp = solr.query(query);
             SolrDocumentList docs = rsp.getResults();
             
@@ -68,9 +69,10 @@ public class MiClienteSearchSolrj {
             salid.add(" ");
             for (int i = 0; i < docs.getNumFound(); i++) {
                 salid.add(" ");
-                salid.add("id: "+docs.get(i).getFieldValue("id"));
-                salid.add("title: "+docs.get(i).getFieldValue("title"));
-                salid.add("text: "+docs.get(i).getFieldValue("text"));
+                salid.add("Id: "+docs.get(i).getFieldValue("id"));
+                salid.add("Title: "+docs.get(i).getFieldValue("title"));
+                salid.add("Text: "+docs.get(i).getFieldValue("text"));
+                salid.add("Score: "+docs.get(i).getFieldValue("score"));
             }
             //Separacion de consultas
             salid.add("------------------------");
@@ -110,6 +112,7 @@ public class MiClienteSearchSolrj {
         SolrQuery query = new SolrQuery();
         query.setQuery("id:"+texto+" title:"+texto+" text:"+texto);
         query.setRows(100000); //Un numero muy grande
+        query.setFields("id", "text", "title", "score");
         QueryResponse rsp = solr.query(query);
         SolrDocumentList docs = rsp.getResults();
         
@@ -119,9 +122,10 @@ public class MiClienteSearchSolrj {
         salid.add(" ");
         salid.add(" ");
         for (int i = 0; i < docs.getNumFound(); i++) {
-            salid.add("id: "+docs.get(i).getFieldValue("id"));
-            salid.add("title: "+docs.get(i).getFieldValue("title"));
-            salid.add("text: "+docs.get(i).getFieldValue("text"));
+            salid.add("Id: "+docs.get(i).getFieldValue("id"));
+            salid.add("Title: "+docs.get(i).getFieldValue("title"));
+            salid.add("Text: "+docs.get(i).getFieldValue("text"));
+            salid.add("Score: "+docs.get(i).getFieldValue("score"));
             salid.add(" ");
             salid.add("------------------------");
         }

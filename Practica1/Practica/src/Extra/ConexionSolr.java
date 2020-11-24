@@ -1,6 +1,8 @@
 package Extra;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 
 /**
@@ -20,7 +22,7 @@ public class ConexionSolr {
         //Abro conexion con SOLR
         try {
             Runtime r = Runtime.getRuntime();
-            r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd start");
+            Process exec = r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd start");
         } catch (IOException ex) {
             System.out.println("Error abriendo conexion con Solr: "+ex);
         }
@@ -33,7 +35,7 @@ public class ConexionSolr {
         String url = "http://localhost:8983/solr";
         
         //Abro la url en el navegador
-        goUrl(url);
+        //goUrl(url);
         conectado=true;
         
     }

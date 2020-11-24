@@ -149,8 +149,8 @@ public class MiFrame extends JFrame{
      * @param evt
      */
     private void DesconectarActionPerformed(java.awt.event.ActionEvent evt) { 
-        solr.CerrarConexion();
         Salir();
+        solr.CerrarConexion();
         JOptionPane.showMessageDialog(null, "Conexion cerrada");
     }   
     /**
@@ -274,7 +274,11 @@ public class MiFrame extends JFrame{
      */
     public void setBox(String[] s){
         box.removeAllItems(); 
-        box.addItem("micoleccion"); //Lo añado el primero
+        if(s.length>0){ //Si hay mas de uno
+            box.addItem("micoleccion"); //Lo añado el primero
+        }else{
+            box.addItem("Core");
+        }
         for (int i = 0; i < s.length; i++) {
             if(!s[i].equals("micoleccion")){
                 box.addItem(s[i]);
@@ -312,9 +316,9 @@ public class MiFrame extends JFrame{
     
     private void Salir(){
         //Pongo nombre a core
-        String[] s = new String[1];
-        s[0]="";
-        setBox(s);
+        /*String[] s = new String[1];
+        s[0]="";*/
+        setBox(new String[0]);
         
         //MiniInfo vacio
         info.ActualizarMinInf("", "");
@@ -326,11 +330,16 @@ public class MiFrame extends JFrame{
         CoreAdminRequest request = new CoreAdminRequest();
         request.setAction(CoreAdminAction.STATUS);
         CoreAdminResponse cores=null;
-        try {
-            cores = request.process(solr);
-        } catch (SolrServerException | IOException ex) {
-            JOptionPane.showMessageDialog(null, "Error recuperando cores: "+ex);
+        boolean encontrado=false;
+        while(!encontrado){
+            try {
+                cores = request.process(solr);
+                encontrado=true;
+            } catch (SolrServerException | IOException ex) {
+                //JOptionPane.showMessageDialog(null, "Error recuperando cores: "+ex);
+            }
         }
+        
         //Los guardamos
         List<String> coreList = new ArrayList<String>();
         for (int i = 0; i < cores.getCoreStatus().size(); i++) {

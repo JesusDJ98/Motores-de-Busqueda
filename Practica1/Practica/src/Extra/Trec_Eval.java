@@ -13,44 +13,132 @@ import java.util.logging.Logger;
  */
 public class Trec_Eval {
     //private Dato
+    private int doc;
+    private int query;
+    private PrintWriter pw;
     
-    public Trec_Eval(/* Los datos */){
+    
+    public Trec_Eval(int documentos, int consultas/* Los datos */){
         //Le introduzco los datos
+        doc=documentos;
+        query=consultas;
     }
     
-    private void TratamientoDatos(){
-        /*Tendremos que tratar los datos
-        Pues solo voy a necesitar:
-                el numero de la consulta
-                el id de cada respuesta
-                el score de cada respuesta
-        */
+    private void TratamientoDatos(String[] salida){
+        String s = DirAct();
+        CreoFichero(s);
         
-        //Formato: NºConsulta, 0, idDoc, 0/1 -->Si es devuelto o no
+        int i = 0; //Numero de la query
+        int pos = 0; //Posicion de salida
+        int pos2 = 0; //va de 0 a 4+5por cada documento devuelto
+        String id = "";
+        while(i < query){
+            String query = "";
+            //Determino cual es la query que estamos realizando
+            boolean nuevo = false;
+            int numDoc = 0; //Numero de documentos de la consulta actual
+            String[] aux = new String[numDoc];   //Contiene el id y score de todos los doc de la consulta
+            while(!nuevo){
+                if(salida[pos].equals("--------------")){
+                    pos2=0; //Reinicio
+                    nuevo = true; //Sale
+                }else{
+                    if(pos2 == 0){
+                        String[] partes = salida[pos].split(": ");
+                        String[] partes2 = partes[1].split(" ");
+                        query = partes2[0];
+                    }else if(pos2 == 1){
+                        String[] partes = salida[pos].split(": ");//0: Documentos: -1:num
+                        numDoc = Integer.parseInt(partes[1]);
+                    }else{
+                        aux = new String[numDoc];
+                        int incremento = 5;
+                        for (int j = 0; j < numDoc; j++) {
+                            String[] partes = salida[pos].split(": ");  //0:id: 1:numId
+                            String[] partes2 = salida[pos+2].split(": ");//0:score: 1: numScore
+                            aux[j] = partes[1] + " , " +partes2[1];
+
+                            pos+=incremento;
+                            //pos2+=incremento; //No necesario
+                        }
+                    }
+                    pos2++; //Solo me importa el 0 1 y cualquier otro
+                    pos++;
+                }
+                
+                /*
+                Ahora escribo todos los documentos comparandolos
+                con los del aux, y si es igual escribo su score
+                Sino simplemente escribo lo normal
+                */
+                //Escribo
+                String NumConsulta = query;
+                int controlador = 0;    //el proximo id de la consulta
+                for(int k=0; k<doc; k++){
+                    int Ranking = k+1;
+                    int NumDoc = k+1;
+                    String Score = "0.0";
+                    if(controlador < numDoc){
+                        for(int m = controlador; m<numDoc; m++){
+                            String[] part = aux[m].split(" , ");
+                            int ID = Integer.parseInt(part[0]);
+                            if(NumDoc == ID){
+                                //El NumDoc no hace falta cambiarlo
+                                Score = part[1];//Cambiamos el Score
+                                controlador++;
+                            }
+                        }
+                    }
+                        
+                    //          NumConsulta+ " P1 " + NumDoc + Ranking + Score + " JDJ";
+                    pw.println(NumConsulta + " P1 " + NumDoc + Ranking + Score + " JDJ");
+                }
+            }
+                
+            
+            i++; //Miro la siguiente query
+        }
         
-        /*
-        Lo que veo mejor
-        Coger solo los id devueltos de cada consulta
-        Ordenarlos
-        Mientrs i sea menor q x[0] poner 0
-        cuando sea igual añadimos 1 y eliminamos s[0]
-        asi hasta que no quede ningun numero devuelto 
-        y seguimos pponiendo 0 sin comparar hasta 6004 poniendo 0
-        */
+        
+        
+        int contador = 0;   //indice para controlar cuando es inicio 
+        boolean fin = false;//Llenamos de escribir
+        int salid = 0;      //indice de la salida
+        while(!fin){
+            String NumConsulta = "";
+            int Ranking = 1; 
+            String Score = "";
+            //Leemos las consultas
+            boolean nuevo = false; //Nueva consulta
+            while(!nuevo){
+            
+
+                //Escribimos
+                //for(int i=0; i<doc; i++){
+                    //Escribo
+                    //          NumConsulta+ " P1 " + NumDoc+ Ranking + Score + " JDJ";
+                    pw.println(NumConsulta + " P1 " + (i+1) + Ranking + Score + " JDJ");
+                //}
+            }
+            
+        }
     }
     
-    public void CreoFichero(String path){
-        Existe(path+"\\trec_top_file.txt");//Si existe lo elimina
+    private void CreoFichero(String path){
+        Existe(path+"\\Trec_Eval\\trec_top_file.txt");//Si existe lo elimina
         //Creamos el fichero
         FileWriter fichero = null;
-        PrintWriter pw = null;
+        pw = null;
         try {
-            fichero = new FileWriter(path+"\\trec_top_file.txt");
+            fichero = new FileWriter(path+"\\Trec_Eval\\trec_top_file.txt");
             pw = new PrintWriter(fichero);
             //Insertamos los datos
             /*for (int i = 0; i < 10; i++) {
                 pw.println("Lo que sea");
             }*/
+            
+            
+            
         } catch (IOException ex) {
             System.out.println("Error creando trec_top_file: ");
         }finally{

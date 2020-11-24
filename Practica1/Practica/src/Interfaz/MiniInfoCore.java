@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
 import java.awt.Color;
@@ -19,6 +14,7 @@ public class MiniInfoCore extends JPanel{
     private JLabel core;
     private JLabel NDoc;
     private String coleccion;
+    private int datos;
     
     public MiniInfoCore(){
         
@@ -31,6 +27,7 @@ public class MiniInfoCore extends JPanel{
     }
     
     private void Inicio(){
+        datos=0;
         coleccion = "";
         core = new JLabel("Core: ");
         NDoc = new JLabel("Nº Doc: ");
@@ -48,6 +45,12 @@ public class MiniInfoCore extends JPanel{
      */
     public void ActualizarMinInf(String c, String num){
         coleccion = c;
+        datos=0;
+        try{
+            datos = Integer.parseInt(num);
+        }catch(Exception ex){
+        }
+        
         core.setText("Core: "+c);
         NDoc.setText("Nº Doc: "+num);
     }
@@ -58,6 +61,14 @@ public class MiniInfoCore extends JPanel{
      */
     public String getCore(){
         return coleccion;
+    }
+    
+    /**
+     * Devuelve el numero de documentos que hay
+     * @return
+     */
+    public int getNum(){
+        return datos;
     }
         
 }

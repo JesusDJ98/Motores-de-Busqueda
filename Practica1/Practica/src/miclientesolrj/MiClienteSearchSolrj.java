@@ -68,11 +68,11 @@ public class MiClienteSearchSolrj {
             salid.add("Documentos: "+docs.getNumFound());
             salid.add(" ");
             for (int i = 0; i < docs.getNumFound(); i++) {
-                salid.add(" ");
                 salid.add("Id: "+docs.get(i).getFieldValue("id"));
                 salid.add("Title: "+docs.get(i).getFieldValue("title"));
                 salid.add("Text: "+docs.get(i).getFieldValue("text"));
                 salid.add("Score: "+docs.get(i).getFieldValue("score"));
+                salid.add(" ");
             }
             //Separacion de consultas
             salid.add("------------------------");

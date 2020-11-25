@@ -12,8 +12,6 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
 
 
-
-
 /**
  *
  * @author Jesus Delgado
@@ -51,13 +49,14 @@ public class MiClienteSearchSolrj {
             SolrQuery query = new SolrQuery();
             //Coger solo 5 pos
             String s="";
+            //s= consultas[j]; //Demasiado largo
             String[] aux=consultas[j].split(" "); //Separamos
             for(int i=0; i<5; i++){//Cogemos 5 palabras
                 s+=aux[i];
                 if(i<4){
                     s+=" ";
                 }
-            }
+            }//*/
             query.setQuery("id:"+s+" title:"+s+" text:"+s);
             query.setRows(100000);//Numero grande 10k
             query.setFields("id", "text", "title", "score");

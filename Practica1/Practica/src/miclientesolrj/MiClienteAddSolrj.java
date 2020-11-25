@@ -69,7 +69,7 @@ public class MiClienteAddSolrj {
         solr.add(doc);
         solr.commit();
         
-        JOptionPane.showMessageDialog(null, "Eliminado correctamente");
+        JOptionPane.showMessageDialog(null, "Añadido correctamente");
         
     }
     
@@ -87,10 +87,10 @@ public class MiClienteAddSolrj {
         solr.deleteByQuery("id:"+id);
         UpdateResponse commit = solr.commit();
         
-        if(commit.getStatus() == 0){
-            JOptionPane.showMessageDialog(null, "No existe ningun documente con dicho id: "+id);
-        }else{
+        if(commit.getQTime() > 20){ //Si no existe suele ser 3, si existe supera los 100
             JOptionPane.showMessageDialog(null, "Eliminado correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "No existe ningun documente con dicho id: "+id);
         }
         
     }

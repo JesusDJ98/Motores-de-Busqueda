@@ -3,12 +3,19 @@ package Interfaz;
 import Extra.ConexionSolr;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,6 +50,7 @@ public class MiFrame extends JFrame{
     private MiClienteSearchSolrj search;
    
     private String[] OpcionesCore;
+    private JButton boton;
     
     
     public MiFrame(MiniInfoCore p0, PanelPrincipal p1, PanelConsultas p2, PanelPractica p3, ConexionSolr s, MiClienteSearchSolrj s2){
@@ -179,20 +187,11 @@ public class MiFrame extends JFrame{
         opciones.setLayout(null);
         opciones.setBorder(BorderFactory.createLineBorder(Color.black));
         
-        //ComboBox del Core
-        //String[] OpcionesCore = new String[3];
-        /*OpcionesCore[0] ="Core";
-        OpcionesCore[1] ="Eliminar";
-        OpcionesCore[2] ="Nuevo";*/
-        
-        
-        //= Cores();
-        
         
         box = new JComboBox(OpcionesCore);
         //box.setBackground(Color.LIGHT_GRAY);
         //box.setName("Core");
-        box.setBounds(10, 200, 100, 30);
+        box.setBounds(0, 0, 100, 30);
         box.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -200,12 +199,49 @@ public class MiFrame extends JFrame{
                 if(permitido){
                     String namecore = (String) box.getSelectedItem();
                     box.setName(namecore);//Cambio el nombre
-                    
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
+                
             }
         });
+        
+        boton =  Botones();
+        
+        JLabel aux = new JLabel();
+        aux.setBounds(5, 200, 120, 30);
+        //aux.setText("HOLAA");
+        aux.add(box);
+        aux.add(boton);
+        
+        
+        aux.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //System.out.println("AhoraClick");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //System.out.println("AhoraPressed");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //System.out.println("AhoraRelease");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton.setVisible(true);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton.setVisible(false);
+            }
+        });
+        
         
         //Lista de Acciones
         String[] op = { "Buscador", "Practica", "Modificar_Solr" };
@@ -218,8 +254,11 @@ public class MiFrame extends JFrame{
         });
         //Lista.setBackground(Color.LIGHT_GRAY);
         
-        opciones.add(box);
+        //opciones.add(box);
         opciones.add(Lista);
+        opciones.add(aux);
+        
+        //opciones.add(boton);
         
         return opciones;
     }
@@ -284,9 +323,47 @@ public class MiFrame extends JFrame{
                 box.addItem(s[i]);
             }
         }
+    }
+    
+    public JButton Botones(){
+        JButton mas = new JButton();
+        mas.setLayout(null);
+        mas.setBounds(100, 5, 18, 20);
+        Image img = new ImageIcon("src/Imagenes/Signos2.png").getImage();
+        ImageIcon imagenBusc=new ImageIcon(img.getScaledInstance(10, 15, Image.SCALE_SMOOTH));
+        mas.setIcon(imagenBusc);
         
-        /*box.addItem("Eliminar");
-        box.addItem("Nuevo");*/
+        mas.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //System.out.println("AhoraClick");
+                JOptionPane.showMessageDialog(null, "Desea añadir o eliminar core");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //System.out.println("AhoraPressed");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //System.out.println("AhoraRelease");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton.setVisible(true);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton.setVisible(false);
+            }
+        });
+        
+        
+        mas.setVisible(false);
+        return mas;
     }
     
     /**
@@ -315,11 +392,7 @@ public class MiFrame extends JFrame{
     }
     
     private void Salir(){
-        //Pongo nombre a core
-        /*String[] s = new String[1];
-        s[0]="";*/
         setBox(new String[0]);
-        
         //MiniInfo vacio
         info.ActualizarMinInf("", "");
     }

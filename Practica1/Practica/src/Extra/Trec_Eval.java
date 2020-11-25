@@ -1,9 +1,11 @@
 package Extra;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,6 +18,7 @@ public class Trec_Eval {
     private int doc;
     private int query;
     private PrintWriter pw;
+    private FileWriter fichero;
     
     
     public Trec_Eval(int documentos, int consultas/* Los datos */){
@@ -24,9 +27,10 @@ public class Trec_Eval {
         query=consultas;
     }
     
-    private void TratamientoDatos(String[] salida){
+    public void TratamientoDatos(String[] salida){
         String s = DirAct();
-        CreoFichero(s);
+        //CreoFichero(s);
+        AbroFich(s);
         
         int i = 0; //Numero de la query
         int pos = 0; //Posicion de salida
@@ -39,8 +43,9 @@ public class Trec_Eval {
             int numDoc = 0; //Numero de documentos de la consulta actual
             String[] aux = new String[numDoc];   //Contiene el id y score de todos los doc de la consulta
             while(!nuevo){
-                if(salida[pos].equals("--------------")){
+                if(salida[pos].equals("------------------------")){
                     pos2=0; //Reinicio
+                    pos++;
                     nuevo = true; //Sale
                 }else{
                     if(pos2 == 0){
@@ -50,21 +55,23 @@ public class Trec_Eval {
                     }else if(pos2 == 1){
                         String[] partes = salida[pos].split(": ");//0: Documentos: -1:num
                         numDoc = Integer.parseInt(partes[1]);
-                    }else{
+                    }else if(pos2>2){
                         aux = new String[numDoc];
                         int incremento = 5;
                         for (int j = 0; j < numDoc; j++) {
                             String[] partes = salida[pos].split(": ");  //0:id: 1:numId
-                            String[] partes2 = salida[pos+2].split(": ");//0:score: 1: numScore
+                            String[] partes2 = salida[pos+3].split(": ");//0:score: 1: numScore
                             aux[j] = partes[1] + " , " +partes2[1];
 
                             pos+=incremento;
                             //pos2+=incremento; //No necesario
-                        }
+                        }pos--;
                     }
                     pos2++; //Solo me importa el 0 1 y cualquier otro
                     pos++;
                 }
+                
+            }
                 
                 /*
                 Ahora escribo todos los documentos comparandolos
@@ -75,122 +82,104 @@ public class Trec_Eval {
                 String NumConsulta = query;
                 int controlador = 0;    //el proximo id de la consulta
                 for(int k=0; k<doc; k++){
-                    int Ranking = k+1;
+                    int Ranking = 0;
                     int NumDoc = k+1;
                     String Score = "0.0";
                     if(controlador < numDoc){
-                        for(int m = controlador; m<numDoc; m++){
+                        int m = controlador;
+                        boolean encontrado = false;
+                        while(!encontrado && m<numDoc){
                             String[] part = aux[m].split(" , ");
                             int ID = Integer.parseInt(part[0]);
                             if(NumDoc == ID){
                                 //El NumDoc no hace falta cambiarlo
+                                Ranking = (m+1);    //Cambiamos el ranking
                                 Score = part[1];//Cambiamos el Score
                                 controlador++;
+                                encontrado=true;
                             }
+                            m++;
                         }
                     }
-                        
+                    //System.out.println(NumConsulta + " P1 " + NumDoc + " " + Ranking + " " + Score + " JDJ");    
                     //          NumConsulta+ " P1 " + NumDoc + Ranking + Score + " JDJ";
-                    pw.println(NumConsulta + " P1 " + NumDoc + Ranking + Score + " JDJ");
+                    pw.println(NumConsulta + " P1 " + NumDoc + " " + Ranking + " " + Score + " JDJ");
                 }
-            }
-                
-            
             i++; //Miro la siguiente query
         }
-        
-        
-        
-        int contador = 0;   //indice para controlar cuando es inicio 
-        boolean fin = false;//Llenamos de escribir
-        int salid = 0;      //indice de la salida
-        while(!fin){
-            String NumConsulta = "";
-            int Ranking = 1; 
-            String Score = "";
-            //Leemos las consultas
-            boolean nuevo = false; //Nueva consulta
-            while(!nuevo){
-            
-
-                //Escribimos
-                //for(int i=0; i<doc; i++){
-                    //Escribo
-                    //          NumConsulta+ " P1 " + NumDoc+ Ranking + Score + " JDJ";
-                    pw.println(NumConsulta + " P1 " + (i+1) + Ranking + Score + " JDJ");
-                //}
-            }
-            
-        }
+        CierroFich();
     }
     
-    private void CreoFichero(String path){
+    private void AbroFich(String path){
         Existe(path+"\\Trec_Eval\\trec_top_file.txt");//Si existe lo elimina
         //Creamos el fichero
-        FileWriter fichero = null;
+        fichero = null;
         pw = null;
         try {
             fichero = new FileWriter(path+"\\Trec_Eval\\trec_top_file.txt");
             pw = new PrintWriter(fichero);
-            //Insertamos los datos
-            /*for (int i = 0; i < 10; i++) {
-                pw.println("Lo que sea");
-            }*/
-            
-            
-            
         } catch (IOException ex) {
             System.out.println("Error creando trec_top_file: ");
-        }finally{
-            if (null != fichero){
-                try {
-                    fichero.close();
-                } catch (IOException ex) {
-                    System.out.println("Cerrando el fichero");
-                }
-            }
-              
         }
     }
     
+    private void CierroFich(){
+        if (null != fichero){
+            try {
+                fichero.close();
+            } catch (IOException ex) {
+                System.out.println("Cerrando el fichero");
+            }
+        }
+    }
     
+    /**
+     * Comprueba la existencia del fichero elegido
+     * y lo elimina si existe
+     * @param fichero
+     */
     private void Existe(String fichero){
-        System.out.println("Ruta: "+fichero);
         File fich = new File(fichero);
         if(fich.exists()){
             if(fich.delete()){
-                System.out.println("Eliminado correctamente");
-            }else{
-                System.out.println("Existe pero no se ha eliminado");
             }
-        }else{
-            System.out.println("NO existe aun");
         }
     }
     
     
-    public double Precision(){
-        double a = 0.0;
+    public float Precision(){
+        float a = 0.0f;
         String pathAct =DirAct();
-        CreoFichero(pathAct); //Creo el fichero en formato trec_Eval
         
-        
+        Existe(pathAct+"\\Trec_Eval\\Solucion.txt");
         //Comparo con treceval
         try {
             Runtime r = Runtime.getRuntime();
-            r.exec("cmd /C cd "+pathAct+"\\Trec_Eval\\treceval.exe trec_rel_file.txt trec_top_file.txt" );
-            //Nos deberia devolver la efectividad y mas cosas
+            r.exec("cmd /C cd "+pathAct+"\\Trec_Eval && treceval trec_rel_file.txt trec_top_file.txt >> Solucion.txt" );
+            // [-q] genera un porcentaje por cada query
+            // [-a] npi
             
-            //Actualizamos el valor de a
-            //a = ;
+            //Con este bucle evito realizar una espera
+            //Leemos el fichero generado
+            boolean encontrado = false;
+            while(!encontrado){
+                try{
+                    Scanner sc = new Scanner(new File(pathAct+"\\Trec_Eval\\Solucion.txt"));
+                    encontrado=true;
+                    String aux = "";
+                    while(sc.hasNextLine()){
+                        aux = sc.nextLine();//Solo nos interesa la ultima posicion
+                    }
+                    String[] partes = aux.split(" ");
+                    //Actualizamos el valor de a
+                    a = Float.parseFloat(partes[partes.length-1]);
+                }catch(Exception ex){
+                }
+            }
         } catch (IOException ex) {
-            System.out.println("Error abriendo conexion con Solr: "+ex);
+            System.out.println("Error Precision: "+ex);
         }
-        //Damos un margen
-        try{
-            Thread.sleep(20000);//20 segundos
-        }catch(InterruptedException ex){
-        }
+            
         
         //Devolvemos la precision
         return a;
@@ -202,7 +191,7 @@ public class Trec_Eval {
      * Devuelve el directorio de trabajo
      * @return
      */
-    public String DirAct(){
+    private String DirAct(){
         //Ver en que directorio estamos trabajando
         String dir = "";
         try {

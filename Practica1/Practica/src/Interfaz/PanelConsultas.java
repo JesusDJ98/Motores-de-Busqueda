@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
 import Extra.ConexionSolr;
@@ -69,8 +64,7 @@ public class PanelConsultas extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 boolean permitido = solr.estado();
                 if(permitido){
-                    System.out.println("Hola boton añadir, estas conectado");
-                    //Añadir();
+                    Añadir();
                     //ModificacionJLabel(); //Actualizamos la cantidad de documentos
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
@@ -86,8 +80,7 @@ public class PanelConsultas extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 boolean permitido = solr.estado();
                 if(permitido){
-                    System.out.println("Hola boton eliminar, estas conectado");
-                    //Eliminar();
+                    Eliminar();
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -144,13 +137,15 @@ public class PanelConsultas extends JPanel{
      * Añado los datos
      */
     private void Añadir(){
+        coleccion = info.getCore();
+        boolean ejecutado=false;
         try{
-            if((id.getText()!="") && (title.getText()!="") && (text.getText()!="")){
+            if((!id.getText().equals("")) && (!title.getText().equals("")) && (!text.getText().equals(""))){
                 clienteAdd.Añadir(id.getText(), title.getText(), text.getText(), coleccion);
                 LimpiarField();
-                //JOptionPane.showMessageDialog(null, "Añadido correctamente");
+                ejecutado=true;
             }else{
-                JOptionPane.showMessageDialog(null, "Rellena todos los datos");
+                JOptionPane.showMessageDialog(null, "Rellena todos los campos");
             }
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Error añadiendo: "+ex);
@@ -161,19 +156,23 @@ public class PanelConsultas extends JPanel{
         }catch(Exception ex){
         }
         
-        consultas.ActualizarMiniInfo(info.getCore());
+        if(ejecutado){
+            consultas.ActualizarMiniInfo(info.getCore());
+        }
     }
     
     /**
      * Elimino los datos
      */
     private void Eliminar(){
+        boolean ejecutado=false;
+        coleccion = info.getCore();
         clienteAdd = new MiClienteAddSolrj();
         try{
-            if(id.getText()!=""){
+            if(!id.getText().equals("")){
                 clienteAdd.Eliminar(id.getText(), coleccion);
                 LimpiarField();
-                //JOptionPane.showMessageDialog(null, "Eliminado correctamente");
+                ejecutado=true;
             }else{
                 JOptionPane.showMessageDialog(null, "Rellena el id");
             }
@@ -186,7 +185,9 @@ public class PanelConsultas extends JPanel{
         }catch(Exception ex){
         }
         
-        consultas.ActualizarMiniInfo(info.getCore());
+        if(ejecutado){
+            consultas.ActualizarMiniInfo(info.getCore());
+        }
     }
     
     /**

@@ -199,15 +199,27 @@ public class PanelPractica extends JPanel{
         
         query.setCant(a);
         query.Leer();
-        //String[] ListaQue = query.getQuerys();
         
+        //Escribimos en la app la salida
         accion.setText("Accion: Realizando Querys");
+        String[] salida = new String[0];
         try {
             consultas.BusquedaQuery(query, "micoleccion");
-            String[] s = consultas.getSalida();
+            salida = consultas.getSalida();
             
-            if(s!=null){
-                SalidaPanel.setListData(s);
+            if(salida!=null){
+                SalidaPanel.setListData(salida);
+                
+                //Vemos efectividad
+                accion.setText("Accion: Generando Trec_Eval");
+                //Aqui genero el traceval            num   Doc    query      
+                Trec_Eval evaluacion = new Trec_Eval(info.getNum(), a);
+                evaluacion.TratamientoDatos(salida);
+                //Luego comparo
+                float accuracy = evaluacion.Precision();
+                
+                //Lo escribo
+                labelAcu.setText("Presición: "+accuracy);
                 
             }else{
                 System.out.println("NULL");
@@ -216,13 +228,6 @@ public class PanelPractica extends JPanel{
             JOptionPane.showMessageDialog(null, "Error al ejecutar la consulta");
         }
         
-        accion.setText("Accion: Generando Trec_Eval");
-        //Aqui genero el traceval
-        
-        //Luego comparo
-        
-        //Lo escribo
-        labelAcu.setText("Presición: ");
         
     }
     

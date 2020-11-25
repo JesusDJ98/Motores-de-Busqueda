@@ -1,8 +1,6 @@
 package Extra;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 
 /**
@@ -26,16 +24,6 @@ public class ConexionSolr {
         } catch (IOException ex) {
             System.out.println("Error abriendo conexion con Solr: "+ex);
         }
-        //Damos un margen
-        try{
-            Thread.sleep(10000);//10 segundos
-        }catch(InterruptedException ex){
-        }
-        
-        String url = "http://localhost:8983/solr";
-        
-        //Abro la url en el navegador
-        //goUrl(url);
         conectado=true;
         
     }
@@ -58,7 +46,26 @@ public class ConexionSolr {
         String url = "http://localhost:8983/solr/#/"+name+"/core-overview";
         
         //Abro la url en el navegador
-        goUrl(url);
+        //goUrl(url);
+    }
+    
+    /**
+     * Método para eliminar una coleccion de SOLR
+     * @param name
+     */
+    public void DeleteColeccion(String name){
+        //Creo el nuevo core
+        try {
+            Runtime r = Runtime.getRuntime();
+            r.exec("cmd /C cd "+DirAct()+"\\solr-8.6.3"+ " && bin\\solr.cmd delete -c "+name);
+        } catch (IOException ex) {
+            System.out.println("Error eliminando CORE: "+ex);
+        }
+        //Damos un margen
+        try{
+            Thread.sleep(5000);//5 segundos
+        }catch(InterruptedException ex){
+        }
     }
     
     /**

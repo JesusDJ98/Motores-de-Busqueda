@@ -1,77 +1,81 @@
-2020-11-25 13:07:33.182 INFO  (main) [   ] o.e.j.u.log Logging initialized @3234ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-11-25 13:07:33.398 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2020-11-25 13:10:40.359 INFO  (main) [   ] o.e.j.u.log Logging initialized @3402ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-25 13:10:40.574 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2020-11-25 13:07:33.693 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
-2020-11-25 13:07:33.755 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
-2020-11-25 13:07:36.343 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2020-11-25 13:07:36.368 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2020-11-25 13:07:36.368 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2020-11-25 13:07:36.372 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
-2020-11-25 13:07:36.509 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2020-11-25 13:07:36.519 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2020-11-25 13:07:36.519 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2020-11-25 13:07:36.519 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
-2020-11-25 13:07:36.520 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-11-25T13:07:36.520Z
-2020-11-25 13:07:36.541 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-11-25 13:07:36.555 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
-2020-11-25 13:07:36.789 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
-2020-11-25 13:07:37.524 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2020-11-25 13:07:38.405 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@37ebc9d8[provider=null,keyStore=null,trustStore=null]
-2020-11-25 13:07:38.405 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@37ebc9d8[provider=null,keyStore=null,trustStore=null]
-2020-11-25 13:07:38.598 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
-2020-11-25 13:07:38.598 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
-2020-11-25 13:07:38.684 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2020-11-25 13:07:38.902 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2020-11-25 13:07:38.906 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2020-11-25 13:07:39.024 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-11-25 13:07:39.024 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-11-25 13:07:39.034 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-11-25 13:07:39.115 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-11-25 13:07:39.115 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [micoleccion]
-2020-11-25 13:07:39.216 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-11-25 13:07:39.594 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
-2020-11-25 13:07:40.599 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-11-25 13:07:40.599 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-11-25 13:07:40.600 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-11-25 13:07:40.600 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-11-25 13:07:40.600 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-11-25 13:07:41.010 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-11-25 13:07:41.154 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
-2020-11-25 13:07:41.208 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-11-25 13:07:41.271 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
-2020-11-25 13:07:41.308 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
-2020-11-25 13:07:41.328 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-11-25 13:07:41.328 INFO  (main) [   ] o.e.j.s.Server Started @11382ms
-2020-11-25 13:07:41.505 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=11
-2020-11-25 13:07:42.526 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-11-25 13:07:42.526 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-11-25 13:07:42.560 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-11-25 13:07:42.561 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-11-25 13:07:42.925 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
-2020-11-25 13:07:42.968 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-11-25 13:07:42.986 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-11-25 13:07:43.013 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-11-25 13:07:43.043 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-11-25 13:07:43.043 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-11-25 13:07:43.058 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
-2020-11-25 13:07:43.815 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=167
-2020-11-25 13:07:43.845 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=68
-2020-11-25 13:07:56.950 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=85
-2020-11-25 13:07:56.963 INFO  (qtp1926343982-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+WOULD+BE+INTERESTED+TO+title:I+WOULD+BE+INTERESTED+TO+text:I+WOULD+BE+INTERESTED+TO&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=4
-2020-11-25 13:10:11.370 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-11-25 13:10:11.370 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
-2020-11-25 13:10:11.376 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
-2020-11-25 13:10:11.378 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@50fb4af6
-2020-11-25 13:10:11.378 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@50fb4af6
-2020-11-25 13:10:11.379 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@79f81a96: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@25b933d
-2020-11-25 13:10:11.434 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-11-25 13:10:11.474 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2020-11-25 13:10:11.474 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@60e30396
-2020-11-25 13:10:11.480 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2020-11-25 13:10:11.481 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@285516f4
-2020-11-25 13:10:11.483 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2020-11-25 13:10:11.483 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@55502a66
-2020-11-25 13:10:11.519 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2020-11-25 13:10:40.800 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
+2020-11-25 13:10:40.852 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2020-11-25 13:10:43.435 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2020-11-25 13:10:43.454 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2020-11-25 13:10:43.455 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2020-11-25 13:10:43.459 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
+2020-11-25 13:10:43.567 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2020-11-25 13:10:43.575 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2020-11-25 13:10:43.575 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2020-11-25 13:10:43.575 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2020-11-25 13:10:43.576 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-11-25T13:10:43.576Z
+2020-11-25 13:10:43.593 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2020-11-25 13:10:43.606 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
+2020-11-25 13:10:43.801 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
+2020-11-25 13:10:44.528 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2020-11-25 13:10:45.508 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@37ebc9d8[provider=null,keyStore=null,trustStore=null]
+2020-11-25 13:10:45.509 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@37ebc9d8[provider=null,keyStore=null,trustStore=null]
+2020-11-25 13:10:45.663 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2020-11-25 13:10:45.663 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2020-11-25 13:10:45.748 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2020-11-25 13:10:46.010 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2020-11-25 13:10:46.013 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2020-11-25 13:10:46.123 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2020-11-25 13:10:46.124 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2020-11-25 13:10:46.133 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2020-11-25 13:10:46.207 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2020-11-25 13:10:46.208 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [micoleccion]
+2020-11-25 13:10:46.298 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2020-11-25 13:10:46.712 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
+2020-11-25 13:10:47.803 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2020-11-25 13:10:47.803 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2020-11-25 13:10:47.803 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2020-11-25 13:10:47.803 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2020-11-25 13:10:47.803 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2020-11-25 13:10:48.119 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2020-11-25 13:10:48.147 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2020-11-25 13:10:48.148 INFO  (main) [   ] o.e.j.s.Server Started @11193ms
+2020-11-25 13:10:48.196 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2020-11-25 13:10:48.301 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
+2020-11-25 13:10:48.360 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2020-11-25 13:10:48.383 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
+2020-11-25 13:10:48.489 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=11
+2020-11-25 13:10:49.482 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2020-11-25 13:10:49.482 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2020-11-25 13:10:49.524 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2020-11-25 13:10:49.524 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2020-11-25 13:10:49.876 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
+2020-11-25 13:10:49.908 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2020-11-25 13:10:49.919 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2020-11-25 13:10:49.937 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2020-11-25 13:10:49.965 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2020-11-25 13:10:49.965 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2020-11-25 13:10:49.981 INFO  (searcherExecutor-15-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
+2020-11-25 13:10:50.588 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=109
+2020-11-25 13:10:50.752 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=88
+2020-11-25 13:11:04.510 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=62
+2020-11-25 13:11:04.525 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+WOULD+BE+INTERESTED+TO+title:I+WOULD+BE+INTERESTED+TO+text:I+WOULD+BE+INTERESTED+TO&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=4
+2020-11-25 13:13:30.517 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=22
+2020-11-25 13:13:32.596 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=4
+2020-11-25 13:13:40.832 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=5
+2020-11-25 13:13:40.843 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+WOULD+BE+INTERESTED+TO+title:I+WOULD+BE+INTERESTED+TO+text:I+WOULD+BE+INTERESTED+TO&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
+2020-11-25 13:17:09.446 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2020-11-25 13:17:09.446 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2020-11-25 13:17:09.453 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
+2020-11-25 13:17:09.455 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@20571ce
+2020-11-25 13:17:09.455 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@20571ce
+2020-11-25 13:17:09.455 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@681521a3: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@7d8ca117
+2020-11-25 13:17:09.515 INFO  (coreCloseExecutor-21-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2020-11-25 13:17:09.547 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2020-11-25 13:17:09.547 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@b636f9e
+2020-11-25 13:17:09.554 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2020-11-25 13:17:09.554 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@6e405390
+2020-11-25 13:17:09.557 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2020-11-25 13:17:09.557 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@611b7877
+2020-11-25 13:17:09.586 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}

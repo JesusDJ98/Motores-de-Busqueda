@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,12 +18,12 @@ public class LeerCorpus {
     private String[] texto;
     
     public LeerCorpus(){
-        id = new int[6004];
+        /*id = new int[6004];
         titulo = new String[6004];
         texto = new String[6004];//*/
-        /*id = new int[501];
+        id = new int[501];
         titulo = new String[501];
-        texto = new String[501];*/
+        texto = new String[501]; //*/
     }
     
     /**
@@ -141,6 +139,8 @@ public class LeerCorpus {
             List<String> res = new ArrayList<>();
             File[] arr_content = f.listFiles();
             
+            
+            
             for(int i=0; i<arr_content.length; i++){
                 if( arr_content[i].isFile()){ //Si es un archivo
                     String aux = arr_content[i].getName();
@@ -175,7 +175,6 @@ public class LeerCorpus {
         try {
             dir = new java.io.File( "." ).getCanonicalPath();
         } catch (IOException ex) {
-            Logger.getLogger(ConexionSolr.class.getName()).log(Level.SEVERE, null, ex);
         }
         return dir;
     }

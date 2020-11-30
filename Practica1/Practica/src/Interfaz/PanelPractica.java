@@ -135,42 +135,58 @@ public class PanelPractica extends JPanel{
      */
     private void Corpus_SOLR(){
         accion.setText("Accion: Leyendo el CORPUS");
+        
+        boolean correcto = false;
+        int a = 0;
+        while(!correcto){
+            String s = JOptionPane.showInputDialog("Cuantos ficheros deseas leer? (max 14)");
+            try{
+                a = Integer.parseInt(s);
+                if(a>0){
+                    if(a>14){
+                        a = 14;
+                    }
+                    correcto = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Cantidad no aceptada");
+                }
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Deben ser numeros");
+            }
+        }
+        
         //Leo el Corpus
         String[] listado = lisa.Listado();
-        for(int i = 0; i<listado.length; i++){
-            System.out.println("File: "+listado[i]);
-            accion.setText("Accion: Leyendo "+listado[i]);
+        //AQUI QUIERO METER UNA NUVA PANTALLA DE CARGANDO
+        
+        
+        int cantidad = a; //Solo quiero el primero
+        /*if(cantidad >= listado.length ){
+            cantidad = listado.length;
+        }*/
+        
+        for(int i = 0; i<cantidad; i++){
+            //accion.setText("Accion: Leyendo "+listado[i]);
             try {
                 lisa.LeerFicheros(listado[i]);
-                Thread.sleep(200); //Mini descanso para que de time a actualizar
-            } catch (FileNotFoundException | InterruptedException ex) {
+            } catch (FileNotFoundException ex) {
                 accion.setText("Accion: Error leyendo "+listado[i]);
             }
         }
-        accion.setText("Accion: Añadiendo el Corpus a SOLR");
+        
+        //accion.setText("Accion: Añadiendo el Corpus a SOLR");
+        //this.repaint(); //No sirve
+        //this.updateUI(); //Tampoco sirve
         try {
-            
-            Thread.sleep(1000);//espero
             //Lo añado a SOLR
             clientaAdd.AñadirCorpus(lisa, "micoleccion");
-        } catch (SolrServerException | IOException | InterruptedException ex) {
+            System.out.println("Ya añadido");
+        } catch (SolrServerException | IOException ex) {
             accion.setText("Accion: Error añadiendo el Corpus a SOLR");
         }
-        
-        //Actualizamos y esperamos
-        try{
-            Thread.sleep(2000);
-        }catch(Exception ex){
-        }
-        
         consultas.ActualizarMiniInfo(info.getCore());
-        //Actualizamos y esperamos
-        try{
-            Thread.sleep(1000);
-        }catch(Exception ex){
-        }
         
-        accion.setText("Accion: Todo el CORPUS Agregado");
+        accion.setText("Accion: Todo el CORPUS Agregado a SOLR");
     }
     
     /**
@@ -216,7 +232,7 @@ public class PanelPractica extends JPanel{
                 Trec_Eval evaluacion = new Trec_Eval(info.getNum(), a);
                 evaluacion.TratamientoDatos(salida);
                 //Luego comparo
-                float accuracy = evaluacion.Precision();
+                String accuracy = evaluacion.Precision();
                 
                 //Lo escribo
                 labelAcu.setText("Presición: "+accuracy);
@@ -228,6 +244,7 @@ public class PanelPractica extends JPanel{
             JOptionPane.showMessageDialog(null, "Error al ejecutar la consulta");
         }
         
+        accion.setText("Accion: ");
         
     }
     

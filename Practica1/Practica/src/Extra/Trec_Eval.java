@@ -1,7 +1,6 @@
 package Extra;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -147,8 +146,8 @@ public class Trec_Eval {
     }
     
     
-    public float Precision(){
-        float a = 0.0f;
+    public String Precision(){
+        String a = "";
         String pathAct =DirAct();
         
         Existe(pathAct+"\\Trec_Eval\\Solucion.txt");
@@ -167,12 +166,20 @@ public class Trec_Eval {
                     Scanner sc = new Scanner(new File(pathAct+"\\Trec_Eval\\Solucion.txt"));
                     encontrado=true;
                     String aux = "";
+                    
+                    try{
+                        Thread.sleep(600); //Encuentra el fichero pero aun no tiene info
+                    }catch(Exception ex){
+                    }
+                    
                     while(sc.hasNextLine()){
                         aux = sc.nextLine();//Solo nos interesa la ultima posicion
                     }
                     String[] partes = aux.split(" ");
                     //Actualizamos el valor de a
-                    a = Float.parseFloat(partes[partes.length-1]);
+                    //a = Float.parseFloat(partes[partes.length-1]);
+                    a = partes[partes.length-1];
+                    
                 }catch(Exception ex){
                 }
             }

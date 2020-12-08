@@ -176,6 +176,7 @@ public class Trec_Eval {
                         aux = sc.nextLine();//Solo nos interesa la ultima posicion
                     }
                     String[] partes = aux.split(" ");
+                    System.out.println("Aux: "+aux);
                     //Actualizamos el valor de a
                     //a = Float.parseFloat(partes[partes.length-1]);
                     a = partes[partes.length-1];

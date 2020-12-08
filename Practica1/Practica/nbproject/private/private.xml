@@ -4,8 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/Interfaz/MiFrame.java</file>
+            <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/Extra/ConexionSolr.java</file>
+            <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/miclientesolrj/MiClienteSearchSolrj.java</file>
+            <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/miclientesolrj/MiClienteAddSolrj.java</file>
+            <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/Interfaz/MiniInfoCore.java</file>
             <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/Interfaz/PanelPractica.java</file>
             <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/Extra/LeerCorpus.java</file>
+            <file>file:/C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/src/Extra/Trec_Eval.java</file>
         </group>
     </open-files>
 </project-private>

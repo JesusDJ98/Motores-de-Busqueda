@@ -37,6 +37,13 @@ import org.apache.solr.common.params.CoreAdminParams.CoreAdminAction;
  */
 public class MiFrame extends JFrame{
     
+    class Indice{
+        Indice(int i){
+            id = i;
+        }
+        public int id;
+    }
+    
     //Material de la Interfaz
     private  JComboBox box;
     private  PanelPrincipal mainP;
@@ -154,8 +161,12 @@ public class MiFrame extends JFrame{
      * Nos desconectamos de SOLR
      * @param evt
      */
-    private void DesconectarActionPerformed(java.awt.event.ActionEvent evt) { 
-        Salir();
+    private void DesconectarActionPerformed(java.awt.event.ActionEvent evt) {
+        if(!solr.estado()){
+            Salir(0);
+        }else{
+            Salir(1);
+        }
         solr.CerrarConexion();
         JOptionPane.showMessageDialog(null, "Conexion cerrada");
     }   
@@ -171,7 +182,7 @@ public class MiFrame extends JFrame{
         }catch(Exception ex){
         }
         //OpcionesCore = Cores();
-        setBox(Cores());
+        setBox(Cores(), 1);
     }
     
     /**
@@ -197,6 +208,12 @@ public class MiFrame extends JFrame{
                 if(permitido){
                     String namecore = (String) box.getSelectedItem();
                     box.setName(namecore);//Cambio el nombre
+                    
+                    if(box.getItemCount()>1){ //Ni null ni Core
+                        search.ActualizarMiniInfo((String)box.getSelectedItem());
+                    }
+                    
+                    
                 }else{
                     JOptionPane.showMessageDialog(null, "No estas conectado");
                 }
@@ -308,17 +325,22 @@ public class MiFrame extends JFrame{
     /**
      * Modificamos el nombre del core
      * @param s
+     * @param op
      */
-    public void setBox(String[] s){
-        box.removeAllItems(); 
-        if(s.length>0){ //Si hay mas de uno
-            box.addItem("micoleccion"); //Lo añado el primero
-        }else{
-            box.addItem("Core");
-        }
-        for (int i = 0; i < s.length; i++) {
-            if(!s[i].equals("micoleccion")){
-                box.addItem(s[i]);
+    public void setBox(String[] s, int op){
+        
+        if(op==1){
+            box.removeAllItems(); 
+            if(s.length>0){ //Si hay mas de uno
+                box.addItem("micoleccion"); //Lo añado el primero
+            }else{
+                box.addItem("Core");
+            }
+
+            for (int i = 0; i < s.length; i++) {
+                if(!s[i].equals("micoleccion")){
+                    box.addItem(s[i]);
+                }
             }
         }
     }
@@ -334,8 +356,35 @@ public class MiFrame extends JFrame{
         mas.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //System.out.println("AhoraClick");
-                JOptionPane.showMessageDialog(null, "Desea añadir o eliminar core");
+                String newCore = JOptionPane.showInputDialog(null, "Nombre repetido elimina, nombre nuevo inserta");
+                //System.out.println("Nuevo: "+newCore);
+                if(newCore!=null){
+                    boolean permitido=solr.estado();
+                    if(permitido){
+                        String actual = (String)box.getSelectedItem();
+                        Indice indice = new Indice(0);
+                        boolean nuevoC = AñadirCore(newCore, indice);
+                        if(nuevoC){//Añadimos
+                            solr.NewColeccion(newCore);
+                        }else{//Eliminamos
+                            solr.DeleteColeccion(newCore);
+                        }
+                       try{//Doy margen
+                           Thread.sleep(1000);
+                       }catch(Exception ex){
+                           
+                       }
+                        //Actualiza
+                        setBox(Cores(), 1);
+                        if(!actual.equals(newCore)){
+                            box.setSelectedItem(actual);
+                        }
+                        search.ActualizarMiniInfo((String)box.getSelectedItem());
+                        
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No estas conectado");
+                    } 
+                }
             }
 
             @Override
@@ -389,8 +438,9 @@ public class MiFrame extends JFrame{
         return datos;
     }
     
-    private void Salir(){
-        setBox(new String[0]);
+    private void Salir(int op){
+        //Muestra dos vece NO estas CONECTADO
+        setBox(new String[0], op);
         //MiniInfo vacio
         info.ActualizarMinInf("", "");
     }
@@ -415,7 +465,7 @@ public class MiFrame extends JFrame{
         List<String> coreList = new ArrayList<String>();
         for (int i = 0; i < cores.getCoreStatus().size(); i++) {
             coreList.add(cores.getCoreStatus().getName(i));
-            System.out.println(cores.getCoreStatus().getName(i));
+            //System.out.println(cores.getCoreStatus().getName(i));
         }
         
         String[] coresDisponibles = new String[coreList.size()];
@@ -426,4 +476,25 @@ public class MiFrame extends JFrame{
         return coresDisponibles;
     }
     
+    /**
+     * Vemos si es nuevo o no el core introducido
+     * @param NuevoCore
+     * @param indice
+     * @return
+     */
+    private boolean AñadirCore(String NuevoCore, Indice indice){
+        
+        boolean nuevo = true;
+        int i = 0;
+        //System.out.println("Opciones core: "+OpcionesCore.length);
+        while(i<box.getItemCount() & nuevo){
+            //System.out.println("Comparo con: "+box.getItemAt(i));
+            if(box.getItemAt(i).equals(NuevoCore)){
+                nuevo = false;
+                indice.id = i;
+            }
+            i++;
+        }
+        return nuevo;
+    }
 }

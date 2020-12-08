@@ -18,10 +18,10 @@ public class LeerCorpus {
     private String[] texto;
     
     public LeerCorpus(){
-        /*id = new int[6004];
+        id = new int[6004];
         titulo = new String[6004];
         texto = new String[6004];//*/
-        id = new int[501];
+        /*id = new int[501];
         titulo = new String[501];
         texto = new String[501]; //*/
     }

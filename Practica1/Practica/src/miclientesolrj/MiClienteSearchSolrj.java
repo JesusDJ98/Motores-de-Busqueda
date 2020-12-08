@@ -167,7 +167,7 @@ public class MiClienteSearchSolrj {
         } catch (SolrServerException | IOException | InterruptedException ex) {
         }
         String s = ""+documentos;
-        PanelInfo.ActualizarMinInf("micoleccion", s);
+        PanelInfo.ActualizarMinInf(core, s);
     }
 
 }

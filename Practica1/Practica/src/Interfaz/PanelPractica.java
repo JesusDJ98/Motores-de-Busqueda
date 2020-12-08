@@ -179,7 +179,7 @@ public class PanelPractica extends JPanel{
         //this.updateUI(); //Tampoco sirve
         try {
             //Lo añado a SOLR
-            clientaAdd.AñadirCorpus(lisa, "micoleccion");
+            clientaAdd.AñadirCorpus(lisa, info.getCore());
             System.out.println("Ya añadido");
         } catch (SolrServerException | IOException ex) {
             accion.setText("Accion: Error añadiendo el Corpus a SOLR");
@@ -220,7 +220,7 @@ public class PanelPractica extends JPanel{
         accion.setText("Accion: Realizando Querys");
         String[] salida = new String[0];
         try {
-            consultas.BusquedaQuery(query, "micoleccion");
+            consultas.BusquedaQuery(query, info.getCore());
             salida = consultas.getSalida();
             
             if(salida!=null){

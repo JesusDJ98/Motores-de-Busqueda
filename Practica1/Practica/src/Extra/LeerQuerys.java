@@ -22,7 +22,7 @@ public class LeerQuerys {
      */
     public LeerQuerys(int cantidad) {
         this.cantidad=cantidad;
-        querys = new String[35];
+        querys = new String[cantidad];
     }
     
     /**
@@ -43,12 +43,11 @@ public class LeerQuerys {
             int pos = 0;
             while(sc.hasNextLine() && pos<this.cantidad){
                 String s = sc.nextLine();
-                //System.out.println(s);
                 
                 if(i > 0){
                     char charAt = s.charAt(s.length()-1);
                     if(charAt=='#'){                //Terminamos
-                        String aux="";
+                        String aux="";  //La ultima frase
                         for(int j=0; j<s.length()-1; j++){
                             aux += s.charAt(j);
                         }
@@ -57,12 +56,14 @@ public class LeerQuerys {
                         consulta="";                //Reseteamos
                         i=-1;                       //mas el 1 seria igual a 0
                     }else{
-                        consulta += s;              //Añadimos
+                        consulta += s + " ";        //Añadimos
                     }
                 }else{//Aqui estamos leyendo el numero, que no nos intersa
                 }
                 i++;                                //Incrementamos
             }
+            //System.out.println("Consulta: "+consulta); //Aqui no me muestra nada...
+            System.out.println("Query: "+this.querys[0]);
         } catch (FileNotFoundException ex) {
             System.out.println("Error leyendo Querys: "+ex);
         }
@@ -87,6 +88,7 @@ public class LeerQuerys {
      */
     public void setCant(int cant){
         this.cantidad=cant;
+        this.querys = new String[cant];
     }
     
     /**

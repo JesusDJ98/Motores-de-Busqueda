@@ -218,7 +218,7 @@ public class PanelPractica extends JPanel{
         
         //Escribimos en la app la salida
         accion.setText("Accion: Realizando Querys");
-        String[] salida = new String[0];
+        String[] salida;
         try {
             consultas.BusquedaQuery(query, info.getCore());
             salida = consultas.getSalida();

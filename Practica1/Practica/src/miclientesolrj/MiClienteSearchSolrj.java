@@ -1,6 +1,7 @@
 package miclientesolrj;
 
 import Extra.LeerQuerys;
+import Extra.Tratamiento_Query;
 import Interfaz.MiniInfoCore;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class MiClienteSearchSolrj {
     private String[] salida;
     private String[] salidaBuscador;
     private MiniInfoCore PanelInfo;
+    private Tratamiento_Query tratar;
     
     public MiClienteSearchSolrj(MiniInfoCore infoC){
         PanelInfo = infoC;
@@ -49,14 +51,23 @@ public class MiClienteSearchSolrj {
             SolrQuery query = new SolrQuery();
             //Coger solo 5 pos
             String s="";
-            //s= consultas[j]; //Demasiado largo
-            String[] aux=consultas[j].split(" "); //Separamos
-            for(int i=0; i<5; i++){//Cogemos 5 palabras
-                s+=aux[i];
-                if(i<4){
-                    s+=" ";
-                }
-            }//*/
+            
+            //Un poco de trabajo en la consulta
+            s= consultas[j];
+            //System.out.println("Mi consulta (j = "+j+"): " + s);
+            tratar = new Tratamiento_Query(s);
+            tratar.Limpiar();
+            String words = tratar.getPalabras();
+            /*System.out.println(" ");
+            System.out.println("------------------------");
+            System.out.println(" Consulta "+j);
+            System.out.println("-------------------------");
+            System.out.println(words);*/
+            s = words;
+            
+            
+            
+            
             query.setQuery("id:"+s+" title:"+s+" text:"+s);
             query.setRows(100000);//Numero grande 10k
             query.setFields("id", "text", "title", "score");

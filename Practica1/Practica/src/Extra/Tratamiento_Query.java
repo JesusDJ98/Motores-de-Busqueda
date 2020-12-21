@@ -44,7 +44,8 @@ public class Tratamiento_Query {
                     }
                 }
             }
-        } // */
+        } 
+        System.out.println("Solo ruido: "+palabras);
         
         //Pasamos todas las palabras a la variable global
         /*String conjunto = "";
@@ -69,8 +70,19 @@ public class Tratamiento_Query {
         return r;
     }
     
-    private void StopWords(){
-        
+    /**
+     * Elimina las palabras vacias
+     * 
+     * Voy a coger una lista ya hecha y le añadire alguna que otra palabra
+     */
+    public void StopWords(){
+        String stopWords[]={"INTERESTED","IDENTIFICATION","EVALUATION", "INSTANCE"};
+        for(int i=0;i<stopWords.length;i++){
+            if(palabras.contains(stopWords[i])){
+                palabras=palabras.replaceAll(stopWords[i]+"\\s+", ""); //note this will remove spaces at the end
+            }
+        }
+        System.out.println("Stop_words: "+palabras);
     }
     
     public String getPalabras(){

@@ -1,17 +1,17 @@
-2020-12-21 12:29:32.692 INFO  (main) [   ] o.e.j.u.log Logging initialized @4156ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-12-21 12:29:33.044 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2020-12-22 16:44:49.730 INFO  (main) [   ] o.e.j.u.log Logging initialized @3913ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-12-22 16:44:49.877 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2020-12-21 12:29:33.783 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
-2020-12-21 12:29:33.877 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
-2020-12-21 12:29:36.590 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2020-12-21 12:29:36.614 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2020-12-21 12:29:36.614 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2020-12-21 12:29:36.649 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
-2020-12-21 12:29:36.757 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2020-12-21 12:29:36.765 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2020-12-21 12:29:36.765 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2020-12-21 12:29:36.765 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
-2020-12-21 12:29:36.786 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-12-21T12:29:36.786Z
+2020-12-22 16:44:50.430 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
+2020-12-22 16:44:50.582 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2020-12-22 16:44:53.945 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2020-12-22 16:44:53.968 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2020-12-22 16:44:53.968 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2020-12-22 16:44:53.974 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2020-12-22 16:44:54.141 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2020-12-22 16:44:54.153 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2020-12-22 16:44:54.154 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2020-12-22 16:44:54.154 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2020-12-22 16:44:54.155 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-12-22T16:44:54.155Z

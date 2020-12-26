@@ -14,10 +14,10 @@ import java.util.logging.Logger;
 public class Tratamiento_Query {
     
     private String consulta;
-    private String palabras;
+    private ArrayList<String> palabras;
     public Tratamiento_Query(String s){
         consulta = s;
-        palabras = "";
+        palabras = new ArrayList<>();
     }
     
     public void Limpiar(){
@@ -27,7 +27,7 @@ public class Tratamiento_Query {
             los sutantivos y a estos, hacerle stemming (reduccion a raiz)
         */
         
-        EliminarSP();   //Eliminamos los signos de puntuacion y las palabras de menos de 3 caracteres
+        Tokenizer();   //Eliminamos los signos de puntuacion y las palabras de menos de 3 caracteres
         StopWords();    //Eliminamos palabras vacias de mas de 3 caracteres
         //Reduccion a la raiz   -->No creo que me sea util
         //Analisis morfologico  --> Lo mas util, cogeria solo los sustantivos
@@ -38,23 +38,27 @@ public class Tratamiento_Query {
      * Eliminamos los signos de puntuacion ( ',' '-' '.' )
      * Y las "palabras" de 3 o menos caracteres
      */
-    private void EliminarSP(){
+    private void Tokenizer(){
+        System.out.println(" ");
         //String[] frases = consulta.split(". "); //Esto separa en un espacio y elimina el caracter anterior
         String[] frases = consulta.split("\\. ");
         //Estudiamos cada una de las oraciones
         for (int i = 0; i < frases.length; i++) { //La ultima es punto y final
             String[] frases2 = frases[i].split("\\, ");
             for (int j = 0; j < frases2.length; j++) {
-                String[] palabra = frases2[j].split(" ");
+                String[] word = frases2[j].split(" ");
                 //Estudiamos las palabras
-                for (int k = 0; k < palabra.length; k++) {
-                    if(!Ruido(palabra[k])){ //Si tiene menos de 3 carracteres lo considero ruido
-                        palabras += palabra[k] + " ";
+                for (int k = 0; k < word.length; k++) {
+                    String[] token = word[k].split("\\-");
+                    //Nos quedamos con los tokens
+                    for (int l = 0; l < token.length; l++) {
+                        if(!Ruido(token[l])){ 
+                            palabras.add(token[l]);
+                        }
                     }
                 }
             }
         } 
-        //System.out.println("Solo ruido: "+palabras);
     }
     
     /**
@@ -64,7 +68,7 @@ public class Tratamiento_Query {
      */
     private boolean Ruido(String s){
         boolean r = false;
-        if(s.length() <= 3){
+        if(s.equals(" ") || s.length() == 0){
             r = true;
         }
         return r;
@@ -76,20 +80,15 @@ public class Tratamiento_Query {
      * Voy a coger una lista ya hecha y le añadire alguna que otra palabra
      */
     private void StopWords(){
-        String stopWords[]=LeerSW();
-        for(int i=0;i<stopWords.length;i++){
-            if(palabras.contains(stopWords[i])){
-                palabras=palabras.replaceAll(stopWords[i]+"\\s+", ""); //note this will remove spaces at the end
-            }
-        }
-        //System.out.println("Stop_words: "+palabras);
+        ArrayList<String> stopWords = LeerSW();
+        palabras.removeAll(stopWords);
     }
     
     /**
      * Leemos el fichero de stop words
      * @return
      */
-    public String[] LeerSW(){
+    public ArrayList<String> LeerSW(){
         ArrayList<String> SW = new ArrayList<>();
         String actual = DirAct();
         String archivo = actual+"\\stopwords_en.txt";
@@ -99,19 +98,12 @@ public class Tratamiento_Query {
             Scanner sc = new Scanner(file);
             while(sc.hasNextLine()){
                 String s = sc.nextLine();
-                if(s.length()>3){
-                    SW.add(s.toUpperCase());
-                }
+                SW.add(s.toUpperCase());
             }
         }catch(Exception ex){
         }
-        //System.out.println("Total de Stop_Words: "+SW.size());
-        String[] Stop_words = new String[SW.size()];
-        for(int i =0; i<SW.size(); i++){
-            Stop_words[i] = SW.get(i);
-        }
         
-        return Stop_words;
+        return SW;
     }
     
     /**
@@ -133,8 +125,17 @@ public class Tratamiento_Query {
      * Devolvemos la consulta ya limpiada
      * @return
      */
-    public String getPalabras(){
+    public ArrayList<String> getPalabras(){
         return this.palabras;
+    }
+    
+    public String PalabrasString(){
+        String s = "";
+        for(int i = 0; i< this.palabras.size(); i++){
+            s += this.palabras.get(i)+" ";
+        }
+        
+        return s;
     }
     
 }

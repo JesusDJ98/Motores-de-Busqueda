@@ -57,13 +57,14 @@ public class MiClienteSearchSolrj {
             //System.out.println("Mi consulta (j = "+j+"): " + s);
             tratar = new Tratamiento_Query(s);
             tratar.Limpiar();
-            String words = tratar.getPalabras();
+            String words = tratar.PalabrasString();
             /*System.out.println(" ");
             System.out.println("------------------------");
             System.out.println(" Consulta "+j);
             System.out.println("-------------------------");
             System.out.println(words);*/
             s = words;
+            System.out.println("MiniTrabajo: "+s);
             
             
             

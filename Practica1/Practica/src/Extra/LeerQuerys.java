@@ -62,8 +62,6 @@ public class LeerQuerys {
                 }
                 i++;                                //Incrementamos
             }
-            //System.out.println("Consulta: "+consulta); //Aqui no me muestra nada...
-            System.out.println("Query: "+this.querys[0]);
         } catch (FileNotFoundException ex) {
             System.out.println("Error leyendo Querys: "+ex);
         }

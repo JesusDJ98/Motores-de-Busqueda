@@ -1,0 +1,1 @@
+stanford: https://stanfordnlp.github.io/CoreNLP/download.html#getting-a-copy

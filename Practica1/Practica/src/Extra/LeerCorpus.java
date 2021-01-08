@@ -16,14 +16,14 @@ public class LeerCorpus {
     private int[] id;
     private String[] titulo;
     private String[] texto;
-    
+    //                          1   2   3     4    5   6     7    8    9   10  11    12   13   14 
+    private int[] cantidad = {500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 127, 223, 154}; 
+    //                        500 1000 1500  2000 2500 3000 3500 4000 4500 5000 5500 5627 5850 6004
+    private int cant = 50;
     public LeerCorpus(){
-        id = new int[6004];
-        titulo = new String[6004];
-        texto = new String[6004];//*/
-        /*id = new int[501];
-        titulo = new String[501];
-        texto = new String[501]; //*/
+        id = new int[cant];
+        titulo = new String[cant];
+        texto = new String[cant];
     }
     
     /**
@@ -77,6 +77,7 @@ public class LeerCorpus {
         int i = 0;
         while(sc.hasNextLine()) {
             String aux = sc.nextLine();
+            
             //System.out.println(aux);
             if(i==0){ //Donde se encuentra el documento
                 //String aux = sc.nextLine();
@@ -96,13 +97,14 @@ public class LeerCorpus {
                     fin_titulo = false;
                     i=-1; 
                 }else{
-                    if(aux.equals("")){ //Separacion entre tirulo y texto
-                        fin_titulo = true;
-                    }
                     if(fin_titulo){ //Lo agregamos al texto
-                        tex += aux;
-                    }else{          //Lo agregamos al titulo
-                        tit += aux;
+                        tex += aux+" ";
+                    }else {          //Lo agregamos al titulo
+                        if(!vacio(aux)){
+                            tit += aux+" ";
+                        }else{
+                            fin_titulo = true;
+                        }
                     }
                 }
             }
@@ -177,6 +179,41 @@ public class LeerCorpus {
         } catch (IOException ex) {
         }
         return dir;
+    }
+    
+    private boolean vacio(String aux){
+        boolean v = false;
+        if(aux.equals("") || aux.equals("      ") || aux.equals("     ") 
+                || aux.equals("    ") || aux.equals("   ") || aux.equals("  ")
+                || aux.equals(" ")){ //Separacion entre titulo y texto
+            v = true;
+        }
+        return v;
+    }
+    
+    /**
+     * Cambiamos el tamaño de nuestros array
+     * @param a
+     */
+    public void setCant(int a){
+        int total = 0;
+        if( a > this.cantidad.length){
+            a = this.cantidad.length;
+        }
+        for (int i = 0; i < a; i++) {
+            total += this.cantidad[i];
+        }
+        this.cant = total;
+        //System.out.println("tamaño del array: "+this.cant);
+        Actualizar();
+    }
+    /*
+     * Actualizamos el tamaño de nuestros array
+    */
+    private void Actualizar(){
+        id = new int[cant];
+        titulo = new String[cant];
+        texto = new String[cant];
     }
     
 }

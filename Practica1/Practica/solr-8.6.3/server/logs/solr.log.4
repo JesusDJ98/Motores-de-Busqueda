@@ -1,149 +1,796 @@
-2020-12-08 19:54:41.265 INFO  (main) [   ] o.e.j.u.log Logging initialized @2850ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-12-08 19:54:41.500 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2021-01-08 09:13:14.134 INFO  (main) [   ] o.e.j.u.log Logging initialized @3641ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-01-08 09:13:14.436 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2020-12-08 19:54:41.728 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
-2020-12-08 19:54:41.785 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
-2020-12-08 19:54:44.304 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2020-12-08 19:54:44.320 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2020-12-08 19:54:44.321 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2020-12-08 19:54:44.324 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
-2020-12-08 19:54:44.437 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2020-12-08 19:54:44.447 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2020-12-08 19:54:44.447 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2020-12-08 19:54:44.448 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
-2020-12-08 19:54:44.449 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-12-08T19:54:44.448Z
-2020-12-08 19:54:44.467 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-12-08 19:54:44.482 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
-2020-12-08 19:54:44.693 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
-2020-12-08 19:54:45.448 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2020-12-08 19:54:46.359 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@5217f3d0[provider=null,keyStore=null,trustStore=null]
-2020-12-08 19:54:46.359 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@5217f3d0[provider=null,keyStore=null,trustStore=null]
-2020-12-08 19:54:46.530 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@7646731d[provider=null,keyStore=null,trustStore=null]
-2020-12-08 19:54:46.530 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@7646731d[provider=null,keyStore=null,trustStore=null]
-2020-12-08 19:54:46.614 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2020-12-08 19:54:46.837 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2020-12-08 19:54:46.840 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2020-12-08 19:54:46.951 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:46.953 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:46.963 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:47.067 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 4 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-12-08 19:54:47.068 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [Eliminar, micoleccion, prueba, YaCorpus]
-2020-12-08 19:54:47.254 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-08 19:54:47.254 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-08 19:54:47.254 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-08 19:54:47.795 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-08 19:54:47.810 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-08 19:54:47.814 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-08 19:54:48.971 WARN  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-08 19:54:48.972 WARN  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-08 19:54:48.972 WARN  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-08 19:54:49.526 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-08 19:54:49.529 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-08 19:54:49.564 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-08 19:54:49.752 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.c.CoreContainer Creating SolrCore 'prueba' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba, trusted=true
-2020-12-08 19:54:49.782 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
-2020-12-08 19:54:49.801 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.c.CoreContainer Creating SolrCore 'Eliminar' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Eliminar, trusted=true
-2020-12-08 19:54:49.843 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Eliminar' (registry 'solr.core.Eliminar') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:49.843 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:49.859 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.prueba' (registry 'solr.core.prueba') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:49.878 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.c.SolrCore [[prueba] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba\data\]
-2020-12-08 19:54:49.878 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
-2020-12-08 19:54:49.879 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.c.SolrCore [[Eliminar] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Eliminar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Eliminar\data\]
-2020-12-08 19:54:50.676 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@272113c4{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
-2020-12-08 19:54:50.697 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@1329eff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-12-08 19:54:50.698 INFO  (main) [   ] o.e.j.s.Server Started @12287ms
-2020-12-08 19:54:51.321 INFO  (qtp1364767791-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=8
-2020-12-08 19:54:51.471 INFO  (qtp1364767791-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=79
-2020-12-08 19:54:51.738 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-08 19:54:51.738 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-08 19:54:51.739 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-08 19:54:51.739 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-08 19:54:51.740 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-08 19:54:51.740 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-08 19:54:51.774 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-08 19:54:51.774 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-08 19:54:51.776 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-08 19:54:51.776 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-08 19:54:51.784 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-08 19:54:51.784 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-08 19:54:52.012 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Eliminar\conf
-2020-12-08 19:54:52.086 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-08 19:54:52.110 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-08 19:54:52.141 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-08 19:54:52.151 INFO  (coreLoadExecutor-13-thread-1) [   x:Eliminar] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1685541137573478400
-2020-12-08 19:54:52.163 INFO  (searcherExecutor-17-thread-1-processing-x:Eliminar) [   x:Eliminar] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-08 19:54:52.163 INFO  (searcherExecutor-17-thread-1-processing-x:Eliminar) [   x:Eliminar] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-08 19:54:52.190 INFO  (searcherExecutor-17-thread-1-processing-x:Eliminar) [   x:Eliminar] o.a.s.c.SolrCore [Eliminar]  Registered new searcher autowarm time: 0 ms
-2020-12-08 19:54:52.196 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba\conf
-2020-12-08 19:54:52.207 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-08 19:54:52.207 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-08 19:54:52.209 INFO  (coreLoadExecutor-13-thread-3) [   x:prueba] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-08 19:54:52.210 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-08 19:54:52.232 INFO  (searcherExecutor-19-thread-1-processing-x:prueba) [   x:prueba] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-08 19:54:52.232 INFO  (searcherExecutor-19-thread-1-processing-x:prueba) [   x:prueba] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-08 19:54:52.237 INFO  (searcherExecutor-19-thread-1-processing-x:prueba) [   x:prueba] o.a.s.c.SolrCore [prueba]  Registered new searcher autowarm time: 0 ms
-2020-12-08 19:54:52.283 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-08 19:54:52.394 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
-2020-12-08 19:54:52.399 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-08 19:54:52.399 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-08 19:54:52.405 INFO  (coreLoadExecutor-13-thread-2) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-08 19:54:52.415 INFO  (searcherExecutor-18-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-08 19:54:52.415 INFO  (searcherExecutor-18-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-08 19:54:52.419 INFO  (searcherExecutor-18-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
-2020-12-08 19:54:52.529 WARN  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-08 19:54:52.529 WARN  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-08 19:54:52.529 WARN  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-08 19:54:52.529 WARN  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-08 19:54:52.529 WARN  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-08 19:54:52.624 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-08 19:54:52.696 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.c.CoreContainer Creating SolrCore 'YaCorpus' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus, trusted=true
-2020-12-08 19:54:52.697 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.YaCorpus' (registry 'solr.core.YaCorpus') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-08 19:54:52.698 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.c.SolrCore [[YaCorpus] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus\data\]
-2020-12-08 19:54:52.828 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-08 19:54:52.828 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-08 19:54:52.840 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-08 19:54:52.840 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-08 19:54:52.971 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus\conf
-2020-12-08 19:54:52.972 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-08 19:54:52.972 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-08 19:54:52.974 INFO  (coreLoadExecutor-13-thread-1) [   x:YaCorpus] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-08 19:54:52.981 INFO  (searcherExecutor-33-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-08 19:54:52.981 INFO  (searcherExecutor-33-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-08 19:54:52.983 INFO  (searcherExecutor-33-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.c.SolrCore [YaCorpus]  Registered new searcher autowarm time: 0 ms
-2020-12-08 19:54:53.567 INFO  (qtp1364767791-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=81
-2020-12-08 19:55:45.953 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@1329eff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-12-08 19:55:45.953 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
-2020-12-08 19:55:45.958 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=806813022
-2020-12-08 19:55:45.960 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.c.SolrCore [Eliminar]  CLOSING SolrCore org.apache.solr.core.SolrCore@17f6fbc
-2020-12-08 19:55:45.960 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.c.SolrCore [prueba]  CLOSING SolrCore org.apache.solr.core.SolrCore@3c49146f
-2020-12-08 19:55:45.961 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.prueba tag=SolrCore@3c49146f
-2020-12-08 19:55:45.961 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@316fb5c8
-2020-12-08 19:55:45.961 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.c.SolrCore [YaCorpus]  CLOSING SolrCore org.apache.solr.core.SolrCore@44f2ba1b
-2020-12-08 19:55:45.961 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@6c421913: rootName = null, domain = solr.core.prueba, service url = null, agent id = null] for registry solr.core.prueba/com.codahale.metrics.MetricRegistry@783ac3e2
-2020-12-08 19:55:45.988 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.Eliminar tag=SolrCore@17f6fbc
-2020-12-08 19:55:45.988 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@3c5fbb08: rootName = null, domain = solr.core.Eliminar, service url = null, agent id = null] for registry solr.core.Eliminar/com.codahale.metrics.MetricRegistry@fc71604
-2020-12-08 19:55:46.011 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-08 19:55:46.019 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.YaCorpus tag=SolrCore@44f2ba1b
-2020-12-08 19:55:46.019 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1b5835b3: rootName = null, domain = solr.core.YaCorpus, service url = null, agent id = null] for registry solr.core.YaCorpus/com.codahale.metrics.MetricRegistry@289fd440
-2020-12-08 19:55:46.025 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-08 19:55:46.053 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@316fb5c8
-2020-12-08 19:55:46.053 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@646da04f: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@3784edf7
-2020-12-08 19:55:46.057 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-08 19:55:46.073 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-08 19:55:46.158 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2020-12-08 19:55:46.159 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@143d9a93: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@169338a1
-2020-12-08 19:55:46.165 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2020-12-08 19:55:46.165 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@5ec77191: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@4e6a1c19
-2020-12-08 19:55:46.167 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2020-12-08 19:55:46.167 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4642b71d: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@5b6b43fe
-2020-12-08 19:55:46.194 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@272113c4{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2021-01-08 09:13:14.741 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
+2021-01-08 09:13:14.807 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2021-01-08 09:13:17.361 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2021-01-08 09:13:17.376 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2021-01-08 09:13:17.376 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2021-01-08 09:13:17.380 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2021-01-08 09:13:17.505 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2021-01-08 09:13:17.513 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2021-01-08 09:13:17.514 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2021-01-08 09:13:17.514 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2021-01-08 09:13:17.515 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2021-01-08T09:13:17.515Z
+2021-01-08 09:13:17.529 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2021-01-08 09:13:17.537 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
+2021-01-08 09:13:17.711 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
+2021-01-08 09:13:18.520 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2021-01-08 09:13:19.402 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
+2021-01-08 09:13:19.402 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
+2021-01-08 09:13:19.567 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2021-01-08 09:13:19.567 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2021-01-08 09:13:19.649 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2021-01-08 09:13:19.909 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2021-01-08 09:13:19.911 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2021-01-08 09:13:20.005 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:13:20.006 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:13:20.015 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:13:20.112 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 3 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2021-01-08 09:13:20.113 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [jugar, practica, uno]
+2021-01-08 09:13:20.307 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:13:20.307 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:13:20.307 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:13:20.905 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:13:20.914 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:13:20.930 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:13:22.095 WARN  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:13:22.666 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:13:22.666 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:13:22.680 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:13:22.884 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.c.CoreContainer Creating SolrCore 'jugar' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar, trusted=true
+2021-01-08 09:13:22.887 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.c.CoreContainer Creating SolrCore 'practica' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\practica, trusted=true
+2021-01-08 09:13:22.909 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.c.CoreContainer Creating SolrCore 'uno' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno, trusted=true
+2021-01-08 09:13:22.967 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.practica' (registry 'solr.core.practica') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:13:22.967 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.jugar' (registry 'solr.core.jugar') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:13:22.968 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.uno' (registry 'solr.core.uno') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:13:23.007 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.c.SolrCore [[jugar] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 09:13:23.007 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.c.SolrCore [[uno] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\data\]
+2021-01-08 09:13:23.011 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.c.SolrCore [[practica] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\practica], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\practica\data\]
+2021-01-08 09:13:23.583 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2021-01-08 09:13:23.613 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-01-08 09:13:23.613 INFO  (main) [   ] o.e.j.s.Server Started @13122ms
+2021-01-08 09:13:24.361 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=8
+2021-01-08 09:13:24.663 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 09:13:24.663 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 09:13:24.663 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 09:13:24.663 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 09:13:24.663 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 09:13:24.665 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 09:13:24.701 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:13:24.702 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:13:24.718 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:13:24.718 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:13:24.733 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:13:24.734 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:13:24.970 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\practica\conf
+2021-01-08 09:13:24.976 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 09:13:24.977 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf
+2021-01-08 09:13:24.994 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=79
+2021-01-08 09:13:25.033 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:13:25.033 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:13:25.037 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:13:25.056 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:13:25.077 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:13:25.082 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:13:25.097 INFO  (coreLoadExecutor-13-thread-1) [   x:jugar] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:13:25.097 INFO  (coreLoadExecutor-13-thread-2) [   x:practica] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:13:25.098 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:13:25.108 INFO  (coreLoadExecutor-13-thread-3) [   x:uno] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1688309286943326208
+2021-01-08 09:13:25.118 INFO  (searcherExecutor-17-thread-1-processing-x:practica) [   x:practica] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:13:25.118 INFO  (searcherExecutor-17-thread-1-processing-x:practica) [   x:practica] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:13:25.122 INFO  (searcherExecutor-19-thread-1-processing-x:uno) [   x:uno] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:13:25.122 INFO  (searcherExecutor-19-thread-1-processing-x:uno) [   x:uno] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:13:25.128 INFO  (searcherExecutor-18-thread-1-processing-x:jugar) [   x:jugar] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:13:25.129 INFO  (searcherExecutor-18-thread-1-processing-x:jugar) [   x:jugar] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:13:25.139 INFO  (searcherExecutor-17-thread-1-processing-x:practica) [   x:practica] o.a.s.c.SolrCore [practica]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:13:25.143 INFO  (searcherExecutor-18-thread-1-processing-x:jugar) [   x:jugar] o.a.s.c.SolrCore [jugar]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:13:25.144 INFO  (searcherExecutor-19-thread-1-processing-x:uno) [   x:uno] o.a.s.c.SolrCore [uno]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:13:26.596 INFO  (qtp1926343982-16) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=88
+2021-01-08 09:13:55.460 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=3
+2021-01-08 09:13:55.623 INFO  (qtp1926343982-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=153
+2021-01-08 09:13:55.703 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=241
+2021-01-08 09:14:01.299 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:01.333 INFO  (qtp1926343982-24) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=16
+2021-01-08 09:14:01.344 INFO  (qtp1926343982-16) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=22
+2021-01-08 09:14:01.358 INFO  (qtp1926343982-20) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=2
+2021-01-08 09:14:01.444 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=144
+2021-01-08 09:14:01.481 INFO  (qtp1926343982-15) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=128
+2021-01-08 09:14:04.651 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:04.679 INFO  (qtp1926343982-24) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=21
+2021-01-08 09:14:04.686 INFO  (qtp1926343982-21) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=30
+2021-01-08 09:14:04.916 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=264
+2021-01-08 09:14:04.958 INFO  (qtp1926343982-16) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:14:18.083 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:18.103 INFO  (qtp1926343982-16) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=8
+2021-01-08 09:14:18.105 INFO  (qtp1926343982-22) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:14:18.124 INFO  (qtp1926343982-16) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:14:18.248 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=162
+2021-01-08 09:14:18.266 INFO  (qtp1926343982-19) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=161
+2021-01-08 09:14:20.930 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=2
+2021-01-08 09:14:20.964 INFO  (qtp1926343982-21) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:14:20.983 INFO  (qtp1926343982-18) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=9
+2021-01-08 09:14:21.051 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=110
+2021-01-08 09:14:21.108 INFO  (qtp1926343982-21) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:14:28.603 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:14:28.614 INFO  (qtp1926343982-22) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:14:28.635 INFO  (qtp1926343982-21) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=21
+2021-01-08 09:14:28.680 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=76
+2021-01-08 09:14:28.757 INFO  (qtp1926343982-22) [   x:practica] o.a.s.c.S.Request [practica]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:14:38.489 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:38.494 INFO  (qtp1926343982-18) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:14:38.518 INFO  (qtp1926343982-22) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=6
+2021-01-08 09:14:38.523 INFO  (qtp1926343982-21) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:14:38.633 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=139
+2021-01-08 09:14:38.639 INFO  (qtp1926343982-18) [   x:jugar] o.a.s.c.S.Request [jugar]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=134
+2021-01-08 09:14:40.403 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:40.425 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=7
+2021-01-08 09:14:40.479 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=76
+2021-01-08 09:14:40.509 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:14:40.522 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=9
+2021-01-08 09:14:40.579 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=70
+2021-01-08 09:14:53.473 INFO  (qtp1926343982-16) [   x:jugar] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.jugar tag=SolrCore@23045f94
+2021-01-08 09:14:53.474 INFO  (qtp1926343982-16) [   x:jugar] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@65bb9eba: rootName = null, domain = solr.core.jugar, service url = null, agent id = null] for registry solr.core.jugar/com.codahale.metrics.MetricRegistry@60fdc961
+2021-01-08 09:14:53.539 INFO  (qtp1926343982-16) [   x:jugar] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:14:53.544 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=jugar&other=P_en&action=RENAME&wt=json&_=1610097235266} status=0 QTime=71
+2021-01-08 09:14:53.585 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:53.617 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=13
+2021-01-08 09:14:53.669 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=78
+2021-01-08 09:14:55.666 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:14:55.692 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=4
+2021-01-08 09:14:55.753 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=68
+2021-01-08 09:15:04.839 INFO  (qtp1926343982-21) [   x:practica] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.practica tag=SolrCore@18721383
+2021-01-08 09:15:04.839 INFO  (qtp1926343982-21) [   x:practica] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@639df452: rootName = null, domain = solr.core.practica, service url = null, agent id = null] for registry solr.core.practica/com.codahale.metrics.MetricRegistry@41a12d59
+2021-01-08 09:15:04.884 INFO  (qtp1926343982-21) [   x:practica] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_split' (registry 'solr.core.P_split') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:15:04.887 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=practica&other=P_split&action=RENAME&wt=json&_=1610097235266} status=0 QTime=48
+2021-01-08 09:15:04.939 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:15:04.951 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=9
+2021-01-08 09:15:04.999 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=60
+2021-01-08 09:15:06.372 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:15:06.388 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=8
+2021-01-08 09:15:06.458 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=80
+2021-01-08 09:15:15.733 INFO  (qtp1926343982-22) [   x:uno] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.uno tag=SolrCore@529c046f
+2021-01-08 09:15:15.733 INFO  (qtp1926343982-22) [   x:uno] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@7a9df756: rootName = null, domain = solr.core.uno, service url = null, agent id = null] for registry solr.core.uno/com.codahale.metrics.MetricRegistry@3a138532
+2021-01-08 09:15:15.770 INFO  (qtp1926343982-22) [   x:uno] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_tight' (registry 'solr.core.P_tight') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:15:15.772 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=uno&other=P_tight&action=RENAME&wt=json&_=1610097235266} status=0 QTime=39
+2021-01-08 09:15:15.814 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:15:15.834 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610097235266} status=0 QTime=13
+2021-01-08 09:15:15.889 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=72
+2021-01-08 09:15:20.237 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:15:20.264 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:20.280 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:15:20.344 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=67
+2021-01-08 09:15:20.397 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=154
+2021-01-08 09:15:20.436 INFO  (qtp1926343982-46) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=158
+2021-01-08 09:15:23.789 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:15:23.801 INFO  (qtp1926343982-22) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=4
+2021-01-08 09:15:23.802 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:15:23.876 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:23.882 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=93
+2021-01-08 09:15:33.833 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:15:33.842 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=3
+2021-01-08 09:15:33.860 INFO  (qtp1926343982-22) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:15:33.896 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=62
+2021-01-08 09:15:33.907 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:37.709 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf\managed-schema
+2021-01-08 09:15:37.834 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:15:37.897 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:15:38.089 WARN  (qtp1926343982-23) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:15:38.089 WARN  (qtp1926343982-23) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:15:38.090 WARN  (qtp1926343982-23) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:15:38.090 WARN  (qtp1926343982-23) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:15:38.090 WARN  (qtp1926343982-23) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:15:38.194 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:15:38.282 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.c.CoreContainer Reloading SolrCore 'P_en' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar
+2021-01-08 09:15:38.305 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:15:38.306 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.c.SolrCore [[P_en] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 09:15:38.502 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:15:38.502 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:15:38.507 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 09:15:38.507 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:15:38.508 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:15:38.508 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:15:38.523 INFO  (searcherExecutor-33-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:15:38.524 INFO  (searcherExecutor-33-thread-1-processing-x:P_en) [   x:P_en] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:15:38.528 INFO  (searcherExecutor-33-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:15:38.548 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2021-01-08 09:15:38.550 INFO  (qtp1926343982-23) [   ] o.a.s.c.S.Request [P_en]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=0 QTime=940
+2021-01-08 09:15:38.551 INFO  (qtp1926343982-23) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@23045f94
+2021-01-08 09:15:38.551 INFO  (qtp1926343982-23) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@23045f94
+2021-01-08 09:15:38.551 INFO  (qtp1926343982-23) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@128a70b1: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@60fdc961
+2021-01-08 09:15:38.557 INFO  (searcherExecutor-33-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:15:38.560 INFO  (searcherExecutor-33-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 3 ms
+2021-01-08 09:15:40.146 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:15:40.162 INFO  (qtp1926343982-23) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=4
+2021-01-08 09:15:40.179 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=16
+2021-01-08 09:15:40.244 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=98
+2021-01-08 09:15:40.280 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:44.194 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:15:44.202 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=4
+2021-01-08 09:15:44.207 INFO  (qtp1926343982-22) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=2
+2021-01-08 09:15:44.269 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=71
+2021-01-08 09:15:44.288 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:46.977 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf\managed-schema
+2021-01-08 09:15:47.084 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:15:47.144 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:15:47.345 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:15:47.345 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:15:47.345 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:15:47.346 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:15:47.346 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:15:47.444 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:15:47.516 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.CoreContainer Reloading SolrCore 'P_en' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar
+2021-01-08 09:15:47.537 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:15:47.537 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.SolrCore [[P_en] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 09:15:47.649 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:15:47.649 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:15:47.654 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 09:15:47.654 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:15:47.655 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:15:47.656 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:15:47.665 INFO  (searcherExecutor-38-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:15:47.666 INFO  (searcherExecutor-38-thread-1-processing-x:P_en) [   x:P_en] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:15:47.671 INFO  (searcherExecutor-38-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:15:47.681 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2021-01-08 09:15:47.682 INFO  (qtp1926343982-45) [   ] o.a.s.c.S.Request [P_en]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=0 QTime=773
+2021-01-08 09:15:47.682 INFO  (qtp1926343982-45) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@49aa103f
+2021-01-08 09:15:47.682 INFO  (qtp1926343982-45) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@49aa103f
+2021-01-08 09:15:47.682 INFO  (qtp1926343982-45) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@5cb8420e: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@60fdc961
+2021-01-08 09:15:47.686 INFO  (searcherExecutor-38-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:15:47.693 INFO  (searcherExecutor-38-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:15:49.319 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=4
+2021-01-08 09:15:49.337 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:15:49.352 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=3
+2021-01-08 09:15:49.397 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=73
+2021-01-08 09:15:49.406 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:52.698 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:15:52.715 INFO  (qtp1926343982-23) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:15:52.723 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:15:52.723 INFO  (qtp1926343982-16) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=5
+2021-01-08 09:15:52.843 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=143
+2021-01-08 09:15:52.861 INFO  (qtp1926343982-22) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=140
+2021-01-08 09:15:56.395 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=1
+2021-01-08 09:15:56.400 INFO  (qtp1926343982-16) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:15:56.417 INFO  (qtp1926343982-23) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:15:56.468 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:15:56.472 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=76
+2021-01-08 09:16:00.629 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:16:00.635 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:16:00.649 INFO  (qtp1926343982-45) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:16:00.694 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=60
+2021-01-08 09:16:00.705 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:16:03.038 ERROR (qtp1926343982-23) [   x:P_split] o.a.s.h.RequestHandlerBase org.apache.solr.api.ApiBag$ExceptionWithErrObject: error processing commands, errors: [{delete-field={name=text_Text}, errorMessages=[Can't delete field 'text_Text' because it's referred to by at least one copy field directive.
+]}], 
+	at org.apache.solr.handler.SchemaHandler.handleRequestBody(SchemaHandler.java:95)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:500)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+	at java.lang.Thread.run(Unknown Source)
+
+2021-01-08 09:16:03.038 INFO  (qtp1926343982-23) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=400 QTime=2
+2021-01-08 09:16:07.770 ERROR (qtp1926343982-21) [   x:P_split] o.a.s.h.RequestHandlerBase org.apache.solr.api.ApiBag$ExceptionWithErrObject: error processing commands, errors: [{delete-field={name=text_Text}, errorMessages=[Can't delete field 'text_Text' because it's referred to by at least one copy field directive.
+]}], 
+	at org.apache.solr.handler.SchemaHandler.handleRequestBody(SchemaHandler.java:95)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:500)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+	at java.lang.Thread.run(Unknown Source)
+
+2021-01-08 09:16:07.770 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=400 QTime=0
+2021-01-08 09:16:20.558 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:16:20.563 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=2
+2021-01-08 09:16:20.573 INFO  (qtp1926343982-23) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:16:20.617 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=57
+2021-01-08 09:16:20.652 INFO  (qtp1926343982-23) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:16:24.269 ERROR (qtp1926343982-19) [   x:P_split] o.a.s.h.RequestHandlerBase org.apache.solr.api.ApiBag$ExceptionWithErrObject: error processing commands, errors: [{delete-field={name=text_Titulo}, errorMessages=[Can't delete field 'text_Titulo' because it's referred to by at least one copy field directive.
+]}], 
+	at org.apache.solr.handler.SchemaHandler.handleRequestBody(SchemaHandler.java:95)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:500)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+	at java.lang.Thread.run(Unknown Source)
+
+2021-01-08 09:16:24.269 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=400 QTime=0
+2021-01-08 09:16:28.124 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:16:28.133 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=2
+2021-01-08 09:16:28.152 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:16:28.197 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=68
+2021-01-08 09:16:28.223 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:16:31.038 ERROR (qtp1926343982-45) [   x:P_split] o.a.s.h.RequestHandlerBase org.apache.solr.api.ApiBag$ExceptionWithErrObject: error processing commands, errors: [{delete-field={name=text_Text_str}, errorMessages=[Can't delete field 'text_Text_str' because it's referred to by at least one copy field directive.
+]}], 
+	at org.apache.solr.handler.SchemaHandler.handleRequestBody(SchemaHandler.java:95)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:500)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+	at java.lang.Thread.run(Unknown Source)
+
+2021-01-08 09:16:31.038 INFO  (qtp1926343982-45) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=400 QTime=1
+2021-01-08 09:16:41.869 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:16:41.874 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:16:41.898 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=2
+2021-01-08 09:16:41.898 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:16:42.037 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=163
+2021-01-08 09:16:42.042 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=149
+2021-01-08 09:16:46.466 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:16:46.476 INFO  (qtp1926343982-21) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:16:46.483 INFO  (qtp1926343982-19) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=12
+2021-01-08 09:16:46.534 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=64
+2021-01-08 09:16:46.552 INFO  (qtp1926343982-21) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:17:20.306 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf\managed-schema
+2021-01-08 09:17:20.363 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:17:20.431 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:17:20.636 WARN  (qtp1926343982-16) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:17:20.636 WARN  (qtp1926343982-16) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:17:20.636 WARN  (qtp1926343982-16) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:17:20.636 WARN  (qtp1926343982-16) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:17:20.636 WARN  (qtp1926343982-16) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:17:20.728 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:17:20.798 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.CoreContainer Reloading SolrCore 'P_tight' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno
+2021-01-08 09:17:20.821 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_tight' (registry 'solr.core.P_tight') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:17:20.821 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.SolrCore [[P_tight] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\data\]
+2021-01-08 09:17:21.043 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:17:21.043 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:17:21.049 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf
+2021-01-08 09:17:21.049 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:17:21.049 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:17:21.050 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:17:21.051 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1688309534347493376
+2021-01-08 09:17:21.054 INFO  (searcherExecutor-43-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:17:21.055 INFO  (searcherExecutor-43-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:17:21.062 INFO  (searcherExecutor-43-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.SolrCore [P_tight]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:17:21.069 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2021-01-08 09:17:21.070 INFO  (searcherExecutor-43-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:17:21.071 INFO  (qtp1926343982-16) [   ] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=0 QTime=908
+2021-01-08 09:17:21.071 INFO  (qtp1926343982-16) [   ] o.a.s.c.SolrCore [P_tight]  CLOSING SolrCore org.apache.solr.core.SolrCore@529c046f
+2021-01-08 09:17:21.071 INFO  (qtp1926343982-16) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_tight tag=SolrCore@529c046f
+2021-01-08 09:17:21.071 INFO  (qtp1926343982-16) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@34d46c00: rootName = null, domain = solr.core.P_tight, service url = null, agent id = null] for registry solr.core.P_tight/com.codahale.metrics.MetricRegistry@3a138532
+2021-01-08 09:17:21.073 INFO  (searcherExecutor-43-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.SolrCore [P_tight]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:17:22.621 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=10
+2021-01-08 09:17:22.622 INFO  (qtp1926343982-21) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=2
+2021-01-08 09:17:22.673 INFO  (qtp1926343982-19) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:17:51.265 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf\managed-schema
+2021-01-08 09:17:51.333 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:17:51.392 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:17:51.530 WARN  (qtp1926343982-45) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:17:51.530 WARN  (qtp1926343982-45) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:17:51.530 WARN  (qtp1926343982-45) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:17:51.530 WARN  (qtp1926343982-45) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:17:51.530 WARN  (qtp1926343982-45) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:17:51.621 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:17:51.697 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.c.CoreContainer Reloading SolrCore 'P_tight' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno
+2021-01-08 09:17:51.720 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_tight' (registry 'solr.core.P_tight') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:17:51.720 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.c.SolrCore [[P_tight] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\data\]
+2021-01-08 09:17:51.874 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:17:51.874 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:17:51.879 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf
+2021-01-08 09:17:51.880 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:17:51.880 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:17:51.881 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:17:51.881 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1688309566675091456
+2021-01-08 09:17:51.883 INFO  (searcherExecutor-48-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:17:51.884 INFO  (searcherExecutor-48-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:17:51.888 INFO  (searcherExecutor-48-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.SolrCore [P_tight]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:17:51.902 INFO  (qtp1926343982-45) [   x:P_tight] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2021-01-08 09:17:51.903 INFO  (searcherExecutor-48-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:17:51.908 INFO  (searcherExecutor-48-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.SolrCore [P_tight]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:17:51.911 INFO  (qtp1926343982-45) [   ] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=0 QTime=738
+2021-01-08 09:17:51.911 INFO  (qtp1926343982-45) [   ] o.a.s.c.SolrCore [P_tight]  CLOSING SolrCore org.apache.solr.core.SolrCore@4e393266
+2021-01-08 09:17:51.911 INFO  (qtp1926343982-45) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_tight tag=SolrCore@4e393266
+2021-01-08 09:17:51.912 INFO  (qtp1926343982-45) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@19e230f4: rootName = null, domain = solr.core.P_tight, service url = null, agent id = null] for registry solr.core.P_tight/com.codahale.metrics.MetricRegistry@3a138532
+2021-01-08 09:17:53.445 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:17:53.446 INFO  (qtp1926343982-19) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=8
+2021-01-08 09:17:53.499 INFO  (qtp1926343982-21) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:17:57.656 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:17:57.662 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:17:57.676 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=6
+2021-01-08 09:17:57.684 INFO  (qtp1926343982-15) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:17:57.800 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=141
+2021-01-08 09:17:57.817 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=140
+2021-01-08 09:18:00.087 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:18:00.098 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=2
+2021-01-08 09:18:00.104 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:18:00.164 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=75
+2021-01-08 09:18:00.188 INFO  (qtp1926343982-15) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:16.386 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf\managed-schema
+2021-01-08 09:18:16.428 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:18:16.493 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:18:16.667 WARN  (qtp1926343982-19) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:18:16.667 WARN  (qtp1926343982-19) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:18:16.667 WARN  (qtp1926343982-19) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:18:16.667 WARN  (qtp1926343982-19) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:18:16.667 WARN  (qtp1926343982-19) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:18:16.750 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:18:16.827 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.c.CoreContainer Reloading SolrCore 'P_en' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar
+2021-01-08 09:18:16.844 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:18:16.845 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.c.SolrCore [[P_en] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 09:18:16.960 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:18:16.960 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:18:16.964 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 09:18:16.965 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:18:16.965 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:18:16.967 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:18:16.972 INFO  (searcherExecutor-53-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:18:16.972 INFO  (searcherExecutor-53-thread-1-processing-x:P_en) [   x:P_en] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:18:16.977 INFO  (searcherExecutor-53-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:18:16.987 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2021-01-08 09:18:16.988 INFO  (qtp1926343982-19) [   ] o.a.s.c.S.Request [P_en]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=0 QTime=674
+2021-01-08 09:18:16.988 INFO  (searcherExecutor-53-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:18:16.989 INFO  (qtp1926343982-19) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@321040b4
+2021-01-08 09:18:16.989 INFO  (qtp1926343982-19) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@321040b4
+2021-01-08 09:18:16.989 INFO  (qtp1926343982-19) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@7712c892: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@60fdc961
+2021-01-08 09:18:16.991 INFO  (searcherExecutor-53-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:18:18.536 INFO  (qtp1926343982-15) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=2
+2021-01-08 09:18:18.553 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=23
+2021-01-08 09:18:18.594 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:32.727 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf\managed-schema
+2021-01-08 09:18:32.870 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 09:18:32.925 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 09:18:33.122 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 09:18:33.122 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 09:18:33.122 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 09:18:33.122 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 09:18:33.122 WARN  (qtp1926343982-45) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 09:18:33.192 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 09:18:33.262 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.CoreContainer Reloading SolrCore 'P_en' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar
+2021-01-08 09:18:33.282 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 09:18:33.282 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.c.SolrCore [[P_en] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 09:18:33.410 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 09:18:33.410 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 09:18:33.413 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 09:18:33.414 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 09:18:33.414 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 09:18:33.415 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 09:18:33.421 INFO  (searcherExecutor-58-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:18:33.421 INFO  (searcherExecutor-58-thread-1-processing-x:P_en) [   x:P_en] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 09:18:33.427 INFO  (searcherExecutor-58-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:18:33.436 INFO  (qtp1926343982-45) [   x:P_en] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2021-01-08 09:18:33.437 INFO  (searcherExecutor-58-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 09:18:33.437 INFO  (qtp1926343982-45) [   ] o.a.s.c.S.Request [P_en]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=0 QTime=777
+2021-01-08 09:18:33.437 INFO  (qtp1926343982-45) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@3d606e73
+2021-01-08 09:18:33.437 INFO  (qtp1926343982-45) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@3d606e73
+2021-01-08 09:18:33.439 INFO  (searcherExecutor-58-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 09:18:33.439 INFO  (qtp1926343982-45) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4b6fe054: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@60fdc961
+2021-01-08 09:18:34.975 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=7
+2021-01-08 09:18:34.975 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=1
+2021-01-08 09:18:35.015 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:39.681 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:18:39.692 INFO  (qtp1926343982-45) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:39.698 INFO  (qtp1926343982-45) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=1
+2021-01-08 09:18:39.709 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:18:39.833 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=151
+2021-01-08 09:18:39.852 INFO  (qtp1926343982-45) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=148
+2021-01-08 09:18:48.015 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=2
+2021-01-08 09:18:48.019 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:18:48.024 INFO  (qtp1926343982-15) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=3
+2021-01-08 09:18:48.042 INFO  (qtp1926343982-15) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:18:48.160 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=133
+2021-01-08 09:18:48.167 INFO  (qtp1926343982-45) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=135
+2021-01-08 09:18:52.714 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:18:52.733 INFO  (qtp1926343982-15) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=5
+2021-01-08 09:18:52.737 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:52.737 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:18:52.860 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=142
+2021-01-08 09:18:52.871 INFO  (qtp1926343982-45) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=139
+2021-01-08 09:18:55.420 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:18:55.433 INFO  (qtp1926343982-19) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=5
+2021-01-08 09:18:55.453 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:18:55.457 INFO  (qtp1926343982-16) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:55.557 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=136
+2021-01-08 09:18:55.566 INFO  (qtp1926343982-19) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=131
+2021-01-08 09:18:58.330 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:18:58.347 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/replication params={wt=json&command=details&_=1610097241282} status=0 QTime=3
+2021-01-08 09:18:58.351 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:18:58.356 INFO  (qtp1926343982-16) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610097235267&ts=1610097235267} status=503 QTime=0
+2021-01-08 09:18:58.467 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=133
+2021-01-08 09:18:58.483 INFO  (qtp1926343982-19) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/system params={wt=json&_=1610097241280} status=0 QTime=135
+2021-01-08 09:19:00.401 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:19:00.408 INFO  (qtp1926343982-16) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:19:00.408 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:19:00.473 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=72
+2021-01-08 09:19:00.497 INFO  (qtp1926343982-16) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:19:04.450 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:19:04.455 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=1
+2021-01-08 09:19:04.475 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:19:04.515 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=63
+2021-01-08 09:19:04.538 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:19:06.799 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097235266} status=0 QTime=0
+2021-01-08 09:19:06.809 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097241280} status=0 QTime=2
+2021-01-08 09:19:06.832 INFO  (qtp1926343982-20) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097244613} status=0 QTime=0
+2021-01-08 09:19:06.871 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097235267} status=0 QTime=71
+2021-01-08 09:19:06.894 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097241280} status=0 QTime=0
+2021-01-08 09:19:18.944 ERROR (qtp1926343982-46) [   x:P_split] o.a.s.h.RequestHandlerBase org.apache.solr.api.ApiBag$ExceptionWithErrObject: error processing commands, errors: [{delete-field={name=text_Text_str}, errorMessages=[Can't delete field 'text_Text_str' because it's referred to by at least one copy field directive.
+]}], 
+	at org.apache.solr.handler.SchemaHandler.handleRequestBody(SchemaHandler.java:95)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:500)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+	at java.lang.Thread.run(Unknown Source)
+
+2021-01-08 09:19:18.944 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/schema params={wt=json&_=1610097244613} status=400 QTime=0
+2021-01-08 09:19:23.057 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097562887} status=0 QTime=3
+2021-01-08 09:19:23.063 INFO  (qtp1926343982-15) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097563019} status=0 QTime=1
+2021-01-08 09:19:23.081 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097563020} status=0 QTime=0
+2021-01-08 09:19:23.122 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097562887} status=0 QTime=64
+2021-01-08 09:19:23.159 INFO  (qtp1926343982-15) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097563019} status=0 QTime=0
+2021-01-08 09:19:36.933 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610097562887} status=0 QTime=0
+2021-01-08 09:19:36.944 INFO  (qtp1926343982-46) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1610097563019} status=0 QTime=2
+2021-01-08 09:19:36.954 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/config params={wt=json&_=1610097563020} status=0 QTime=0
+2021-01-08 09:19:36.999 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610097562887} status=0 QTime=60
+2021-01-08 09:19:37.031 INFO  (qtp1926343982-20) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1610097563019} status=0 QTime=0
+2021-01-08 09:19:39.730 ERROR (qtp1926343982-21) [   x:P_split] o.a.s.h.RequestHandlerBase org.apache.solr.api.ApiBag$ExceptionWithErrObject: error processing commands, errors: [{delete-field={name=text_Titulo_str}, errorMessages=[Can't delete field 'text_Titulo_str' because it's referred to by at least one copy field directive.
+]}], 
+	at org.apache.solr.handler.SchemaHandler.handleRequestBody(SchemaHandler.java:95)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:500)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
+	at java.lang.Thread.run(Unknown Source)
+
+2021-01-08 09:19:39.730 INFO  (qtp1926343982-21) [   x:P_split] o.a.s.c.S.Request [P_split]  webapp=/solr path=/schema params={wt=json&_=1610097563020} status=400 QTime=1
+2021-01-08 09:21:25.269 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-01-08 09:21:25.269 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2021-01-08 09:21:25.272 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
+2021-01-08 09:21:25.275 INFO  (coreCloseExecutor-63-thread-1) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@754c2ff7
+2021-01-08 09:21:25.275 INFO  (coreCloseExecutor-63-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@754c2ff7
+2021-01-08 09:21:25.275 INFO  (coreCloseExecutor-63-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1fc720a4: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@60fdc961
+2021-01-08 09:21:25.279 INFO  (coreCloseExecutor-63-thread-2) [   ] o.a.s.c.SolrCore [P_split]  CLOSING SolrCore org.apache.solr.core.SolrCore@18721383
+2021-01-08 09:21:25.281 INFO  (coreCloseExecutor-63-thread-3) [   ] o.a.s.c.SolrCore [P_tight]  CLOSING SolrCore org.apache.solr.core.SolrCore@7dd4d5d
+2021-01-08 09:21:25.287 INFO  (coreCloseExecutor-63-thread-2) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_split tag=SolrCore@18721383
+2021-01-08 09:21:25.287 INFO  (coreCloseExecutor-63-thread-2) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@41937e65: rootName = null, domain = solr.core.P_split, service url = null, agent id = null] for registry solr.core.P_split/com.codahale.metrics.MetricRegistry@41a12d59
+2021-01-08 09:21:25.296 INFO  (coreCloseExecutor-63-thread-3) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_tight tag=SolrCore@7dd4d5d
+2021-01-08 09:21:25.296 INFO  (coreCloseExecutor-63-thread-3) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4be59516: rootName = null, domain = solr.core.P_tight, service url = null, agent id = null] for registry solr.core.P_tight/com.codahale.metrics.MetricRegistry@3a138532
+2021-01-08 09:21:25.300 INFO  (coreCloseExecutor-63-thread-2) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 09:21:25.300 INFO  (coreCloseExecutor-63-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 09:21:25.312 INFO  (coreCloseExecutor-63-thread-3) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 09:21:25.340 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2021-01-08 09:21:25.340 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@156a199
+2021-01-08 09:21:25.343 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2021-01-08 09:21:25.344 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@4ea99de7
+2021-01-08 09:21:25.345 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2021-01-08 09:21:25.345 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@1648834f
+2021-01-08 09:21:25.371 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}

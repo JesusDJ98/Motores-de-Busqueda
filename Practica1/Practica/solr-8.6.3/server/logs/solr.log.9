@@ -1,1004 +1,228 @@
-2020-12-21 12:29:32.692 INFO  (main) [   ] o.e.j.u.log Logging initialized @4156ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-12-21 12:29:33.044 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2021-01-08 20:25:38.364 INFO  (main) [   ] o.e.j.u.log Logging initialized @3198ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-01-08 20:25:38.592 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2020-12-21 12:29:33.783 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
-2020-12-21 12:29:33.877 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
-2020-12-21 12:29:36.590 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2020-12-21 12:29:36.614 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2020-12-21 12:29:36.614 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2020-12-21 12:29:36.649 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
-2020-12-21 12:29:36.757 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2020-12-21 12:29:36.765 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2020-12-21 12:29:36.765 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2020-12-21 12:29:36.765 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
-2020-12-21 12:29:36.786 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-12-21T12:29:36.786Z
-2020-12-21 12:29:36.905 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-12-21 12:29:36.939 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
-2020-12-21 12:29:37.494 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
-2020-12-21 12:29:38.120 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2020-12-21 12:29:39.209 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
-2020-12-21 12:29:39.210 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
-2020-12-21 12:29:39.353 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
-2020-12-21 12:29:39.353 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
-2020-12-21 12:29:39.431 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2020-12-21 12:29:39.661 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2020-12-21 12:29:39.664 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2020-12-21 12:29:39.816 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-21 12:29:39.817 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-21 12:29:39.827 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-21 12:29:39.911 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 3 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-12-21 12:29:39.912 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [micoleccion, prueba, YaCorpus]
-2020-12-21 12:29:40.090 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-21 12:29:40.093 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-21 12:29:40.103 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-21 12:29:40.575 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-21 12:29:40.575 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-21 12:29:40.575 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-21 12:29:41.730 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-21 12:29:41.730 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-21 12:29:41.730 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-21 12:29:41.731 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-21 12:29:41.731 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-21 12:29:41.731 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-21 12:29:41.733 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-21 12:29:41.733 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-21 12:29:41.733 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-21 12:29:41.733 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-21 12:29:41.734 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-21 12:29:41.735 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-21 12:29:41.735 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-21 12:29:41.735 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-21 12:29:41.736 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-21 12:29:42.225 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-21 12:29:42.233 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-21 12:29:42.258 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-21 12:29:42.453 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
-2020-12-21 12:29:42.462 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.c.CoreContainer Creating SolrCore 'YaCorpus' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus, trusted=true
-2020-12-21 12:29:42.469 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.c.CoreContainer Creating SolrCore 'prueba' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba, trusted=true
-2020-12-21 12:29:42.542 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.YaCorpus' (registry 'solr.core.YaCorpus') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-21 12:29:42.542 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.prueba' (registry 'solr.core.prueba') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-21 12:29:42.543 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-21 12:29:42.569 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
-2020-12-21 12:29:42.569 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.c.SolrCore [[YaCorpus] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus\data\]
-2020-12-21 12:29:42.569 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.c.SolrCore [[prueba] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba\data\]
-2020-12-21 12:29:43.073 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
-2020-12-21 12:29:43.093 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-12-21 12:29:43.093 INFO  (main) [   ] o.e.j.s.Server Started @14561ms
-2020-12-21 12:29:43.387 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=10
-2020-12-21 12:29:44.234 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-21 12:29:44.234 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-21 12:29:44.234 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-21 12:29:44.234 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-21 12:29:44.234 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-21 12:29:44.235 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-21 12:29:44.277 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-21 12:29:44.277 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-21 12:29:44.279 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-21 12:29:44.280 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-21 12:29:44.281 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-21 12:29:44.283 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-21 12:29:44.714 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba\conf
-2020-12-21 12:29:44.767 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-21 12:29:44.782 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-21 12:29:44.807 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-21 12:29:44.821 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
-2020-12-21 12:29:44.822 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-21 12:29:44.822 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-21 12:29:44.824 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-21 12:29:44.829 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus\conf
-2020-12-21 12:29:44.837 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-21 12:29:44.839 INFO  (searcherExecutor-17-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-21 12:29:44.839 INFO  (searcherExecutor-17-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-21 12:29:44.848 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-21 12:29:44.848 INFO  (searcherExecutor-19-thread-1-processing-x:prueba) [   x:prueba] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-21 12:29:44.848 INFO  (searcherExecutor-19-thread-1-processing-x:prueba) [   x:prueba] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-21 12:29:44.851 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-21 12:29:44.854 INFO  (searcherExecutor-19-thread-1-processing-x:prueba) [   x:prueba] o.a.s.c.SolrCore [prueba]  Registered new searcher autowarm time: 0 ms
-2020-12-21 12:29:44.854 INFO  (searcherExecutor-17-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
-2020-12-21 12:29:44.860 INFO  (searcherExecutor-16-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-21 12:29:44.860 INFO  (searcherExecutor-16-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-21 12:29:44.868 INFO  (searcherExecutor-16-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.c.SolrCore [YaCorpus]  Registered new searcher autowarm time: 0 ms
-2020-12-21 12:29:45.513 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=69
-2020-12-21 12:29:45.682 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=70
-2020-12-21 12:30:00.390 INFO  (qtp1926343982-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++title:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++text:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=137
-2020-12-21 12:30:01.153 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-21 12:35:13.128 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=49
-2020-12-21 12:35:15.198 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-21 12:36:09.133 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=37
-2020-12-21 12:36:11.201 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-21 12:36:18.436 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++title:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++text:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=12
-2020-12-21 12:36:19.248 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=5
-2020-12-21 12:38:06.744 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-21 12:38:08.810 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=5
-2020-12-21 12:38:16.312 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++title:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++text:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=25
-2020-12-21 12:38:17.109 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=4
-2020-12-21 12:39:55.341 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=33
-2020-12-21 12:39:57.408 INFO  (qtp1926343982-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:40:04.811 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++title:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.++text:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+NOVELCOMPUTER+ARCHITECTURES,+FOR+INSTANCE,+INCREASED+PARALLELISM,+BOTHIN+SIMD+AND+MIMD+MACHINES.++I+AM+ALSO+INTERESTED+IN+INFORMATION+ABOUTASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS.COMPUTER+ARCHITECTURES,+ASSOCIATIVE+PROCESSORS,+ASSOCIATIVE+STORESASSOCIATIVE+MEMORY.+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=14
-2020-12-21 12:40:05.578 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 12:42:45.224 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=28
-2020-12-21 12:42:47.289 INFO  (qtp1926343982-22) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:44:29.128 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=39
-2020-12-21 12:44:31.195 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:47:32.789 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=39
-2020-12-21 12:47:34.848 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:47:42.697 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=3
-2020-12-21 12:47:43.455 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:47:48.478 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=1
-2020-12-21 12:47:48.490 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=1
-2020-12-21 12:47:49.233 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:47:54.336 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=1
-2020-12-21 12:47:54.342 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=0
-2020-12-21 12:47:54.346 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=0
-2020-12-21 12:47:54.352 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=0
-2020-12-21 12:47:54.356 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:null+title:null+text:null&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=1
-2020-12-21 12:47:54.998 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 12:48:37.100 INFO  (qtp1926343982-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=40
-2020-12-21 12:48:39.175 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:49:22.463 INFO  (qtp1926343982-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=34
-2020-12-21 12:49:24.531 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:50:33.674 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=34
-2020-12-21 12:50:35.747 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 12:54:09.096 INFO  (qtp1926343982-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-21 12:54:11.156 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 12:54:18.180 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=14
-2020-12-21 12:54:18.994 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 12:56:20.960 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=36
-2020-12-21 12:56:23.020 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 12:56:33.022 ERROR (qtp1926343982-20) [   x:micoleccion] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:220)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:267)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:49)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:174)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:162)
-	... 44 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:885)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:767)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:132)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:263)
-	... 47 more
-
-2020-12-21 12:56:33.022 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:+title:+text:&fl=id,text,title,score&rows=100000&wt=javabin&version=2} status=400 QTime=52
-2020-12-21 12:58:10.309 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-21 12:58:12.366 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 12:58:18.955 ERROR (qtp1926343982-20) [   x:micoleccion] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:220)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:267)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:49)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:174)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:162)
-	... 44 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:885)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:767)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:132)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:263)
-	... 47 more
-
-2020-12-21 12:58:18.955 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:+title:+text:&fl=id,text,title,score&rows=100000&wt=javabin&version=2} status=400 QTime=1
-2020-12-21 12:59:25.827 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=36
-2020-12-21 12:59:27.885 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:00:07.401 ERROR (qtp1926343982-18) [   x:micoleccion] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:220)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:267)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:49)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:174)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:162)
-	... 44 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:885)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:767)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:132)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:263)
-	... 47 more
-
-2020-12-21 13:00:07.401 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:+title:+text:&fl=id,text,title,score&rows=100000&wt=javabin&version=2} status=400 QTime=1
-2020-12-21 13:00:33.149 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=36
-2020-12-21 13:00:35.247 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:00:42.369 ERROR (qtp1926343982-23) [   x:micoleccion] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:220)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:267)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:49)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:174)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:162)
-	... 44 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:885)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:767)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:132)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:263)
-	... 47 more
-
-2020-12-21 13:00:42.369 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:+title:+text:&fl=id,text,title,score&rows=100000&wt=javabin&version=2} status=400 QTime=2
-2020-12-21 13:02:15.528 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=31
-2020-12-21 13:02:17.591 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:02:26.186 ERROR (qtp1926343982-23) [   x:micoleccion] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:220)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'id: title: text:': Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:267)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:49)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:174)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:162)
-	... 44 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ":" ": "" at line 1, column 9.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    "^" ...
-    <QUOTED> ...
-    <TERM> ...
-    <FUZZY_SLOP> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:885)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:767)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:132)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:263)
-	... 47 more
-
-2020-12-21 13:02:26.186 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:+title:+text:&fl=id,text,title,score&rows=100000&wt=javabin&version=2} status=400 QTime=1
-2020-12-21 13:03:46.341 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=24
-2020-12-21 13:03:48.401 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:03:57.754 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
-2020-12-21 13:03:58.544 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:06:36.568 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=33
-2020-12-21 13:06:38.637 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:07:01.562 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=7
-2020-12-21 13:07:02.365 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:09:13.667 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-21 13:09:15.733 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:09:23.507 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=1
-2020-12-21 13:09:24.278 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:10:50.880 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-21 13:10:52.947 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:10:58.796 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=3
-2020-12-21 13:10:59.585 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:12:31.225 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-21 13:12:33.289 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:12:38.662 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
-2020-12-21 13:12:39.456 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-21 13:14:22.381 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-21 13:14:24.445 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:14:30.047 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=1
-2020-12-21 13:14:30.866 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:16:20.589 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=32
-2020-12-21 13:16:22.659 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:16:28.904 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+title:I+AM+INTERESTED+IN+THE+text:I+AM+INTERESTED+IN+THE&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=5
-2020-12-21 13:16:29.717 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:22:05.098 INFO  (qtp1926343982-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=29
-2020-12-21 13:22:07.167 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-21 13:22:12.633 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=12
-2020-12-21 13:22:13.399 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-21 13:23:12.387 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=4
-2020-12-21 13:23:12.408 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:WOULD+INTERESTED+RECEIVE+INFORMATION+NON-USERS+LIBRARIES+INCLUDING+STUDIES+NON-USERS+THEY+NON-USERS+WOULD+ESPECIALLY+GRATEFUL+PAPERS+GIVING+METHODOLOGICAL+APPROACHES+USED+THESE+STUDIES+RESULTS+OBTAINED+NON-USE+LIBRARY+USER+STUDIES++title:WOULD+INTERESTED+RECEIVE+INFORMATION+NON-USERS+LIBRARIES+INCLUDING+STUDIES+NON-USERS+THEY+NON-USERS+WOULD+ESPECIALLY+GRATEFUL+PAPERS+GIVING+METHODOLOGICAL+APPROACHES+USED+THESE+STUDIES+RESULTS+OBTAINED+NON-USE+LIBRARY+USER+STUDIES++text:WOULD+INTERESTED+RECEIVE+INFORMATION+NON-USERS+LIBRARIES+INCLUDING+STUDIES+NON-USERS+THEY+NON-USERS+WOULD+ESPECIALLY+GRATEFUL+PAPERS+GIVING+METHODOLOGICAL+APPROACHES+USED+THESE+STUDIES+RESULTS+OBTAINED+NON-USE+LIBRARY+USER+STUDIES+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=20 status=0 QTime=13
-2020-12-21 13:23:12.419 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+COMPUTER+DOCUMENTATION+SYSTEMS+CHEMICAL+PATENTS+WOULD+PLEASED+RECEIVE+INFORMATION+EITHER+PUBLICALLY+AVAILABLE+SYSTEMS+IN-HOUSE+SYSTEMS+CHEMISTRY+CHEMICAL+PATENTS++title:INTERESTED+COMPUTER+DOCUMENTATION+SYSTEMS+CHEMICAL+PATENTS+WOULD+PLEASED+RECEIVE+INFORMATION+EITHER+PUBLICALLY+AVAILABLE+SYSTEMS+IN-HOUSE+SYSTEMS+CHEMISTRY+CHEMICAL+PATENTS++text:INTERESTED+COMPUTER+DOCUMENTATION+SYSTEMS+CHEMICAL+PATENTS+WOULD+PLEASED+RECEIVE+INFORMATION+EITHER+PUBLICALLY+AVAILABLE+SYSTEMS+IN-HOUSE+SYSTEMS+CHEMISTRY+CHEMICAL+PATENTS+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=5
-2020-12-21 13:23:12.431 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:WOULD+PLEASED+RECEIVE+INFORMATION+JOURNALS+LIBRARIES+(ANY+TYPES+LIBRARY)+BOTH+CURRENT+BACK+ISSUES+ALSO+INTERESTED+INFORMATION+WAYS+WHICH+LIBRARIES+HAVE+COPED+WITH+CUTS+PERIODICALS+BUDGETS+PERIODICALS+JOURNALS+LIBRARIES+USER+STUDIES+CUTS+PUBLIC+LIBRARIES+ACADEMIC+LIBRARIES+UNIVERSITY+LIBRARIES+POLYTECHNIC+LIBRARIES+HIGHER+EDUCATION+LIBRARIES++title:WOULD+PLEASED+RECEIVE+INFORMATION+JOURNALS+LIBRARIES+(ANY+TYPES+LIBRARY)+BOTH+CURRENT+BACK+ISSUES+ALSO+INTERESTED+INFORMATION+WAYS+WHICH+LIBRARIES+HAVE+COPED+WITH+CUTS+PERIODICALS+BUDGETS+PERIODICALS+JOURNALS+LIBRARIES+USER+STUDIES+CUTS+PUBLIC+LIBRARIES+ACADEMIC+LIBRARIES+UNIVERSITY+LIBRARIES+POLYTECHNIC+LIBRARIES+HIGHER+EDUCATION+LIBRARIES++text:WOULD+PLEASED+RECEIVE+INFORMATION+JOURNALS+LIBRARIES+(ANY+TYPES+LIBRARY)+BOTH+CURRENT+BACK+ISSUES+ALSO+INTERESTED+INFORMATION+WAYS+WHICH+LIBRARIES+HAVE+COPED+WITH+CUTS+PERIODICALS+BUDGETS+PERIODICALS+JOURNALS+LIBRARIES+USER+STUDIES+CUTS+PUBLIC+LIBRARIES+ACADEMIC+LIBRARIES+UNIVERSITY+LIBRARIES+POLYTECHNIC+LIBRARIES+HIGHER+EDUCATION+LIBRARIES+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=20 status=0 QTime=7
-2020-12-21 13:23:12.465 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:DISSERTATION+OVERVIEW+NEWS+DATABASES+LOOKING+AVAILABILITY+CONTENT+SCOPE+USEFULNESS+WHAT+CURRENTLY+AVAILABLE+WILL+INCLUDE+EXAMINATION+USER+GROUPS+BOTH+PERCEIVED+REALITY+MORE+SPECIFICALLY+SHALL+CARRY+BRIEF+EXAMINATION+HISTORY+DEVELOPMENT+NEWS+DATABASES+STARTING+WITH+YORK+TIMES+INFORMATION+BANK+ENDING+WITH+MOST+RECENT+DEVELOPMENTS+REUTERS+NEWS+NEWSPAPERS+NEWS+DATABASES+REUTERS+NEXIS+TEXTLINE+YORK+TIMES+INFORMATION+BANK+FINTEL+DATASOLVE+WORLD+REPORTER++title:DISSERTATION+OVERVIEW+NEWS+DATABASES+LOOKING+AVAILABILITY+CONTENT+SCOPE+USEFULNESS+WHAT+CURRENTLY+AVAILABLE+WILL+INCLUDE+EXAMINATION+USER+GROUPS+BOTH+PERCEIVED+REALITY+MORE+SPECIFICALLY+SHALL+CARRY+BRIEF+EXAMINATION+HISTORY+DEVELOPMENT+NEWS+DATABASES+STARTING+WITH+YORK+TIMES+INFORMATION+BANK+ENDING+WITH+MOST+RECENT+DEVELOPMENTS+REUTERS+NEWS+NEWSPAPERS+NEWS+DATABASES+REUTERS+NEXIS+TEXTLINE+YORK+TIMES+INFORMATION+BANK+FINTEL+DATASOLVE+WORLD+REPORTER++text:DISSERTATION+OVERVIEW+NEWS+DATABASES+LOOKING+AVAILABILITY+CONTENT+SCOPE+USEFULNESS+WHAT+CURRENTLY+AVAILABLE+WILL+INCLUDE+EXAMINATION+USER+GROUPS+BOTH+PERCEIVED+REALITY+MORE+SPECIFICALLY+SHALL+CARRY+BRIEF+EXAMINATION+HISTORY+DEVELOPMENT+NEWS+DATABASES+STARTING+WITH+YORK+TIMES+INFORMATION+BANK+ENDING+WITH+MOST+RECENT+DEVELOPMENTS+REUTERS+NEWS+NEWSPAPERS+NEWS+DATABASES+REUTERS+NEXIS+TEXTLINE+YORK+TIMES+INFORMATION+BANK+FINTEL+DATASOLVE+WORLD+REPORTER+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=21
-2020-12-21 13:23:12.504 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:DISSERTATION+LIBRARY+OUTREACH+CHINESE+COMMUNITY+SHEFFIELD+WOULD+INTERESTED+LIBRARY+OUTREACH+RACIAL+ETHNIC+GROUPS+LIBRARY+OUTREACH+BOOK+DEPOSIT+COLLECTIONS+ETHNIC+MINORITIES+CHINESE+RACIAL+GROUPS+ETHNIC+GROUPS+LIBRARY+SERVICES+MULTI-CULTURAL+SOCIETY++title:DISSERTATION+LIBRARY+OUTREACH+CHINESE+COMMUNITY+SHEFFIELD+WOULD+INTERESTED+LIBRARY+OUTREACH+RACIAL+ETHNIC+GROUPS+LIBRARY+OUTREACH+BOOK+DEPOSIT+COLLECTIONS+ETHNIC+MINORITIES+CHINESE+RACIAL+GROUPS+ETHNIC+GROUPS+LIBRARY+SERVICES+MULTI-CULTURAL+SOCIETY++text:DISSERTATION+LIBRARY+OUTREACH+CHINESE+COMMUNITY+SHEFFIELD+WOULD+INTERESTED+LIBRARY+OUTREACH+RACIAL+ETHNIC+GROUPS+LIBRARY+OUTREACH+BOOK+DEPOSIT+COLLECTIONS+ETHNIC+MINORITIES+CHINESE+RACIAL+GROUPS+ETHNIC+GROUPS+LIBRARY+SERVICES+MULTI-CULTURAL+SOCIETY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=6
-2020-12-21 13:23:12.512 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:WOULD+PLEASED+RECEIVE+PAPERS+SECURITY+INFORMATION+DATABANKS+DATABASES+SECURITY+PRIVACY+CONFIDENTIALITY+PROTECTION+DATA+INFORMATION+RIGHTS+ACCESS++title:WOULD+PLEASED+RECEIVE+PAPERS+SECURITY+INFORMATION+DATABANKS+DATABASES+SECURITY+PRIVACY+CONFIDENTIALITY+PROTECTION+DATA+INFORMATION+RIGHTS+ACCESS++text:WOULD+PLEASED+RECEIVE+PAPERS+SECURITY+INFORMATION+DATABANKS+DATABASES+SECURITY+PRIVACY+CONFIDENTIALITY+PROTECTION+DATA+INFORMATION+RIGHTS+ACCESS+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=20 status=0 QTime=3
-2020-12-21 13:23:12.523 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+PROFESSIONAL+EDUCATION+LIBRARIANS+PARTICULAR+SERVICE+TRAINING+AVAILABLE+QUALIFIED+LIBRARIANS+RATHER+THAN+EDUCATION+LIBRARY+SCHOOLS+SERVICE+TRAINING+COULD+GENERAL+PARTICULAR+AREA+LIBRARIANSHIP+COMPUTERISED+RETRIEVAL+SYSTEMS+PROFESSIONAL+EDUCATION+SERVICE+TRAINING+CONTINUING+EDUCATION++title:INTERESTED+PROFESSIONAL+EDUCATION+LIBRARIANS+PARTICULAR+SERVICE+TRAINING+AVAILABLE+QUALIFIED+LIBRARIANS+RATHER+THAN+EDUCATION+LIBRARY+SCHOOLS+SERVICE+TRAINING+COULD+GENERAL+PARTICULAR+AREA+LIBRARIANSHIP+COMPUTERISED+RETRIEVAL+SYSTEMS+PROFESSIONAL+EDUCATION+SERVICE+TRAINING+CONTINUING+EDUCATION++text:INTERESTED+PROFESSIONAL+EDUCATION+LIBRARIANS+PARTICULAR+SERVICE+TRAINING+AVAILABLE+QUALIFIED+LIBRARIANS+RATHER+THAN+EDUCATION+LIBRARY+SCHOOLS+SERVICE+TRAINING+COULD+GENERAL+PARTICULAR+AREA+LIBRARIANSHIP+COMPUTERISED+RETRIEVAL+SYSTEMS+PROFESSIONAL+EDUCATION+SERVICE+TRAINING+CONTINUING+EDUCATION+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=4
-2020-12-21 13:23:12.536 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+EXTENT+WHICH+LIBRARIES+CHARGING+SERVICES+THIS+REFERS+PUBLIC+LIBRARIES+PARTICULAR+THOUGH+WOULD+INTERESTED+OTHER+LIBRARIES+ALSO+WOULD+PLEASED+RECEIVE+PAPERS+CHARGING+SERVICE+LIBRARY+OFFERS+ESPECIALLY+ONLINE+SEARCHING+INTERESTED+MANAGEMENT+CHARGING+PHILOSOPHY+BEHIND+WHETHER+SERVICES+SHOULD+FREE+CHARGING+POLICIES+FEES+SERVICES++title:INTERESTED+EXTENT+WHICH+LIBRARIES+CHARGING+SERVICES+THIS+REFERS+PUBLIC+LIBRARIES+PARTICULAR+THOUGH+WOULD+INTERESTED+OTHER+LIBRARIES+ALSO+WOULD+PLEASED+RECEIVE+PAPERS+CHARGING+SERVICE+LIBRARY+OFFERS+ESPECIALLY+ONLINE+SEARCHING+INTERESTED+MANAGEMENT+CHARGING+PHILOSOPHY+BEHIND+WHETHER+SERVICES+SHOULD+FREE+CHARGING+POLICIES+FEES+SERVICES++text:INTERESTED+EXTENT+WHICH+LIBRARIES+CHARGING+SERVICES+THIS+REFERS+PUBLIC+LIBRARIES+PARTICULAR+THOUGH+WOULD+INTERESTED+OTHER+LIBRARIES+ALSO+WOULD+PLEASED+RECEIVE+PAPERS+CHARGING+SERVICE+LIBRARY+OFFERS+ESPECIALLY+ONLINE+SEARCHING+INTERESTED+MANAGEMENT+CHARGING+PHILOSOPHY+BEHIND+WHETHER+SERVICES+SHOULD+FREE+CHARGING+POLICIES+FEES+SERVICES+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=8
-2020-12-21 13:23:12.545 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+INFORMATION+PROVISION+CURRENT+AWARENESS+BULLETINS+ESPECIALLY+SERVICES+INSTITUTION+ACADEMIC+LIBRARIES+INDUSTRY+SUBJECT+FIELD+SELECTIVE+DISSEMINATION+INFORMATION+CURRENT+AWARENESS+BULLETINS+INFORMATION+BULLETINS++title:INTERESTED+INFORMATION+PROVISION+CURRENT+AWARENESS+BULLETINS+ESPECIALLY+SERVICES+INSTITUTION+ACADEMIC+LIBRARIES+INDUSTRY+SUBJECT+FIELD+SELECTIVE+DISSEMINATION+INFORMATION+CURRENT+AWARENESS+BULLETINS+INFORMATION+BULLETINS++text:INTERESTED+INFORMATION+PROVISION+CURRENT+AWARENESS+BULLETINS+ESPECIALLY+SERVICES+INSTITUTION+ACADEMIC+LIBRARIES+INDUSTRY+SUBJECT+FIELD+SELECTIVE+DISSEMINATION+INFORMATION+CURRENT+AWARENESS+BULLETINS+INFORMATION+BULLETINS+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=3
-2020-12-21 13:23:12.554 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:DISSERTATION+CONCERNED+WITH+HISTORY+LIVERPOOL+LYCEUM+SUBSCRIPTION+LIBRARY+POSSIBLE+SEARCH+TERMS+GENERAL+INFORMATION+SUCH+LIBRARIES+WOULD+CIRCULATING+LIBRARIES+SUBSCRIPTION+LIBRARIES+PROPRIETARY+LIBRARIES+UNDER+NAME+LIBRARY+ITSELF+LIVERPOOL+LYCEUM++title:DISSERTATION+CONCERNED+WITH+HISTORY+LIVERPOOL+LYCEUM+SUBSCRIPTION+LIBRARY+POSSIBLE+SEARCH+TERMS+GENERAL+INFORMATION+SUCH+LIBRARIES+WOULD+CIRCULATING+LIBRARIES+SUBSCRIPTION+LIBRARIES+PROPRIETARY+LIBRARIES+UNDER+NAME+LIBRARY+ITSELF+LIVERPOOL+LYCEUM++text:DISSERTATION+CONCERNED+WITH+HISTORY+LIVERPOOL+LYCEUM+SUBSCRIPTION+LIBRARY+POSSIBLE+SEARCH+TERMS+GENERAL+INFORMATION+SUCH+LIBRARIES+WOULD+CIRCULATING+LIBRARIES+SUBSCRIPTION+LIBRARIES+PROPRIETARY+LIBRARIES+UNDER+NAME+LIBRARY+ITSELF+LIVERPOOL+LYCEUM+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=5
-2020-12-21 13:23:12.878 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:DISSERTATION+SUBJECT+INDEXING+ORAL+HISTORY+COLLECTION+MORE+PRECISELY+SAMPLING+FROM+CASSETTES+SHEFFIELD+CITY+LIBRARIES+HAVE+RECORDED+CITY+INTERVIEWING+ELDERLY+RESIDENTS+COMPARING+FEASIBILITY+FACETED+MANUAL+SCHEME+CARDS+AUTOMATED+INDEXING+KWIC+USING+UNIVERSITY'S+PRIME+COMPUTER+SUBJECT+INDEXING+ORAL+HISTORY+AUDIO-VISUAL+MATERIALS++title:DISSERTATION+SUBJECT+INDEXING+ORAL+HISTORY+COLLECTION+MORE+PRECISELY+SAMPLING+FROM+CASSETTES+SHEFFIELD+CITY+LIBRARIES+HAVE+RECORDED+CITY+INTERVIEWING+ELDERLY+RESIDENTS+COMPARING+FEASIBILITY+FACETED+MANUAL+SCHEME+CARDS+AUTOMATED+INDEXING+KWIC+USING+UNIVERSITY'S+PRIME+COMPUTER+SUBJECT+INDEXING+ORAL+HISTORY+AUDIO-VISUAL+MATERIALS++text:DISSERTATION+SUBJECT+INDEXING+ORAL+HISTORY+COLLECTION+MORE+PRECISELY+SAMPLING+FROM+CASSETTES+SHEFFIELD+CITY+LIBRARIES+HAVE+RECORDED+CITY+INTERVIEWING+ELDERLY+RESIDENTS+COMPARING+FEASIBILITY+FACETED+MANUAL+SCHEME+CARDS+AUTOMATED+INDEXING+KWIC+USING+UNIVERSITY'S+PRIME+COMPUTER+SUBJECT+INDEXING+ORAL+HISTORY+AUDIO-VISUAL+MATERIALS+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=10
-2020-12-21 13:23:12.909 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:DOING+STUDY+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+FROM+PROFESSIONAL+ANGLE+LOOKING+LITERATURE+WHICH+REFLECTS+DISTINCTLY+CHRISTIAN+VIEW+LIBRARIANSHIP+PARTICULARLY+PRIOR+1973+ANYTHING+HISTORICAL+DEVELOPMENT+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+WOULD+INTEREST+ALSO+COVERAGE+GROUP+PROFESSIONAL+PRESS+SINCE+1973+INCLUDING+THEIR+PRONOUNCEMENTS+VIEWS+MEMBERS+NON-MEMBERS+CHRISTIAN+ACTIVITY+ATTITUDES+PROFESSION+(ESPECIALLY+SUBJECTS+LIKE+ETHICS+CENSORSHIP+SELECTION+ETC.)+CHRISTIAN+EVANGELICAL+ETHICS+CENSORSHIP+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP++title:DOING+STUDY+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+FROM+PROFESSIONAL+ANGLE+LOOKING+LITERATURE+WHICH+REFLECTS+DISTINCTLY+CHRISTIAN+VIEW+LIBRARIANSHIP+PARTICULARLY+PRIOR+1973+ANYTHING+HISTORICAL+DEVELOPMENT+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+WOULD+INTEREST+ALSO+COVERAGE+GROUP+PROFESSIONAL+PRESS+SINCE+1973+INCLUDING+THEIR+PRONOUNCEMENTS+VIEWS+MEMBERS+NON-MEMBERS+CHRISTIAN+ACTIVITY+ATTITUDES+PROFESSION+(ESPECIALLY+SUBJECTS+LIKE+ETHICS+CENSORSHIP+SELECTION+ETC.)+CHRISTIAN+EVANGELICAL+ETHICS+CENSORSHIP+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP++text:DOING+STUDY+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+FROM+PROFESSIONAL+ANGLE+LOOKING+LITERATURE+WHICH+REFLECTS+DISTINCTLY+CHRISTIAN+VIEW+LIBRARIANSHIP+PARTICULARLY+PRIOR+1973+ANYTHING+HISTORICAL+DEVELOPMENT+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+WOULD+INTEREST+ALSO+COVERAGE+GROUP+PROFESSIONAL+PRESS+SINCE+1973+INCLUDING+THEIR+PRONOUNCEMENTS+VIEWS+MEMBERS+NON-MEMBERS+CHRISTIAN+ACTIVITY+ATTITUDES+PROFESSION+(ESPECIALLY+SUBJECTS+LIKE+ETHICS+CENSORSHIP+SELECTION+ETC.)+CHRISTIAN+EVANGELICAL+ETHICS+CENSORSHIP+LIBRARIAN'S+CHRISTIAN+FELLOWSHIP+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=20
-2020-12-21 13:23:12.921 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+COGNITIVE+MODELS+LIBRARY+WHAT+STUDIES+ARTICLES+THERE+LOOKING+PSYCHOLOGY+LIBRARY+INFORMATION+STRATEGIES+SEEKING+INFORMATION+USEFULNESS+PERCEIVED+LIBRARIES+LIBRARY+MATERIALS+USER+BEHAVIOUR+INFORMATION+SEEKING+BEHAVIOUR+USEFULNESS+PSYCHOLOGY+LIBRARY+INFORMATION+LIBRARY+USER+USER+SATISFACTION++title:INTERESTED+COGNITIVE+MODELS+LIBRARY+WHAT+STUDIES+ARTICLES+THERE+LOOKING+PSYCHOLOGY+LIBRARY+INFORMATION+STRATEGIES+SEEKING+INFORMATION+USEFULNESS+PERCEIVED+LIBRARIES+LIBRARY+MATERIALS+USER+BEHAVIOUR+INFORMATION+SEEKING+BEHAVIOUR+USEFULNESS+PSYCHOLOGY+LIBRARY+INFORMATION+LIBRARY+USER+USER+SATISFACTION++text:INTERESTED+COGNITIVE+MODELS+LIBRARY+WHAT+STUDIES+ARTICLES+THERE+LOOKING+PSYCHOLOGY+LIBRARY+INFORMATION+STRATEGIES+SEEKING+INFORMATION+USEFULNESS+PERCEIVED+LIBRARIES+LIBRARY+MATERIALS+USER+BEHAVIOUR+INFORMATION+SEEKING+BEHAVIOUR+USEFULNESS+PSYCHOLOGY+LIBRARY+INFORMATION+LIBRARY+USER+USER+SATISFACTION+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=6
-2020-12-21 13:23:12.931 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+INFORMATION+SUBSTRUCTURE+SEARCHING+CHEMICAL+FILES+STRUCTURAL+ACCESS+DATABASES+CHEMICAL+STRUCTURES+WOULD+ESPECIALLY+INTERESTED+COMPUTERISED+SYSTEMS+CHEMICAL+STRUCTURES+COMPUTERIZED+DATABASES+CHEMISTRY+CHEMICAL+SUBSTRUCTURE++title:INTERESTED+INFORMATION+SUBSTRUCTURE+SEARCHING+CHEMICAL+FILES+STRUCTURAL+ACCESS+DATABASES+CHEMICAL+STRUCTURES+WOULD+ESPECIALLY+INTERESTED+COMPUTERISED+SYSTEMS+CHEMICAL+STRUCTURES+COMPUTERIZED+DATABASES+CHEMISTRY+CHEMICAL+SUBSTRUCTURE++text:INTERESTED+INFORMATION+SUBSTRUCTURE+SEARCHING+CHEMICAL+FILES+STRUCTURAL+ACCESS+DATABASES+CHEMICAL+STRUCTURES+WOULD+ESPECIALLY+INTERESTED+COMPUTERISED+SYSTEMS+CHEMICAL+STRUCTURES+COMPUTERIZED+DATABASES+CHEMISTRY+CHEMICAL+SUBSTRUCTURE+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=5
-2020-12-21 13:23:12.952 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:DISSERTATION+CONCERNS+CONSUMER+INFORMATION+SOURCES+PROVISION+CONSUMER+INFORMATION+ADVICE+SHEFFIELD+AREA+DISSERTATION+WILL+INCLUDE+MONITORING+EXAMINING+RADIO+VARIOUS+PUBLICATIONS+SHEFFIELD+LOOKING+INFORMATION+AVAILABLE+LIBRARIES+ADVICE+CENTRES+ELSEWHERE+DOES+INCLUDE+OBLIGATORY+DISCLOSURE+INFORMATION+(LABELLING+SAFETY+ETC.)+INFORMATION+EXPECTED+INCLUDE+INFORMATION+ORDER+THAT+CONSUMER+DECIDE+WHICH+GOODS+SERVICES+INFORMATION+REGARDING+PROTECTION+POINT+SALE+REDRESS+ENFORCEMENT+RIGHTS+CONSUMER+INFORMATION+CONSUMER+PROTECTION+CONSUMER+ADVICE+CONSUMER+EDUCATION+MERCHANDISE+INFORMATION++title:DISSERTATION+CONCERNS+CONSUMER+INFORMATION+SOURCES+PROVISION+CONSUMER+INFORMATION+ADVICE+SHEFFIELD+AREA+DISSERTATION+WILL+INCLUDE+MONITORING+EXAMINING+RADIO+VARIOUS+PUBLICATIONS+SHEFFIELD+LOOKING+INFORMATION+AVAILABLE+LIBRARIES+ADVICE+CENTRES+ELSEWHERE+DOES+INCLUDE+OBLIGATORY+DISCLOSURE+INFORMATION+(LABELLING+SAFETY+ETC.)+INFORMATION+EXPECTED+INCLUDE+INFORMATION+ORDER+THAT+CONSUMER+DECIDE+WHICH+GOODS+SERVICES+INFORMATION+REGARDING+PROTECTION+POINT+SALE+REDRESS+ENFORCEMENT+RIGHTS+CONSUMER+INFORMATION+CONSUMER+PROTECTION+CONSUMER+ADVICE+CONSUMER+EDUCATION+MERCHANDISE+INFORMATION++text:DISSERTATION+CONCERNS+CONSUMER+INFORMATION+SOURCES+PROVISION+CONSUMER+INFORMATION+ADVICE+SHEFFIELD+AREA+DISSERTATION+WILL+INCLUDE+MONITORING+EXAMINING+RADIO+VARIOUS+PUBLICATIONS+SHEFFIELD+LOOKING+INFORMATION+AVAILABLE+LIBRARIES+ADVICE+CENTRES+ELSEWHERE+DOES+INCLUDE+OBLIGATORY+DISCLOSURE+INFORMATION+(LABELLING+SAFETY+ETC.)+INFORMATION+EXPECTED+INCLUDE+INFORMATION+ORDER+THAT+CONSUMER+DECIDE+WHICH+GOODS+SERVICES+INFORMATION+REGARDING+PROTECTION+POINT+SALE+REDRESS+ENFORCEMENT+RIGHTS+CONSUMER+INFORMATION+CONSUMER+PROTECTION+CONSUMER+ADVICE+CONSUMER+EDUCATION+MERCHANDISE+INFORMATION+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=7
-2020-12-21 13:23:13.276 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+ROLE+OFFICE+AUTOMATION+DECISION-SUPPORT+SYSTEMS+MANAGEMENT+INFORMATION+SYSTEMS+INCLUDING+ACCESS+IN-HOUSE+REMOTE+TEXT+BIBLIOGRAPHICAL+REFERENCE+DATABASES+DECISION+SUPPORT+SYSTEMS+MANAGEMENT+INFORMATION+SYSTEMS+OFFICE+AUTOMATION++title:INTERESTED+ROLE+OFFICE+AUTOMATION+DECISION-SUPPORT+SYSTEMS+MANAGEMENT+INFORMATION+SYSTEMS+INCLUDING+ACCESS+IN-HOUSE+REMOTE+TEXT+BIBLIOGRAPHICAL+REFERENCE+DATABASES+DECISION+SUPPORT+SYSTEMS+MANAGEMENT+INFORMATION+SYSTEMS+OFFICE+AUTOMATION++text:INTERESTED+ROLE+OFFICE+AUTOMATION+DECISION-SUPPORT+SYSTEMS+MANAGEMENT+INFORMATION+SYSTEMS+INCLUDING+ACCESS+IN-HOUSE+REMOTE+TEXT+BIBLIOGRAPHICAL+REFERENCE+DATABASES+DECISION+SUPPORT+SYSTEMS+MANAGEMENT+INFORMATION+SYSTEMS+OFFICE+AUTOMATION+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=4
-2020-12-21 13:23:13.290 INFO  (qtp1926343982-46) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:WOULD+PLEASED+RECEIVE+INFORMATION+TELECOMMUNICATIONS+NETWORKS+THIS+COULD+INCLUDE+BOTH+WIDE+AREA+NETWORKS+(MESH)+LOCAL+AREA+NETWORKS+(BUS+RING)+TELECOMMUNICATIONS+LOCAL+AREA+NETWORKS+WIDE+AREA+NETWORKS+DATA+TRANSMISSION+DISTRIBUTED+PROCESSING+DISTRIBUTED+ROUTING+PACKET-SWITCHED+NETWORKS+MESH+RING++title:WOULD+PLEASED+RECEIVE+INFORMATION+TELECOMMUNICATIONS+NETWORKS+THIS+COULD+INCLUDE+BOTH+WIDE+AREA+NETWORKS+(MESH)+LOCAL+AREA+NETWORKS+(BUS+RING)+TELECOMMUNICATIONS+LOCAL+AREA+NETWORKS+WIDE+AREA+NETWORKS+DATA+TRANSMISSION+DISTRIBUTED+PROCESSING+DISTRIBUTED+ROUTING+PACKET-SWITCHED+NETWORKS+MESH+RING++text:WOULD+PLEASED+RECEIVE+INFORMATION+TELECOMMUNICATIONS+NETWORKS+THIS+COULD+INCLUDE+BOTH+WIDE+AREA+NETWORKS+(MESH)+LOCAL+AREA+NETWORKS+(BUS+RING)+TELECOMMUNICATIONS+LOCAL+AREA+NETWORKS+WIDE+AREA+NETWORKS+DATA+TRANSMISSION+DISTRIBUTED+PROCESSING+DISTRIBUTED+ROUTING+PACKET-SWITCHED+NETWORKS+MESH+RING+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=20 status=0 QTime=7
-2020-12-21 13:23:13.299 ERROR (qtp1926343982-24) [   x:micoleccion] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'id:INTERESTED INFORMATION POLICY NATIONAL (INCLUDING THOSE NATIONAL 'CENTRES' 'FOCI') SCIENTIFIC TECHNOLOGICAL MEDICINE INDUSTRY AGRICULTURE) SOURCES INCLUDE VARIOUS PROFESSIONAL BODIES PARLIAMENTARY COMMITTEES COUNTERPARTS OTHER COUNTRIES SUCH VARIOUS PRESIDENTIAL COMMITTEES NATIONAL CENTRES COURSE THOSE INTERNATIONAL 'CONFERENCES' BODIES SUCH UNESCO MORE INTERESTED IMPLEMENTATION THAN PAPER DECLARATIONS WHICH BACKED SUFFICIENT RESOURCES PLANNING AIMS OBJECTIVES GOVERNMENT INTERNATIONAL POLICY INFORMATION POLICY NATIONAL POLICIES COOPERATION  title:INTERESTED INFORMATION POLICY NATIONAL (INCLUDING THOSE NATIONAL 'CENTRES' 'FOCI') SCIENTIFIC TECHNOLOGICAL MEDICINE INDUSTRY AGRICULTURE) SOURCES INCLUDE VARIOUS PROFESSIONAL BODIES PARLIAMENTARY COMMITTEES COUNTERPARTS OTHER COUNTRIES SUCH VARIOUS PRESIDENTIAL COMMITTEES NATIONAL CENTRES COURSE THOSE INTERNATIONAL 'CONFERENCES' BODIES SUCH UNESCO MORE INTERESTED IMPLEMENTATION THAN PAPER DECLARATIONS WHICH BACKED SUFFICIENT RESOURCES PLANNING AIMS OBJECTIVES GOVERNMENT INTERNATIONAL POLICY INFORMATION POLICY NATIONAL POLICIES COOPERATION  text:INTERESTED INFORMATION POLICY NATIONAL (INCLUDING THOSE NATIONAL 'CENTRES' 'FOCI') SCIENTIFIC TECHNOLOGICAL MEDICINE INDUSTRY AGRICULTURE) SOURCES INCLUDE VARIOUS PROFESSIONAL BODIES PARLIAMENTARY COMMITTEES COUNTERPARTS OTHER COUNTRIES SUCH VARIOUS PRESIDENTIAL COMMITTEES NATIONAL CENTRES COURSE THOSE INTERNATIONAL 'CONFERENCES' BODIES SUCH UNESCO MORE INTERESTED IMPLEMENTATION THAN PAPER DECLARATIONS WHICH BACKED SUFFICIENT RESOURCES PLANNING AIMS OBJECTIVES GOVERNMENT INTERNATIONAL POLICY INFORMATION POLICY NATIONAL POLICIES COOPERATION ': Encountered " ")" ") "" at line 1, column 140.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:220)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'id:INTERESTED INFORMATION POLICY NATIONAL (INCLUDING THOSE NATIONAL 'CENTRES' 'FOCI') SCIENTIFIC TECHNOLOGICAL MEDICINE INDUSTRY AGRICULTURE) SOURCES INCLUDE VARIOUS PROFESSIONAL BODIES PARLIAMENTARY COMMITTEES COUNTERPARTS OTHER COUNTRIES SUCH VARIOUS PRESIDENTIAL COMMITTEES NATIONAL CENTRES COURSE THOSE INTERNATIONAL 'CONFERENCES' BODIES SUCH UNESCO MORE INTERESTED IMPLEMENTATION THAN PAPER DECLARATIONS WHICH BACKED SUFFICIENT RESOURCES PLANNING AIMS OBJECTIVES GOVERNMENT INTERNATIONAL POLICY INFORMATION POLICY NATIONAL POLICIES COOPERATION  title:INTERESTED INFORMATION POLICY NATIONAL (INCLUDING THOSE NATIONAL 'CENTRES' 'FOCI') SCIENTIFIC TECHNOLOGICAL MEDICINE INDUSTRY AGRICULTURE) SOURCES INCLUDE VARIOUS PROFESSIONAL BODIES PARLIAMENTARY COMMITTEES COUNTERPARTS OTHER COUNTRIES SUCH VARIOUS PRESIDENTIAL COMMITTEES NATIONAL CENTRES COURSE THOSE INTERNATIONAL 'CONFERENCES' BODIES SUCH UNESCO MORE INTERESTED IMPLEMENTATION THAN PAPER DECLARATIONS WHICH BACKED SUFFICIENT RESOURCES PLANNING AIMS OBJECTIVES GOVERNMENT INTERNATIONAL POLICY INFORMATION POLICY NATIONAL POLICIES COOPERATION  text:INTERESTED INFORMATION POLICY NATIONAL (INCLUDING THOSE NATIONAL 'CENTRES' 'FOCI') SCIENTIFIC TECHNOLOGICAL MEDICINE INDUSTRY AGRICULTURE) SOURCES INCLUDE VARIOUS PROFESSIONAL BODIES PARLIAMENTARY COMMITTEES COUNTERPARTS OTHER COUNTRIES SUCH VARIOUS PRESIDENTIAL COMMITTEES NATIONAL CENTRES COURSE THOSE INTERNATIONAL 'CONFERENCES' BODIES SUCH UNESCO MORE INTERESTED IMPLEMENTATION THAN PAPER DECLARATIONS WHICH BACKED SUFFICIENT RESOURCES PLANNING AIMS OBJECTIVES GOVERNMENT INTERNATIONAL POLICY INFORMATION POLICY NATIONAL POLICIES COOPERATION ': Encountered " ")" ") "" at line 1, column 140.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:267)
-	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:49)
-	at org.apache.solr.search.QParser.getQuery(QParser.java:174)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:162)
-	... 44 more
-Caused by: org.apache.solr.parser.ParseException: Encountered " ")" ") "" at line 1, column 140.
-Was expecting one of:
-    <EOF> 
-    <AND> ...
-    <OR> ...
-    <NOT> ...
-    "+" ...
-    "-" ...
-    <BAREOPER> ...
-    "(" ...
-    "*" ...
-    <QUOTED> ...
-    <TERM> ...
-    <PREFIXTERM> ...
-    <WILDTERM> ...
-    <REGEXPTERM> ...
-    "[" ...
-    "{" ...
-    <LPARAMS> ...
-    "filter(" ...
-    <NUMBER> ...
-    
-	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:885)
-	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:767)
-	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:132)
-	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:263)
-	... 47 more
-
-2020-12-21 13:23:13.299 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+INFORMATION+POLICY+NATIONAL+(INCLUDING+THOSE+NATIONAL+'CENTRES'+'FOCI')+SCIENTIFIC+TECHNOLOGICAL+MEDICINE+INDUSTRY+AGRICULTURE)+SOURCES+INCLUDE+VARIOUS+PROFESSIONAL+BODIES+PARLIAMENTARY+COMMITTEES+COUNTERPARTS+OTHER+COUNTRIES+SUCH+VARIOUS+PRESIDENTIAL+COMMITTEES+NATIONAL+CENTRES+COURSE+THOSE+INTERNATIONAL+'CONFERENCES'+BODIES+SUCH+UNESCO+MORE+INTERESTED+IMPLEMENTATION+THAN+PAPER+DECLARATIONS+WHICH+BACKED+SUFFICIENT+RESOURCES+PLANNING+AIMS+OBJECTIVES+GOVERNMENT+INTERNATIONAL+POLICY+INFORMATION+POLICY+NATIONAL+POLICIES+COOPERATION++title:INTERESTED+INFORMATION+POLICY+NATIONAL+(INCLUDING+THOSE+NATIONAL+'CENTRES'+'FOCI')+SCIENTIFIC+TECHNOLOGICAL+MEDICINE+INDUSTRY+AGRICULTURE)+SOURCES+INCLUDE+VARIOUS+PROFESSIONAL+BODIES+PARLIAMENTARY+COMMITTEES+COUNTERPARTS+OTHER+COUNTRIES+SUCH+VARIOUS+PRESIDENTIAL+COMMITTEES+NATIONAL+CENTRES+COURSE+THOSE+INTERNATIONAL+'CONFERENCES'+BODIES+SUCH+UNESCO+MORE+INTERESTED+IMPLEMENTATION+THAN+PAPER+DECLARATIONS+WHICH+BACKED+SUFFICIENT+RESOURCES+PLANNING+AIMS+OBJECTIVES+GOVERNMENT+INTERNATIONAL+POLICY+INFORMATION+POLICY+NATIONAL+POLICIES+COOPERATION++text:INTERESTED+INFORMATION+POLICY+NATIONAL+(INCLUDING+THOSE+NATIONAL+'CENTRES'+'FOCI')+SCIENTIFIC+TECHNOLOGICAL+MEDICINE+INDUSTRY+AGRICULTURE)+SOURCES+INCLUDE+VARIOUS+PROFESSIONAL+BODIES+PARLIAMENTARY+COMMITTEES+COUNTERPARTS+OTHER+COUNTRIES+SUCH+VARIOUS+PRESIDENTIAL+COMMITTEES+NATIONAL+CENTRES+COURSE+THOSE+INTERNATIONAL+'CONFERENCES'+BODIES+SUCH+UNESCO+MORE+INTERESTED+IMPLEMENTATION+THAN+PAPER+DECLARATIONS+WHICH+BACKED+SUFFICIENT+RESOURCES+PLANNING+AIMS+OBJECTIVES+GOVERNMENT+INTERNATIONAL+POLICY+INFORMATION+POLICY+NATIONAL+POLICIES+COOPERATION+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} status=400 QTime=2
-2020-12-21 13:24:14.115 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INTERESTED+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=2
-2020-12-21 13:24:14.767 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:33:51.494 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=31
-2020-12-21 13:33:53.569 INFO  (qtp1926343982-18) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=4
-2020-12-21 13:33:59.257 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:IDENTIFICATION+EVALUATION+NOVEL+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+BOTH+SIMD+MIMD+MACHINES+ALSO+INFORMATION+ABOUT+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=7 status=0 QTime=7
-2020-12-21 13:34:00.061 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-21 13:36:58.432 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-12-21 13:36:58.432 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
-2020-12-21 13:36:58.526 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
-2020-12-21 13:36:58.532 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@6e8be7c
-2020-12-21 13:36:58.533 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@6e8be7c
-2020-12-21 13:36:58.536 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.c.SolrCore [prueba]  CLOSING SolrCore org.apache.solr.core.SolrCore@30019665
-2020-12-21 13:36:58.538 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.c.SolrCore [YaCorpus]  CLOSING SolrCore org.apache.solr.core.SolrCore@4833e797
-2020-12-21 13:36:58.536 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2e4941b2: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@1e63fb65
-2020-12-21 13:36:58.640 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.prueba tag=SolrCore@30019665
-2020-12-21 13:36:58.641 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@308ef1b7: rootName = null, domain = solr.core.prueba, service url = null, agent id = null] for registry solr.core.prueba/com.codahale.metrics.MetricRegistry@198f3a05
-2020-12-21 13:36:58.668 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.YaCorpus tag=SolrCore@4833e797
-2020-12-21 13:36:58.668 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@387be64: rootName = null, domain = solr.core.YaCorpus, service url = null, agent id = null] for registry solr.core.YaCorpus/com.codahale.metrics.MetricRegistry@2f50cf4a
-2020-12-21 13:36:58.671 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-21 13:36:58.673 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-21 13:36:58.689 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-21 13:36:58.766 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2020-12-21 13:36:58.766 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@54d11943
-2020-12-21 13:36:58.770 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2020-12-21 13:36:58.770 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@7979b274
-2020-12-21 13:36:58.773 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2020-12-21 13:36:58.773 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@7f1f330a
-2020-12-21 13:36:58.817 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2021-01-08 20:25:38.861 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
+2021-01-08 20:25:38.917 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2021-01-08 20:25:42.187 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2021-01-08 20:25:42.214 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2021-01-08 20:25:42.214 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2021-01-08 20:25:42.218 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2021-01-08 20:25:42.331 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2021-01-08 20:25:42.343 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2021-01-08 20:25:42.343 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2021-01-08 20:25:42.343 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2021-01-08 20:25:42.344 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2021-01-08T20:25:42.344Z
+2021-01-08 20:25:42.364 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2021-01-08 20:25:42.375 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
+2021-01-08 20:25:42.569 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
+2021-01-08 20:25:44.241 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2021-01-08 20:25:45.224 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:25:45.224 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:25:45.404 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:25:45.404 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:25:45.474 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2021-01-08 20:25:45.743 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2021-01-08 20:25:45.746 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2021-01-08 20:25:45.855 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:45.855 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:45.867 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:46.008 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 5 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2021-01-08 20:25:46.009 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [P_en, P_split, Prueba, Prueba2, P_tight]
+2021-01-08 20:25:46.263 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:25:46.269 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:25:46.272 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:25:46.844 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:25:46.865 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:25:46.901 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:25:48.118 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:25:48.120 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:25:48.120 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:25:48.120 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:25:48.764 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:25:48.767 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:25:48.826 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:25:49.038 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.c.CoreContainer Creating SolrCore 'P_split' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
+2021-01-08 20:25:49.084 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.c.CoreContainer Creating SolrCore 'P_en' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar, trusted=true
+2021-01-08 20:25:49.154 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.c.CoreContainer Creating SolrCore 'Prueba' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba, trusted=true
+2021-01-08 20:25:49.167 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_split' (registry 'solr.core.P_split') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:49.167 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Prueba' (registry 'solr.core.Prueba') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:49.168 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:49.202 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.c.SolrCore [[Prueba] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba\data\]
+2021-01-08 20:25:49.204 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.c.SolrCore [[P_en] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 20:25:49.217 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.c.SolrCore [[P_split] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
+2021-01-08 20:25:50.066 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2021-01-08 20:25:50.118 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-01-08 20:25:50.120 INFO  (main) [   ] o.e.j.s.Server Started @14961ms
+2021-01-08 20:25:50.702 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=8
+2021-01-08 20:25:50.943 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=248
+2021-01-08 20:25:51.343 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:25:51.343 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:25:51.346 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:25:51.346 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:25:51.347 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:25:51.347 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:25:51.407 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:25:51.407 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:25:51.407 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:25:51.407 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:25:51.407 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:25:51.407 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:25:51.980 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 20:25:51.980 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba\conf
+2021-01-08 20:25:51.981 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
+2021-01-08 20:25:52.026 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:25:52.027 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:25:52.030 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:25:52.056 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:25:52.056 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:25:52.057 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:25:52.105 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:25:52.111 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:25:52.120 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:25:52.157 INFO  (searcherExecutor-18-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:25:52.157 INFO  (searcherExecutor-18-thread-1-processing-x:P_en) [   x:P_en] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:25:52.158 INFO  (searcherExecutor-17-thread-1-processing-x:P_split) [   x:P_split] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:25:52.158 INFO  (searcherExecutor-17-thread-1-processing-x:P_split) [   x:P_split] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:25:52.170 INFO  (searcherExecutor-19-thread-1-processing-x:Prueba) [   x:Prueba] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:25:52.171 INFO  (searcherExecutor-19-thread-1-processing-x:Prueba) [   x:Prueba] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:25:52.192 INFO  (searcherExecutor-18-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:25:52.208 INFO  (searcherExecutor-19-thread-1-processing-x:Prueba) [   x:Prueba] o.a.s.c.SolrCore [Prueba]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:25:52.215 INFO  (searcherExecutor-17-thread-1-processing-x:P_split) [   x:P_split] o.a.s.c.SolrCore [P_split]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:25:52.217 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:25:52.217 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:25:52.355 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:25:52.371 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:25:52.635 WARN  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:25:52.646 WARN  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:25:52.646 WARN  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:25:52.646 WARN  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:25:52.646 WARN  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:25:52.683 WARN  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:25:52.684 WARN  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:25:52.684 WARN  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:25:52.684 WARN  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:25:52.684 WARN  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:25:52.806 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:25:52.821 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:25:52.920 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.c.CoreContainer Creating SolrCore 'Prueba2' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2, trusted=true
+2021-01-08 20:25:52.920 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Prueba2' (registry 'solr.core.Prueba2') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:52.921 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.c.SolrCore [[Prueba2] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2\data\]
+2021-01-08 20:25:52.925 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.c.CoreContainer Creating SolrCore 'P_tight' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno, trusted=true
+2021-01-08 20:25:52.926 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_tight' (registry 'solr.core.P_tight') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:25:52.926 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.c.SolrCore [[P_tight] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\data\]
+2021-01-08 20:25:53.152 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=181
+2021-01-08 20:25:53.187 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:25:53.187 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:25:53.207 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:25:53.207 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:25:53.253 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:25:53.253 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:25:53.263 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:25:53.263 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:25:53.723 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf
+2021-01-08 20:25:53.725 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:25:53.725 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:25:53.727 INFO  (coreLoadExecutor-13-thread-1) [   x:P_tight] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:25:53.733 INFO  (searcherExecutor-35-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:25:53.733 INFO  (searcherExecutor-35-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:25:53.744 INFO  (searcherExecutor-35-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.SolrCore [P_tight]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:25:53.747 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2\conf
+2021-01-08 20:25:53.749 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:25:53.750 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:25:53.752 INFO  (coreLoadExecutor-13-thread-2) [   x:Prueba2] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:25:53.758 INFO  (searcherExecutor-33-thread-1-processing-x:Prueba2) [   x:Prueba2] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:25:53.758 INFO  (searcherExecutor-33-thread-1-processing-x:Prueba2) [   x:Prueba2] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:25:53.762 INFO  (searcherExecutor-33-thread-1-processing-x:Prueba2) [   x:Prueba2] o.a.s.c.SolrCore [Prueba2]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:29:05.890 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=67
+2021-01-08 20:29:08.601 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=15
+2021-01-08 20:29:38.146 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=75
+2021-01-08 20:29:40.797 INFO  (qtp1926343982-21) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=21
+2021-01-08 20:30:02.260 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=0
+2021-01-08 20:30:02.287 INFO  (qtp1926343982-21) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610137802228} status=0 QTime=3
+2021-01-08 20:30:02.328 INFO  (qtp1926343982-21) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/replication params={wt=json&command=details&_=1610137802229} status=0 QTime=15
+2021-01-08 20:30:02.344 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=72
+2021-01-08 20:30:02.364 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610137490281&ts=1610137490281} status=503 QTime=2
+2021-01-08 20:30:02.439 INFO  (qtp1926343982-21) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/admin/system params={wt=json&_=1610137802229} status=0 QTime=102
+2021-01-08 20:30:07.734 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=1
+2021-01-08 20:30:07.747 INFO  (qtp1926343982-20) [   x:Prueba2] o.a.s.c.S.Request [Prueba2]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610137802228} status=0 QTime=1
+2021-01-08 20:30:07.772 INFO  (qtp1926343982-19) [   x:Prueba2] o.a.s.c.S.Request [Prueba2]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610137490281&ts=1610137490281} status=503 QTime=0
+2021-01-08 20:30:07.775 INFO  (qtp1926343982-20) [   x:Prueba2] o.a.s.c.S.Request [Prueba2]  webapp=/solr path=/replication params={wt=json&command=details&_=1610137802229} status=0 QTime=16
+2021-01-08 20:30:07.810 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=75
+2021-01-08 20:30:07.862 INFO  (qtp1926343982-18) [   x:Prueba2] o.a.s.c.S.Request [Prueba2]  webapp=/solr path=/admin/system params={wt=json&_=1610137802229} status=0 QTime=87
+2021-01-08 20:30:10.026 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=0
+2021-01-08 20:30:10.043 INFO  (qtp1926343982-16) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1610137490281&ts=1610137490281} status=503 QTime=0
+2021-01-08 20:30:10.057 INFO  (qtp1926343982-23) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1610137802228} status=0 QTime=6
+2021-01-08 20:30:10.087 INFO  (qtp1926343982-21) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/replication params={wt=json&command=details&_=1610137802229} status=0 QTime=51
+2021-01-08 20:30:10.113 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=83
+2021-01-08 20:30:10.156 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/admin/system params={wt=json&_=1610137802229} status=0 QTime=116
+2021-01-08 20:30:12.515 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=2
+2021-01-08 20:30:12.589 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=72
+2021-01-08 20:30:12.623 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=106
+2021-01-08 20:30:12.659 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=0
+2021-01-08 20:30:12.730 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=67
+2021-01-08 20:30:12.777 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=102
+2021-01-08 20:30:16.700 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=1
+2021-01-08 20:30:16.782 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=72
+2021-01-08 20:30:16.784 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=73
+2021-01-08 20:30:22.553 INFO  (qtp1926343982-24) [   x:Prueba] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.Prueba tag=null
+2021-01-08 20:30:22.556 INFO  (qtp1926343982-24) [   x:Prueba] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@69891d1a: rootName = null, domain = solr.core.Prueba, service url = null, agent id = null] for registry solr.core.Prueba/com.codahale.metrics.MetricRegistry@1bd625d6
+2021-01-08 20:30:22.596 INFO  (qtp1926343982-24) [   ] o.a.s.c.SolrCore [Prueba]  CLOSING SolrCore org.apache.solr.core.SolrCore@436413b5
+2021-01-08 20:30:22.596 INFO  (qtp1926343982-24) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.Prueba tag=SolrCore@436413b5
+2021-01-08 20:30:22.609 INFO  (qtp1926343982-24) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:30:22.636 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=Prueba&action=UNLOAD&wt=json&_=1610137490280} status=0 QTime=86
+2021-01-08 20:30:22.671 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=1
+2021-01-08 20:30:22.727 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=55
+2021-01-08 20:30:22.760 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=85
+2021-01-08 20:30:22.794 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=0
+2021-01-08 20:30:22.846 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=51
+2021-01-08 20:30:22.866 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=65
+2021-01-08 20:30:24.212 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=0
+2021-01-08 20:30:24.268 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=52
+2021-01-08 20:30:24.282 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=66
+2021-01-08 20:30:28.964 INFO  (qtp1926343982-23) [   x:Prueba2] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.Prueba2 tag=SolrCore@7e8b8a08
+2021-01-08 20:30:28.964 INFO  (qtp1926343982-23) [   x:Prueba2] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@6c38f122: rootName = null, domain = solr.core.Prueba2, service url = null, agent id = null] for registry solr.core.Prueba2/com.codahale.metrics.MetricRegistry@73c8936a
+2021-01-08 20:30:29.007 INFO  (qtp1926343982-23) [   x:Prueba2] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Prueba' (registry 'solr.core.Prueba') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:30:29.012 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=Prueba2&other=Prueba&action=RENAME&wt=json&_=1610137490280} status=0 QTime=48
+2021-01-08 20:30:29.061 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1610137490280} status=0 QTime=0
+2021-01-08 20:30:29.124 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1610137490281} status=0 QTime=60
+2021-01-08 20:30:29.150 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1610137490280} status=0 QTime=75
+2021-01-08 20:30:41.464 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-01-08 20:30:41.465 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2021-01-08 20:30:41.468 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
+2021-01-08 20:30:41.470 INFO  (coreCloseExecutor-45-thread-1) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@3aa0b626
+2021-01-08 20:30:41.471 INFO  (coreCloseExecutor-45-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@3aa0b626
+2021-01-08 20:30:41.472 INFO  (coreCloseExecutor-45-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2a9fe126: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@5df66d29
+2021-01-08 20:30:41.475 INFO  (coreCloseExecutor-45-thread-3) [   ] o.a.s.c.SolrCore [P_tight]  CLOSING SolrCore org.apache.solr.core.SolrCore@78eded2a
+2021-01-08 20:30:41.476 INFO  (coreCloseExecutor-45-thread-2) [   ] o.a.s.c.SolrCore [P_split]  CLOSING SolrCore org.apache.solr.core.SolrCore@464836f4
+2021-01-08 20:30:41.476 INFO  (coreCloseExecutor-45-thread-4) [   ] o.a.s.c.SolrCore [Prueba]  CLOSING SolrCore org.apache.solr.core.SolrCore@7e8b8a08
+2021-01-08 20:30:41.480 INFO  (coreCloseExecutor-45-thread-3) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_tight tag=SolrCore@78eded2a
+2021-01-08 20:30:41.482 INFO  (coreCloseExecutor-45-thread-3) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@34e2451b: rootName = null, domain = solr.core.P_tight, service url = null, agent id = null] for registry solr.core.P_tight/com.codahale.metrics.MetricRegistry@941cfb0
+2021-01-08 20:30:41.490 INFO  (coreCloseExecutor-45-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:30:41.494 INFO  (coreCloseExecutor-45-thread-2) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_split tag=SolrCore@464836f4
+2021-01-08 20:30:41.494 INFO  (coreCloseExecutor-45-thread-2) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@438e45f2: rootName = null, domain = solr.core.P_split, service url = null, agent id = null] for registry solr.core.P_split/com.codahale.metrics.MetricRegistry@2b0c6dfd
+2021-01-08 20:30:41.500 INFO  (coreCloseExecutor-45-thread-3) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:30:41.507 INFO  (coreCloseExecutor-45-thread-4) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.Prueba tag=SolrCore@7e8b8a08
+2021-01-08 20:30:41.508 INFO  (coreCloseExecutor-45-thread-4) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@32cd8105: rootName = null, domain = solr.core.Prueba, service url = null, agent id = null] for registry solr.core.Prueba/com.codahale.metrics.MetricRegistry@73c8936a
+2021-01-08 20:30:41.515 INFO  (coreCloseExecutor-45-thread-2) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:30:41.524 INFO  (coreCloseExecutor-45-thread-4) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:30:41.576 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2021-01-08 20:30:41.577 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@2dd7b19c
+2021-01-08 20:30:41.580 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2021-01-08 20:30:41.580 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@623b269c
+2021-01-08 20:30:41.582 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2021-01-08 20:30:41.582 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@19d6f649
+2021-01-08 20:30:41.604 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}

@@ -1,552 +1,229 @@
-2020-12-23 12:27:18.231 INFO  (main) [   ] o.e.j.u.log Logging initialized @3863ms to org.eclipse.jetty.util.log.Slf4jLog
-2020-12-23 12:27:18.572 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2021-01-08 20:37:00.565 INFO  (main) [   ] o.e.j.u.log Logging initialized @2841ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-01-08 20:37:00.746 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2020-12-23 12:27:18.875 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
-2020-12-23 12:27:18.930 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
-2020-12-23 12:27:21.996 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2020-12-23 12:27:22.026 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2020-12-23 12:27:22.027 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2020-12-23 12:27:22.036 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
-2020-12-23 12:27:22.191 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2020-12-23 12:27:22.204 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2020-12-23 12:27:22.205 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2020-12-23 12:27:22.205 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
-2020-12-23 12:27:22.205 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2020-12-23T12:27:22.205Z
-2020-12-23 12:27:22.230 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-12-23 12:27:22.245 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
-2020-12-23 12:27:22.444 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
-2020-12-23 12:27:23.529 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2020-12-23 12:27:24.691 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
-2020-12-23 12:27:24.691 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
-2020-12-23 12:27:24.889 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
-2020-12-23 12:27:24.889 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
-2020-12-23 12:27:24.959 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2020-12-23 12:27:25.209 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2020-12-23 12:27:25.212 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2020-12-23 12:27:25.349 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-23 12:27:25.350 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-23 12:27:25.361 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-23 12:27:25.471 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 3 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
-2020-12-23 12:27:25.472 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [micoleccion, prueba, YaCorpus]
-2020-12-23 12:27:25.638 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-23 12:27:25.639 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-23 12:27:25.644 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2020-12-23 12:27:26.224 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-23 12:27:26.237 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-23 12:27:26.236 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.IndexSchema Schema name=default-config
-2020-12-23 12:27:27.390 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-23 12:27:27.390 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-23 12:27:27.390 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-23 12:27:27.391 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-23 12:27:27.391 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-23 12:27:27.391 WARN  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-23 12:27:27.393 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-23 12:27:27.393 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-23 12:27:27.393 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-23 12:27:27.393 WARN  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-23 12:27:27.394 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2020-12-23 12:27:27.394 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2020-12-23 12:27:27.394 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2020-12-23 12:27:27.394 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2020-12-23 12:27:27.394 WARN  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2020-12-23 12:27:28.136 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-23 12:27:28.137 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-23 12:27:28.170 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2020-12-23 12:27:28.359 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.c.CoreContainer Creating SolrCore 'prueba' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba, trusted=true
-2020-12-23 12:27:28.370 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.c.CoreContainer Creating SolrCore 'YaCorpus' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus, trusted=true
-2020-12-23 12:27:28.373 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.CoreContainer Creating SolrCore 'micoleccion' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
-2020-12-23 12:27:28.433 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.prueba' (registry 'solr.core.prueba') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-23 12:27:28.434 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.YaCorpus' (registry 'solr.core.YaCorpus') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-23 12:27:28.448 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.micoleccion' (registry 'solr.core.micoleccion') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
-2020-12-23 12:27:28.473 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.c.SolrCore [[micoleccion] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
-2020-12-23 12:27:28.473 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.c.SolrCore [[YaCorpus] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus\data\]
-2020-12-23 12:27:28.475 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.c.SolrCore [[prueba] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba\data\]
-2020-12-23 12:27:28.826 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
-2020-12-23 12:27:28.849 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-12-23 12:27:28.854 INFO  (main) [   ] o.e.j.s.Server Started @14487ms
-2020-12-23 12:27:29.411 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=4
-2020-12-23 12:27:29.759 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=359
-2020-12-23 12:27:30.476 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-23 12:27:30.476 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-23 12:27:30.503 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-23 12:27:30.503 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-23 12:27:30.504 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2020-12-23 12:27:30.504 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2020-12-23 12:27:30.549 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-23 12:27:30.549 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-23 12:27:30.556 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-23 12:27:30.556 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-23 12:27:30.584 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2020-12-23 12:27:30.584 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2020-12-23 12:27:31.072 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\prueba\conf
-2020-12-23 12:27:31.124 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-23 12:27:31.144 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-23 12:27:31.177 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
-2020-12-23 12:27:31.178 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-23 12:27:31.179 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-23 12:27:31.183 INFO  (coreLoadExecutor-13-thread-1) [   x:micoleccion] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-23 12:27:31.183 INFO  (coreLoadExecutor-13-thread-2) [   x:prueba] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-23 12:27:31.192 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\YaCorpus\conf
-2020-12-23 12:27:31.198 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2020-12-23 12:27:31.198 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2020-12-23 12:27:31.210 INFO  (coreLoadExecutor-13-thread-3) [   x:YaCorpus] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2020-12-23 12:27:31.233 INFO  (searcherExecutor-19-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-23 12:27:31.233 INFO  (searcherExecutor-19-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-23 12:27:31.237 INFO  (searcherExecutor-16-thread-1-processing-x:prueba) [   x:prueba] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-23 12:27:31.237 INFO  (searcherExecutor-16-thread-1-processing-x:prueba) [   x:prueba] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-23 12:27:31.239 INFO  (searcherExecutor-17-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2020-12-23 12:27:31.239 INFO  (searcherExecutor-17-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2020-12-23 12:27:31.251 INFO  (searcherExecutor-19-thread-1-processing-x:micoleccion) [   x:micoleccion] o.a.s.c.SolrCore [micoleccion]  Registered new searcher autowarm time: 0 ms
-2020-12-23 12:27:31.253 INFO  (searcherExecutor-16-thread-1-processing-x:prueba) [   x:prueba] o.a.s.c.SolrCore [prueba]  Registered new searcher autowarm time: 0 ms
-2020-12-23 12:27:31.257 INFO  (searcherExecutor-17-thread-1-processing-x:YaCorpus) [   x:YaCorpus] o.a.s.c.SolrCore [YaCorpus]  Registered new searcher autowarm time: 0 ms
-2020-12-23 12:27:31.808 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=66
-2020-12-23 12:29:52.172 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=6
-2020-12-23 12:29:52.381 INFO  (qtp1926343982-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=213
-2020-12-23 12:29:52.394 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=223
-2020-12-23 12:30:02.811 INFO  (qtp1926343982-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:30:02.842 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1608726602795} status=0 QTime=9
-2020-12-23 12:30:02.887 INFO  (qtp1926343982-47) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/replication params={wt=json&command=details&_=1608726602796} status=0 QTime=35
-2020-12-23 12:30:02.890 INFO  (qtp1926343982-24) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1608726592016&ts=1608726592016} status=503 QTime=3
-2020-12-23 12:30:02.957 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=138
-2020-12-23 12:30:02.979 INFO  (qtp1926343982-18) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/system params={wt=json&_=1608726602795} status=0 QTime=114
-2020-12-23 12:30:07.577 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:30:07.661 INFO  (qtp1926343982-24) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=81
-2020-12-23 12:30:07.723 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=141
-2020-12-23 12:30:41.842 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=2
-2020-12-23 12:30:41.853 INFO  (qtp1926343982-47) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=8
-2020-12-23 12:30:41.917 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.PluginBag Going to create a new requestHandler with {type = requestHandler,name = /analysis/field,class = solr.FieldAnalysisRequestHandler,attributes = {class=solr.FieldAnalysisRequestHandler, startup=lazy, useParams=_ANALYSIS_FIELD, name=/analysis/field},args = {startup=lazy,useParams=_ANALYSIS_FIELD}} 
-2020-12-23 12:30:41.947 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=104
-2020-12-23 12:30:42.044 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563&analysis.fieldtype=text_en} status=0 QTime=128
-2020-12-23 12:31:04.337 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=3
-2020-12-23 12:31:04.348 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=9
-2020-12-23 12:31:04.381 INFO  (qtp1926343982-47) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you&analysis.showmatch=true&verbose_output=0&wt=json&_=1608726607563&analysis.fieldtype=text_en} status=0 QTime=9
-2020-12-23 12:31:04.429 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=90
-2020-12-23 12:31:06.670 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:31:06.731 INFO  (qtp1926343982-47) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563&analysis.fieldtype=text_en} status=0 QTime=3
-2020-12-23 12:31:06.745 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=68
-2020-12-23 12:31:06.786 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=111
-2020-12-23 12:31:49.107 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:31:49.131 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you&analysis.fieldname=_text_&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563} status=0 QTime=2
-2020-12-23 12:31:49.144 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=22
-2020-12-23 12:31:49.188 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=76
-2020-12-23 12:31:58.807 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:31:58.816 INFO  (qtp1926343982-47) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=5
-2020-12-23 12:31:58.826 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you,+my+brother&analysis.fieldname=_text_&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563} status=0 QTime=3
-2020-12-23 12:31:58.903 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=91
-2020-12-23 12:32:07.096 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:32:07.111 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you,+my+brother&analysis.fieldname=text&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563} status=0 QTime=2
-2020-12-23 12:32:07.119 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:32:07.167 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=67
-2020-12-23 12:32:19.438 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:32:19.446 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:32:19.455 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you,+my+brother&analysis.fieldname=title&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563} status=0 QTime=9
-2020-12-23 12:32:19.517 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=74
-2020-12-23 12:32:28.751 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:32:28.761 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:32:28.776 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/analysis/field params={analysis.fieldvalue=Hello+brother,+i+want+see+you,+my+brother&analysis.showmatch=true&verbose_output=1&wt=json&_=1608726607563&analysis.fieldtype=text_en} status=0 QTime=3
-2020-12-23 12:32:28.821 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=66
-2020-12-23 12:33:11.789 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:33:11.798 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=5
-2020-12-23 12:33:11.818 INFO  (qtp1926343982-47) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=19
-2020-12-23 12:33:11.915 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=123
-2020-12-23 12:33:12.114 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=104
-2020-12-23 12:33:16.863 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:33:16.870 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=4
-2020-12-23 12:33:16.878 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:33:16.930 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=60
-2020-12-23 12:33:16.954 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:33:33.398 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=2
-2020-12-23 12:33:33.403 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=1
-2020-12-23 12:33:33.405 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=2
-2020-12-23 12:33:33.470 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=73
-2020-12-23 12:33:33.485 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:34:06.897 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:34:06.907 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=1
-2020-12-23 12:34:06.913 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:34:06.992 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:34:06.997 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=94
-2020-12-23 12:34:19.895 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:34:19.901 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:34:19.905 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:34:19.972 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=70
-2020-12-23 12:34:19.997 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:34:22.026 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:34:22.036 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:34:22.036 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:34:22.105 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:34:22.109 INFO  (qtp1926343982-46) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=65
-2020-12-23 12:34:31.261 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:34:31.267 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=1
-2020-12-23 12:34:31.276 INFO  (qtp1926343982-46) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=1
-2020-12-23 12:34:31.322 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=60
-2020-12-23 12:34:31.336 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:34:58.631 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:34:58.637 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:34:58.651 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=1
-2020-12-23 12:34:58.698 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=62
-2020-12-23 12:34:58.725 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:35:15.265 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:35:15.271 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=1
-2020-12-23 12:35:15.282 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=3
-2020-12-23 12:35:15.335 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=65
-2020-12-23 12:35:15.357 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:35:38.408 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:35:38.416 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:35:38.417 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:35:38.473 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=60
-2020-12-23 12:35:38.488 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:35:41.182 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:35:41.199 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:35:41.215 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=1
-2020-12-23 12:35:41.260 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=73
-2020-12-23 12:35:41.296 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:36:07.748 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:36:07.819 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=69
-2020-12-23 12:36:20.330 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&_=1608726967701} hits=6000 status=0 QTime=1
-2020-12-23 12:36:37.116 ERROR (qtp1926343982-21) [   x:YaCorpus] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Can't determine a Sort Order (asc or desc) in sort spec 'id', pos=2
-	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:173)
-	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:60)
-	at org.apache.solr.search.QParser.getSortSpec(QParser.java:281)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:189)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-
-2020-12-23 12:36:37.119 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&sort=id&_=1608726967701} status=400 QTime=158
-2020-12-23 12:36:45.566 ERROR (qtp1926343982-16) [   x:YaCorpus] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Can't determine a Sort Order (asc or desc) in sort spec '"id"', pos=4
-	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:173)
-	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:60)
-	at org.apache.solr.search.QParser.getSortSpec(QParser.java:281)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:189)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-
-2020-12-23 12:36:45.566 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&sort="id"&_=1608726967701} status=400 QTime=2
-2020-12-23 12:37:02.248 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&_=1608726967701} hits=6000 status=0 QTime=0
-2020-12-23 12:37:15.392 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:37:15.463 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=68
-2020-12-23 12:37:15.538 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/segments params={wt=json&_=1608727035383} status=0 QTime=134
-2020-12-23 12:37:18.085 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:37:18.115 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/replication params={wt=json&command=details&_=1608726602796} status=0 QTime=27
-2020-12-23 12:37:18.195 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=106
-2020-12-23 12:37:19.606 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:37:19.618 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:37:19.620 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:37:19.684 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=71
-2020-12-23 12:37:19.710 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:37:47.419 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:37:47.445 INFO  (qtp1926343982-24) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1608726602795} status=0 QTime=0
-2020-12-23 12:37:47.449 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/replication params={wt=json&command=details&_=1608726602796} status=0 QTime=22
-2020-12-23 12:37:47.464 INFO  (qtp1926343982-15) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1608726592016&ts=1608726592016} status=503 QTime=0
-2020-12-23 12:37:47.565 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=143
-2020-12-23 12:37:47.590 INFO  (qtp1926343982-21) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/admin/system params={wt=json&_=1608726602795} status=0 QTime=128
-2020-12-23 12:37:54.298 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:37:54.361 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=61
-2020-12-23 12:37:59.528 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&_=1608726967701} hits=6000 status=0 QTime=0
-2020-12-23 12:38:20.007 ERROR (qtp1926343982-20) [   x:YaCorpus] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Can't determine a Sort Order (asc or desc) in sort spec ''id'', pos=4
-	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:173)
-	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:60)
-	at org.apache.solr.search.QParser.getSortSpec(QParser.java:281)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:189)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-
-2020-12-23 12:38:20.007 INFO  (qtp1926343982-20) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&sort='id'&_=1608726967701} status=400 QTime=1
-2020-12-23 12:38:28.190 ERROR (qtp1926343982-16) [   x:YaCorpus] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: Can't determine a Sort Order (asc or desc) in sort spec 'id', pos=2
-	at org.apache.solr.search.SortSpecParsing.parseSortSpecImpl(SortSpecParsing.java:173)
-	at org.apache.solr.search.SortSpecParsing.parseSortSpec(SortSpecParsing.java:60)
-	at org.apache.solr.search.QParser.getSortSpec(QParser.java:281)
-	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:189)
-	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:305)
-	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:214)
-	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2606)
-	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:815)
-	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:588)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:415)
-	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1596)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:545)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:590)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1610)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1300)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:485)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1580)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1215)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
-	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:221)
-	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-	at org.eclipse.jetty.server.Server.handle(Server.java:500)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:547)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
-	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:117)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)
-	at java.lang.Thread.run(Unknown Source)
-
-2020-12-23 12:38:28.190 INFO  (qtp1926343982-16) [   x:YaCorpus] o.a.s.c.S.Request [YaCorpus]  webapp=/solr path=/select params={q=*:*&sort=id&_=1608726967701} status=400 QTime=0
-2020-12-23 12:43:13.841 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:43:13.951 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=110
-2020-12-23 12:43:13.955 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=112
-2020-12-23 12:43:16.978 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:17.034 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/threads params={wt=json&_=1608727396972} status=0 QTime=44
-2020-12-23 12:43:17.053 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=66
-2020-12-23 12:43:20.982 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:20.985 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/properties params={wt=json&_=1608727400974} status=0 QTime=0
-2020-12-23 12:43:21.046 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=61
-2020-12-23 12:43:34.359 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:34.407 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1608726592015} status=0 QTime=44
-2020-12-23 12:43:34.431 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=65
-2020-12-23 12:43:34.457 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:34.501 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1608726592015} status=0 QTime=40
-2020-12-23 12:43:34.530 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=69
-2020-12-23 12:43:39.431 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:39.436 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1608727419420&since=0} status=0 QTime=3
-2020-12-23 12:43:39.496 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=65
-2020-12-23 12:43:41.462 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=2
-2020-12-23 12:43:41.564 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=101
-2020-12-23 12:43:41.567 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=103
-2020-12-23 12:43:44.537 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:43:44.542 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1608726602795} status=0 QTime=0
-2020-12-23 12:43:44.577 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/replication params={wt=json&command=details&_=1608726602796} status=0 QTime=26
-2020-12-23 12:43:44.582 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1608726592016&ts=1608726592016} status=503 QTime=0
-2020-12-23 12:43:44.680 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=139
-2020-12-23 12:43:44.702 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/system params={wt=json&_=1608726602795} status=0 QTime=146
-2020-12-23 12:43:48.435 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:48.529 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=87
-2020-12-23 12:43:48.557 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/segments params={wt=json&_=1608727035383} status=0 QTime=118
-2020-12-23 12:43:50.247 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:43:50.256 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=5
-2020-12-23 12:43:50.274 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=1
-2020-12-23 12:43:50.316 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=66
-2020-12-23 12:43:50.404 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=68
-2020-12-23 12:44:09.364 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=0
-2020-12-23 12:44:09.373 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=1
-2020-12-23 12:44:09.374 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:44:09.426 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=57
-2020-12-23 12:44:09.449 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:44:22.587 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:44:22.599 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:44:22.600 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:44:22.647 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=59
-2020-12-23 12:44:22.672 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=2
-2020-12-23 12:44:34.390 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608726592015} status=0 QTime=1
-2020-12-23 12:44:34.395 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-23 12:44:34.404 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/config params={wt=json&_=1608726791749} status=0 QTime=0
-2020-12-23 12:44:34.449 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608726592016} status=0 QTime=57
-2020-12-23 12:44:34.465 INFO  (qtp1926343982-23) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608726602795} status=0 QTime=3
-2020-12-26 09:46:25.302 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1608975984959} status=0 QTime=16
-2020-12-26 09:46:25.309 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1608975985234} status=0 QTime=16
-2020-12-26 09:46:25.351 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/config params={wt=json&_=1608975985234} status=0 QTime=15
-2020-12-26 09:46:25.539 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1608975985234} status=0 QTime=1
-2020-12-26 09:46:25.561 INFO  (qtp1926343982-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1608975984960} status=0 QTime=258
-2020-12-26 09:59:25.300 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES+INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES+INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES+INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=104
-2020-12-26 09:59:26.100 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-26 10:01:57.033 INFO  (qtp1926343982-48) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-26 10:01:59.097 INFO  (qtp1926343982-19) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:02:30.005 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+COMPUTER+ARCHITECTURES+FOR+INSTANCE+INCREASED+PARALLELISM+IN+SIMD+AND+MIMD+MACHINES++I+AM+INTERESTED+IN+INFORMATION+ASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+COMPUTER+ARCHITECTURES+FOR+INSTANCE+INCREASED+PARALLELISM+IN+SIMD+AND+MIMD+MACHINES++I+AM+INTERESTED+IN+INFORMATION+ASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+COMPUTER+ARCHITECTURES+FOR+INSTANCE+INCREASED+PARALLELISM+IN+SIMD+AND+MIMD+MACHINES++I+AM+INTERESTED+IN+INFORMATION+ASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=28
-2020-12-26 10:02:30.764 INFO  (qtp1926343982-20) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:03:15.840 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-26 10:03:17.911 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:03:36.148 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+COMPUTER+ARCHITECTURES+FOR+INSTANCE+INCREASED+PARALLELISM+IN+SIMD+AND+MIMD+MACHINES++I+AM+INTERESTED+IN+INFORMATION+ASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+COMPUTER+ARCHITECTURES+FOR+INSTANCE+INCREASED+PARALLELISM+IN+SIMD+AND+MIMD+MACHINES++I+AM+INTERESTED+IN+INFORMATION+ASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:I+AM+INTERESTED+IN+THE+IDENTIFICATION+AND+EVALUATION+OF+COMPUTER+ARCHITECTURES+FOR+INSTANCE+INCREASED+PARALLELISM+IN+SIMD+AND+MIMD+MACHINES++I+AM+INTERESTED+IN+INFORMATION+ASSOCIATIVE+STORES+OR+MEMORIES+AND+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=9
-2020-12-26 10:03:36.922 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:04:38.114 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-26 10:04:40.171 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:04:52.390 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=8
-2020-12-26 10:04:53.213 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:07:07.876 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=25
-2020-12-26 10:07:09.946 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=3
-2020-12-26 10:07:17.162 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=5
-2020-12-26 10:07:17.951 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:10:28.536 INFO  (qtp1926343982-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-26 10:10:30.604 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:10:36.848 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=11
-2020-12-26 10:10:37.620 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:13:29.367 INFO  (qtp1926343982-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-26 10:13:31.432 INFO  (qtp1926343982-24) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:13:39.072 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=3
-2020-12-26 10:13:39.865 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:15:09.441 INFO  (qtp1926343982-47) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=30
-2020-12-26 10:15:11.493 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=0
-2020-12-26 10:15:18.224 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=3
-2020-12-26 10:15:19.004 INFO  (qtp1926343982-47) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:16:49.845 INFO  (qtp1926343982-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=35
-2020-12-26 10:16:51.912 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=2
-2020-12-26 10:16:58.412 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=3
-2020-12-26 10:16:59.210 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:18:02.318 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-26 10:18:04.384 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:18:25.637 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES++INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=3
-2020-12-26 10:18:26.464 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:19:20.278 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=27
-2020-12-26 10:19:22.345 INFO  (qtp1926343982-16) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:19:30.004 INFO  (qtp1926343982-21) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=id:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES+INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++title:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES+INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY++text:INTERESTED+IDENTIFICATION+EVALUATION+COMPUTER+ARCHITECTURES+INSTANCE+INCREASED+PARALLELISM+SIMD+MIMD+MACHINES+INTERESTED+INFORMATION+ASSOCIATIVE+STORES+MEMORIES+ASSOCIATIVE+PROCESSORS+COMPUTER+ARCHITECTURES+ASSOCIATIVE+PROCESSORS+ASSOCIATIVE+STORES+ASSOCIATIVE+MEMORY+&fl=id,text,title,score&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=2
-2020-12-26 10:19:30.797 INFO  (qtp1926343982-15) [   x:micoleccion] o.a.s.c.S.Request [micoleccion]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=501 status=0 QTime=1
-2020-12-26 10:19:51.181 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2020-12-26 10:19:51.181 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
-2020-12-26 10:19:51.188 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
-2020-12-26 10:19:51.191 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.c.SolrCore [micoleccion]  CLOSING SolrCore org.apache.solr.core.SolrCore@21571a35
-2020-12-26 10:19:51.191 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.micoleccion tag=SolrCore@21571a35
-2020-12-26 10:19:51.192 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.c.SolrCore [prueba]  CLOSING SolrCore org.apache.solr.core.SolrCore@383c1e9d
-2020-12-26 10:19:51.193 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.c.SolrCore [YaCorpus]  CLOSING SolrCore org.apache.solr.core.SolrCore@289590f6
-2020-12-26 10:19:51.193 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@56839e87: rootName = null, domain = solr.core.micoleccion, service url = null, agent id = null] for registry solr.core.micoleccion/com.codahale.metrics.MetricRegistry@37b7b2ac
-2020-12-26 10:19:51.223 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.prueba tag=SolrCore@383c1e9d
-2020-12-26 10:19:51.223 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2c784d2: rootName = null, domain = solr.core.prueba, service url = null, agent id = null] for registry solr.core.prueba/com.codahale.metrics.MetricRegistry@206d7eb9
-2020-12-26 10:19:51.238 INFO  (coreCloseExecutor-33-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-26 10:19:51.270 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.YaCorpus tag=SolrCore@289590f6
-2020-12-26 10:19:51.270 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@51dfde47: rootName = null, domain = solr.core.YaCorpus, service url = null, agent id = null] for registry solr.core.YaCorpus/com.codahale.metrics.MetricRegistry@6bd568cd
-2020-12-26 10:19:51.273 INFO  (coreCloseExecutor-33-thread-2) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-26 10:19:51.295 INFO  (coreCloseExecutor-33-thread-3) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2020-12-26 10:19:51.348 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2020-12-26 10:19:51.348 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@b05fda8
-2020-12-26 10:19:51.351 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2020-12-26 10:19:51.351 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@2aab7102
-2020-12-26 10:19:51.352 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2020-12-26 10:19:51.352 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@3e479377
-2020-12-26 10:19:51.368 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2021-01-08 20:37:00.960 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 1.8.0_271-b09
+2021-01-08 20:37:01.016 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/contexts/] at interval 0
+2021-01-08 20:37:03.353 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2021-01-08 20:37:03.368 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2021-01-08 20:37:03.368 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2021-01-08 20:37:03.372 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
+2021-01-08 20:37:03.480 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2021-01-08 20:37:03.490 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2021-01-08 20:37:03.490 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2021-01-08 20:37:03.490 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3
+2021-01-08 20:37:03.491 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2021-01-08T20:37:03.491Z
+2021-01-08 20:37:03.509 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2021-01-08 20:37:03.521 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\solr.xml
+2021-01-08 20:37:03.685 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a, but no JMX reporters were configured - adding default JMX reporter.
+2021-01-08 20:37:04.418 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2021-01-08 20:37:05.265 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:37:05.266 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@293bb8a5[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:37:05.417 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:37:05.417 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@3b1bb3ab[provider=null,keyStore=null,trustStore=null]
+2021-01-08 20:37:05.487 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2021-01-08 20:37:05.748 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2021-01-08 20:37:05.750 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2021-01-08 20:37:05.845 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:05.846 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:05.856 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:05.963 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 4 core definitions underneath C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr
+2021-01-08 20:37:05.964 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [P_en, P_split, Prueba, P_tight]
+2021-01-08 20:37:06.156 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:37:06.156 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:37:06.156 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:37:06.672 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:37:06.684 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:37:06.697 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:37:07.835 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:37:07.836 WARN  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:37:07.839 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:37:07.839 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:37:07.839 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:37:07.839 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:37:07.839 WARN  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:37:08.390 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:37:08.398 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:37:08.400 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:37:08.620 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.c.CoreContainer Creating SolrCore 'P_en' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar, trusted=true
+2021-01-08 20:37:08.621 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.c.CoreContainer Creating SolrCore 'P_split' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion, trusted=true
+2021-01-08 20:37:08.635 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.c.CoreContainer Creating SolrCore 'Prueba' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2, trusted=true
+2021-01-08 20:37:08.686 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.Prueba' (registry 'solr.core.Prueba') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:08.687 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_split' (registry 'solr.core.P_split') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:08.702 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_en' (registry 'solr.core.P_en') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:08.722 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.c.SolrCore [[Prueba] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2\data\]
+2021-01-08 20:37:08.725 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.c.SolrCore [[P_en] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\data\]
+2021-01-08 20:37:08.747 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.c.SolrCore [[P_split] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\data\]
+2021-01-08 20:37:09.033 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@771a660{/solr,file:///C:/Users/Jesus%20Delgado/Desktop/2020-2021/1erCuatrimestre/MiGitHub/MB/Motores-de-Busqueda/Practica1/Practica/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}
+2021-01-08 20:37:09.049 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-01-08 20:37:09.049 INFO  (main) [   ] o.e.j.s.Server Started @11332ms
+2021-01-08 20:37:09.614 INFO  (qtp1926343982-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=47
+2021-01-08 20:37:10.306 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:37:10.306 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:37:10.307 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:37:10.307 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:37:10.309 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:37:10.309 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:37:10.364 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:37:10.364 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:37:10.368 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:37:10.368 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:37:10.375 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:37:10.375 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:37:10.551 INFO  (qtp1926343982-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=81
+2021-01-08 20:37:10.889 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\jugar\conf
+2021-01-08 20:37:10.889 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\Prueba2\conf
+2021-01-08 20:37:10.890 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\micoleccion\conf
+2021-01-08 20:37:10.930 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:37:10.935 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:37:10.937 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:37:10.952 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:37:10.956 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:37:10.959 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:37:10.980 INFO  (coreLoadExecutor-13-thread-2) [   x:P_split] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:37:10.980 INFO  (coreLoadExecutor-13-thread-1) [   x:P_en] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:37:10.980 INFO  (coreLoadExecutor-13-thread-3) [   x:Prueba] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:37:11.023 INFO  (searcherExecutor-16-thread-1-processing-x:Prueba) [   x:Prueba] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:37:11.023 INFO  (searcherExecutor-16-thread-1-processing-x:Prueba) [   x:Prueba] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:37:11.031 INFO  (searcherExecutor-17-thread-1-processing-x:P_split) [   x:P_split] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:37:11.031 INFO  (searcherExecutor-17-thread-1-processing-x:P_split) [   x:P_split] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:37:11.033 INFO  (searcherExecutor-19-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:37:11.033 INFO  (searcherExecutor-19-thread-1-processing-x:P_en) [   x:P_en] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:37:11.039 INFO  (searcherExecutor-16-thread-1-processing-x:Prueba) [   x:Prueba] o.a.s.c.SolrCore [Prueba]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:37:11.042 INFO  (searcherExecutor-19-thread-1-processing-x:P_en) [   x:P_en] o.a.s.c.SolrCore [P_en]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:37:11.045 INFO  (searcherExecutor-17-thread-1-processing-x:P_split) [   x:P_split] o.a.s.c.SolrCore [P_split]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:37:11.053 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2021-01-08 20:37:11.148 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.IndexSchema Schema name=default-config
+2021-01-08 20:37:11.282 WARN  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-01-08 20:37:11.282 WARN  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-01-08 20:37:11.283 WARN  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-01-08 20:37:11.283 WARN  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-01-08 20:37:11.283 WARN  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-01-08 20:37:11.375 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-01-08 20:37:11.453 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.c.CoreContainer Creating SolrCore 'P_tight' using configuration from instancedir C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno, trusted=true
+2021-01-08 20:37:11.454 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.P_tight' (registry 'solr.core.P_tight') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@419c5f1a
+2021-01-08 20:37:11.454 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.c.SolrCore [[P_tight] ] Opening new SolrCore at [C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno], dataDir=[C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\data\]
+2021-01-08 20:37:11.564 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-01-08 20:37:11.564 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-01-08 20:37:11.573 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-01-08 20:37:11.573 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-01-08 20:37:11.664 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server\solr\uno\conf
+2021-01-08 20:37:11.665 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-01-08 20:37:11.665 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-01-08 20:37:11.667 INFO  (coreLoadExecutor-13-thread-3) [   x:P_tight] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-01-08 20:37:11.672 INFO  (searcherExecutor-33-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-01-08 20:37:11.672 INFO  (searcherExecutor-33-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-01-08 20:37:11.675 INFO  (searcherExecutor-33-thread-1-processing-x:P_tight) [   x:P_tight] o.a.s.c.SolrCore [P_tight]  Registered new searcher autowarm time: 0 ms
+2021-01-08 20:37:12.429 INFO  (qtp1926343982-16) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=84
+2021-01-08 20:38:16.539 INFO  (qtp1926343982-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=54
+2021-01-08 20:38:19.837 INFO  (qtp1926343982-19) [   x:P_en] o.a.s.c.S.Request [P_en]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=20
+2021-01-08 20:38:28.489 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=4
+2021-01-08 20:38:40.177 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:associative++OR+(text_Text:associative++AND+text_Titulo:associative+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=207
+2021-01-08 20:38:40.221 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:non-users+studies++OR+(text_Text:non-users+studies++AND+text_Titulo:non-users+studies+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=15
+2021-01-08 20:38:40.256 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=412 status=0 QTime=23
+2021-01-08 20:38:40.344 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:libraries++OR+(text_Text:libraries++AND+text_Titulo:libraries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1866 status=0 QTime=26
+2021-01-08 20:38:40.583 INFO  (qtp1926343982-20) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:news++OR+(text_Text:news++AND+text_Titulo:news+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=143 status=0 QTime=18
+2021-01-08 20:38:40.649 INFO  (qtp1926343982-20) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:library++OR+(text_Text:library++AND+text_Titulo:library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1866 status=0 QTime=25
+2021-01-08 20:38:40.851 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:security++OR+(text_Text:security++AND+text_Titulo:security+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=7 status=0 QTime=6
+2021-01-08 20:38:40.865 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:education++OR+(text_Text:education++AND+text_Titulo:education+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=148 status=0 QTime=4
+2021-01-08 20:38:40.907 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:charging++OR+(text_Text:charging++AND+text_Titulo:charging+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=4
+2021-01-08 20:38:40.924 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:bulletins++OR+(text_Text:bulletins++AND+text_Titulo:bulletins+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=4
+2021-01-08 20:38:40.950 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:libraries++OR+(text_Text:libraries++AND+text_Titulo:libraries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1866 status=0 QTime=16
+2021-01-08 20:38:41.159 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:indexing++OR+(text_Text:indexing++AND+text_Titulo:indexing+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=33 status=0 QTime=13
+2021-01-08 20:38:41.211 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:christian++OR+(text_Text:christian++AND+text_Titulo:christian+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=4 status=0 QTime=8
+2021-01-08 20:38:41.238 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:library++OR+(text_Text:library++AND+text_Titulo:library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1866 status=0 QTime=13
+2021-01-08 20:38:41.400 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:chemical++OR+(text_Text:chemical++AND+text_Titulo:chemical+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=53 status=0 QTime=6
+2021-01-08 20:38:41.414 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:consumer++OR+(text_Text:consumer++AND+text_Titulo:consumer+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=4 status=0 QTime=3
+2021-01-08 20:38:41.424 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=412 status=0 QTime=2
+2021-01-08 20:38:41.471 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:networks++OR+(text_Text:networks++AND+text_Titulo:networks+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=97 status=0 QTime=13
+2021-01-08 20:38:41.497 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:national++OR+(text_Text:national++AND+text_Titulo:national+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=139 status=0 QTime=7
+2021-01-08 20:38:41.519 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=412 status=0 QTime=3
+2021-01-08 20:38:41.560 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:online+databases++OR+(text_Text:online+databases++AND+text_Titulo:online+databases+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=2
+2021-01-08 20:38:41.570 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:management++OR+(text_Text:management++AND+text_Titulo:management+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=68 status=0 QTime=3
+2021-01-08 20:38:41.592 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=412 status=0 QTime=1
+2021-01-08 20:38:44.023 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:automatic+document+classification+clusters+clustering+retrieval+term+classifications++OR+(text_Text:automatic+document+classification+clusters+clustering+retrieval+term+classifications++AND+text_Titulo:automatic+document+classification+clusters+clustering+retrieval+term+classifications+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=8
+2021-01-08 20:38:44.050 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:match++OR+(text_Text:match++AND+text_Titulo:match+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=7
+2021-01-08 20:38:44.068 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:library++OR+(text_Text:library++AND+text_Titulo:library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1866 status=0 QTime=8
+2021-01-08 20:38:44.251 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:computer++OR+(text_Text:computer++AND+text_Titulo:computer+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=68 status=0 QTime=3
+2021-01-08 20:38:44.266 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:packages++OR+(text_Text:packages++AND+text_Titulo:packages+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=4 status=0 QTime=3
+2021-01-08 20:38:44.280 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:countries++OR+(text_Text:countries++AND+text_Titulo:countries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=32 status=0 QTime=5
+2021-01-08 20:38:44.294 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:training++OR+(text_Text:training++AND+text_Titulo:training+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=77 status=0 QTime=3
+2021-01-08 20:38:45.204 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:conflation+words+substrings+segmentation++OR+(text_Text:conflation+words+substrings+segmentation++AND+text_Titulo:conflation+words+substrings+segmentation+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=5
+2021-01-08 20:38:46.293 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:search+services+academic+library++OR+(text_Text:search+services+academic+library++AND+text_Titulo:search+services+academic+library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=5
+2021-01-08 20:38:46.307 INFO  (qtp1926343982-22) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:libraries++OR+(text_Text:libraries++AND+text_Titulo:libraries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1866 status=0 QTime=4
+2021-01-08 20:38:47.175 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:pleased+precis+context+indexing+system++OR+(text_Text:pleased+precis+context+indexing+system++AND+text_Titulo:pleased+precis+context+indexing+system+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=3
+2021-01-08 20:38:47.188 INFO  (qtp1926343982-23) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:occupational++OR+(text_Text:occupational++AND+text_Titulo:occupational+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=2
+2021-01-08 20:39:19.667 INFO  (qtp1926343982-19) [   x:P_tight] o.a.s.c.S.Request [P_tight]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=10
+2021-01-08 20:40:17.346 INFO  (qtp1926343982-23) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=4
+2021-01-08 20:40:25.467 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:associative++OR+(text_Text:associative++AND+text_Titulo:associative+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=2
+2021-01-08 20:40:25.479 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:non-users+studies++OR+(text_Text:non-users+studies++AND+text_Titulo:non-users+studies+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=2
+2021-01-08 20:40:25.489 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=153 status=0 QTime=3
+2021-01-08 20:40:25.513 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:libraries++OR+(text_Text:libraries++AND+text_Titulo:libraries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=569 status=0 QTime=5
+2021-01-08 20:40:25.571 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:news++OR+(text_Text:news++AND+text_Titulo:news+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=6
+2021-01-08 20:40:25.587 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:library++OR+(text_Text:library++AND+text_Titulo:library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1161 status=0 QTime=3
+2021-01-08 20:40:25.660 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:security++OR+(text_Text:security++AND+text_Titulo:security+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=8 status=0 QTime=4
+2021-01-08 20:40:25.671 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:education++OR+(text_Text:education++AND+text_Titulo:education+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=151 status=0 QTime=3
+2021-01-08 20:40:25.694 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:charging++OR+(text_Text:charging++AND+text_Titulo:charging+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=3
+2021-01-08 20:40:25.708 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:bulletins++OR+(text_Text:bulletins++AND+text_Titulo:bulletins+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1 status=0 QTime=6
+2021-01-08 20:40:25.725 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:libraries++OR+(text_Text:libraries++AND+text_Titulo:libraries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=569 status=0 QTime=2
+2021-01-08 20:40:25.774 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:indexing++OR+(text_Text:indexing++AND+text_Titulo:indexing+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=36 status=0 QTime=6
+2021-01-08 20:40:25.791 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:christian++OR+(text_Text:christian++AND+text_Titulo:christian+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=4 status=0 QTime=8
+2021-01-08 20:40:25.801 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:library++OR+(text_Text:library++AND+text_Titulo:library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1161 status=0 QTime=2
+2021-01-08 20:40:25.889 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:chemical++OR+(text_Text:chemical++AND+text_Titulo:chemical+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=49 status=0 QTime=10
+2021-01-08 20:40:25.900 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:consumer++OR+(text_Text:consumer++AND+text_Titulo:consumer+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
+2021-01-08 20:40:25.908 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=153 status=0 QTime=1
+2021-01-08 20:40:25.926 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:networks++OR+(text_Text:networks++AND+text_Titulo:networks+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=32 status=0 QTime=3
+2021-01-08 20:40:25.936 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:national++OR+(text_Text:national++AND+text_Titulo:national+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=140 status=0 QTime=3
+2021-01-08 20:40:25.958 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=153 status=0 QTime=2
+2021-01-08 20:40:25.972 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:online+databases++OR+(text_Text:online+databases++AND+text_Titulo:online+databases+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=2
+2021-01-08 20:40:25.982 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:management++OR+(text_Text:management++AND+text_Titulo:management+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=69 status=0 QTime=1
+2021-01-08 20:40:25.993 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:systems++OR+(text_Text:systems++AND+text_Titulo:systems+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=153 status=0 QTime=1
+2021-01-08 20:40:26.427 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:automatic+document+classification+clusters+clustering+retrieval+term+classifications++OR+(text_Text:automatic+document+classification+clusters+clustering+retrieval+term+classifications++AND+text_Titulo:automatic+document+classification+clusters+clustering+retrieval+term+classifications+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=5
+2021-01-08 20:40:26.437 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:match++OR+(text_Text:match++AND+text_Titulo:match+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=2
+2021-01-08 20:40:26.445 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:library++OR+(text_Text:library++AND+text_Titulo:library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=1161 status=0 QTime=2
+2021-01-08 20:40:26.519 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:computer++OR+(text_Text:computer++AND+text_Titulo:computer+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=78 status=0 QTime=2
+2021-01-08 20:40:26.530 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:packages++OR+(text_Text:packages++AND+text_Titulo:packages+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=3 status=0 QTime=2
+2021-01-08 20:40:26.542 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:countries++OR+(text_Text:countries++AND+text_Titulo:countries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=29 status=0 QTime=4
+2021-01-08 20:40:26.553 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:training++OR+(text_Text:training++AND+text_Titulo:training+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=79 status=0 QTime=3
+2021-01-08 20:40:26.969 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:conflation+words+substrings+segmentation++OR+(text_Text:conflation+words+substrings+segmentation++AND+text_Titulo:conflation+words+substrings+segmentation+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=4
+2021-01-08 20:40:27.872 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:search+services+academic+library++OR+(text_Text:search+services+academic+library++AND+text_Titulo:search+services+academic+library+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=2
+2021-01-08 20:40:27.879 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:libraries++OR+(text_Text:libraries++AND+text_Titulo:libraries+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=569 status=0 QTime=1
+2021-01-08 20:40:29.100 INFO  (qtp1926343982-19) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:pleased+precis+context+indexing+system++OR+(text_Text:pleased+precis+context+indexing+system++AND+text_Titulo:pleased+precis+context+indexing+system+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=0 status=0 QTime=2
+2021-01-08 20:40:29.110 INFO  (qtp1926343982-22) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&fl=id,text_Text,text_Titulo,score&fq=id:occupational++OR+(text_Text:occupational++AND+text_Titulo:occupational+)&sort=score+asc&rows=100000&wt=javabin&version=2} hits=2 status=0 QTime=2
+2021-01-08 20:40:44.816 INFO  (qtp1926343982-23) [   x:Prueba] o.a.s.c.S.Request [Prueba]  webapp=/solr path=/select params={q=*:*&rows=100000&wt=javabin&version=2} hits=6000 status=0 QTime=15
+2021-01-08 20:43:52.880 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@41c2284a{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-01-08 20:43:52.880 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2021-01-08 20:43:52.886 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=1406206626
+2021-01-08 20:43:52.888 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.c.SolrCore [Prueba]  CLOSING SolrCore org.apache.solr.core.SolrCore@45df98de
+2021-01-08 20:43:52.888 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.Prueba tag=SolrCore@45df98de
+2021-01-08 20:43:52.889 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.c.SolrCore [P_split]  CLOSING SolrCore org.apache.solr.core.SolrCore@4ab4cb7e
+2021-01-08 20:43:52.889 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@57653c20: rootName = null, domain = solr.core.Prueba, service url = null, agent id = null] for registry solr.core.Prueba/com.codahale.metrics.MetricRegistry@3a0868ac
+2021-01-08 20:43:52.889 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.c.SolrCore [P_en]  CLOSING SolrCore org.apache.solr.core.SolrCore@268e31bb
+2021-01-08 20:43:52.890 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.c.SolrCore [P_tight]  CLOSING SolrCore org.apache.solr.core.SolrCore@1110879c
+2021-01-08 20:43:52.913 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_split tag=SolrCore@4ab4cb7e
+2021-01-08 20:43:52.914 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@bda1d35: rootName = null, domain = solr.core.P_split, service url = null, agent id = null] for registry solr.core.P_split/com.codahale.metrics.MetricRegistry@407bddee
+2021-01-08 20:43:52.938 INFO  (coreCloseExecutor-39-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:43:52.958 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_en tag=SolrCore@268e31bb
+2021-01-08 20:43:52.958 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@65326484: rootName = null, domain = solr.core.P_en, service url = null, agent id = null] for registry solr.core.P_en/com.codahale.metrics.MetricRegistry@6ecf9641
+2021-01-08 20:43:52.959 INFO  (coreCloseExecutor-39-thread-2) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:43:52.974 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.P_tight tag=SolrCore@1110879c
+2021-01-08 20:43:52.974 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@243d7bd5: rootName = null, domain = solr.core.P_tight, service url = null, agent id = null] for registry solr.core.P_tight/com.codahale.metrics.MetricRegistry@5176d81c
+2021-01-08 20:43:52.976 INFO  (coreCloseExecutor-39-thread-3) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:43:52.993 INFO  (coreCloseExecutor-39-thread-4) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2021-01-08 20:43:53.072 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2021-01-08 20:43:53.072 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@4159e81b: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@11a7560b
+2021-01-08 20:43:53.075 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2021-01-08 20:43:53.075 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1450078a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@4bbb6d43
+2021-01-08 20:43:53.077 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2021-01-08 20:43:53.077 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@c68a5f8: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@edcfb36
+2021-01-08 20:43:53.096 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@771a660{/solr,null,UNAVAILABLE}{C:\Users\Jesus Delgado\Desktop\2020-2021\1erCuatrimestre\MiGitHub\MB\Motores-de-Busqueda\Practica1\Practica\solr-8.6.3\server/solr-webapp/webapp}

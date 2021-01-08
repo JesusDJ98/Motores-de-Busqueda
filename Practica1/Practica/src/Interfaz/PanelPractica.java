@@ -160,10 +160,8 @@ public class PanelPractica extends JPanel{
         //AQUI QUIERO METER UNA NUVA PANTALLA DE CARGANDO
         
         
-        int cantidad = a; //Solo quiero el primero
-        /*if(cantidad >= listado.length ){
-            cantidad = listado.length;
-        }*/
+        int cantidad = a; 
+        lisa.setCant(a);//Creo los array a nuestra medida
         
         for(int i = 0; i<cantidad; i++){
             //accion.setText("Accion: Leyendo "+listado[i]);
@@ -180,7 +178,7 @@ public class PanelPractica extends JPanel{
         try {
             //Lo añado a SOLR
             clientaAdd.AñadirCorpus(lisa, info.getCore());
-            System.out.println("Ya añadido");
+            //System.out.println("Ya añadido");
         } catch (SolrServerException | IOException ex) {
             accion.setText("Accion: Error añadiendo el Corpus a SOLR");
         }

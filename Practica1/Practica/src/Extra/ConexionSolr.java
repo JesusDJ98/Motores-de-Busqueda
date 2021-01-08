@@ -41,7 +41,8 @@ public class ConexionSolr {
             Thread.sleep(5000);//5 segundos
         }catch(InterruptedException ex){
         }
-        
+        //Comando hay campos nulos (text_Text suele añadirse mal)
+        //-fieldName:['' TO *]
         
         String url = "http://localhost:8983/solr/#/"+name+"/core-overview";
         

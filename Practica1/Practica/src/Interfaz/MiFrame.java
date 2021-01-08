@@ -328,21 +328,20 @@ public class MiFrame extends JFrame{
      * @param op
      */
     public void setBox(String[] s, int op){
-        
         if(op==1){
-            box.removeAllItems(); 
-            if(s.length>0){ //Si hay mas de uno
-                box.addItem("micoleccion"); //Lo añado el primero
-            }else{
-                box.addItem("Core");
-            }
+            box.removeAllItems();
 
-            for (int i = 0; i < s.length; i++) {
-                if(!s[i].equals("micoleccion")){
+            if(s.length == 0){
+                box.removeAllItems();
+                box.addItem("Core");
+            }else{
+                for (int i = 0; i < s.length; i++) {
                     box.addItem(s[i]);
                 }
             }
         }
+        
+        
     }
     
     public JButton Botones(){
@@ -459,6 +458,10 @@ public class MiFrame extends JFrame{
             } catch (SolrServerException | IOException ex) {
                 //JOptionPane.showMessageDialog(null, "Error recuperando cores: "+ex);
             }
+        }
+        try{    //Margen para que coja bien todos los cores
+            Thread.sleep(1200);
+        }catch(Exception ex){
         }
         
         //Los guardamos

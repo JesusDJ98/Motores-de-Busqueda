@@ -42,8 +42,8 @@ public class MiClienteAddSolrj {
         for(int i=0; i<tama; i++){
             SolrInputDocument doc = new SolrInputDocument();
             doc.addField("id", IdDoc[i]);
-            doc.addField("title", Titulo[i]);
-            doc.addField("text", Texto[i]);
+            doc.addField("text_Titulo", Titulo[i]);
+            doc.addField("text_Text", Texto[i]);
             solr.add(doc);
             solr.commit();
         }
@@ -64,8 +64,8 @@ public class MiClienteAddSolrj {
         //Creo los documentos SOLR
         SolrInputDocument doc = new SolrInputDocument();
         doc.addField("id", id);
-        doc.addField("title", title);
-        doc.addField("text", text);
+        doc.addField("text_Titulo", title);
+        doc.addField("text_Text", text);
         solr.add(doc);
         solr.commit();
         

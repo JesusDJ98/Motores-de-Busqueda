@@ -15,7 +15,7 @@
 
 **Interfaz**:
 
-![Inicio](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Objetivo2.PNG "Interfaz de Inicio")
+![Inicio](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG "Interfaz de Inicio")
 
 <p float="left">
   <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" /> 

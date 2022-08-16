@@ -1,7 +1,7 @@
 # Elaboracion de un Sistema de Recuperacion de Informacion (SRI) con GATE y Apache SOLR.
 
 **Objetivo**:
-![Esquema General](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Objetivo2.PNG, "Esquema General")
+![Esquema General](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Objetivo2.PNG "Esquema General")
 
 **Partes**:
 1. Parseo de documentos
@@ -16,7 +16,7 @@
 **Interfaz**:
 
 <p float="left">
-  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG" width="150" />
-  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" width="150" /> 
-  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG" width="150" />
+  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG" width="300" />
+  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" width="300" /> 
+  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG" width="300" />
 </p>

@@ -15,12 +15,10 @@
 
 **Interfaz**:
 
-<img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" />
-
-![Interfaz_Inicio](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG "Interfaz de Inicio")  ![Interfaz_Practica](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG "Interfaz de Practica")  ![Interfaz_Editar](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG "Interfaz de Editar")
+![Inicio](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG "Interfaz de Inicio")  ![Practica](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG "Interfaz de Practica")  ![Editar](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG "Interfaz de Editar")
 
 
-<p float="left">
-  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" /> 
-  <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG" />
-</p>
+[//]: <> (<p float="left">)
+	[//]: <> (<img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" /> )
+	[//]: <> (<img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG" /> )
+[//]: <> (</p>)

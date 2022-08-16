@@ -17,8 +17,10 @@
 
 <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" />
 
+![Interfaz de Inicio](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG "Interfaz de Inicio") ![Interfaz de Practica](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG "Interfaz de Practica")
+
 <p float="left">
-	![Inicio](https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Inicio.PNG "Interfaz de Inicio")
+	
   <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Practica.PNG" /> 
   <img src="https://github.com/JesusDJ98/Motores-de-Busqueda/tree/master/Practica1/Imagenes/Editar.PNG" />
 </p>
